@@ -1,0 +1,21 @@
+<template>
+  <el-tabs v-bind="$attrs" v-on="$listeners">
+  </el-tabs>
+</template>
+
+<script>
+export default {
+  name: 'TcTabs',
+  props: {
+  },
+  data: () => ({
+  }),
+  computed: {
+  },
+  methods: {
+  }
+}
+</script>
+
+<style scoped lang="scss">
+</style>
