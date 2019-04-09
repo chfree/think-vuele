@@ -37,7 +37,7 @@ import {
   TcImg
 } from '../packages/tennetcn-ui'
 
-import utilLib from './util-lib'
+import utilLib from './utils/util-lib'
 
 const components = [
   utilLib,

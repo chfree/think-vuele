@@ -7,7 +7,7 @@ import {
   findComponentsDownward,
   findBrothersComponents,
   isNull
-} from './util'
+} from '.'
 
 const install = function (Vue, opts = {}) {
   Vue.prototype.$tcUtil = Vue.prototype.$tcUtil || {}
