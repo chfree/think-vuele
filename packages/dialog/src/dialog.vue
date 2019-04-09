@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import elDragDialog from '@/directive/el-dragDialog' // base on element-ui
+import elDragDialog from 'main/directives/el-dragDialog' // base on element-ui
 export default {
   name: 'TcDialog',
   directives: { elDragDialog },
@@ -46,30 +46,30 @@ export default {
       this.isShow = val
     }
   },
-  mounted() {
+  mounted () {
     this.$tcUtil.addResizeCall(this.calcRender)
     this.calcRender()
   },
-  destroyed() {
+  destroyed () {
     this.$tcUtil.clearResizeCallAll()
   },
   methods: {
-    calcRender() {
+    calcRender () {
       this.calcHeight()
       this.calcDialogHeight()
       this.calcMarginTop()
     },
-    opened() {
+    opened () {
       this.getChildVueComponentAttr(this, 'opened')
       this.$emit('opened')
     },
-    calcDialogHeight() {
+    calcDialogHeight () {
       this.dialogHeight = 'height:' + (this.currentHeight + this.footbarHeight) + 'px'
     },
-    calcMarginTop() {
+    calcMarginTop () {
       this.marginTop = (window.innerHeight - this.titleHeight - this.currentHeight - this.footbarHeight) / 2 + 'px'
     },
-    calcHeight() {
+    calcHeight () {
       this.currentHeight = 0
       if (this.height.indexOf('%') > 0) {
         this.currentHeight = window.innerHeight * parseFloat(this.height) / 100
@@ -103,7 +103,7 @@ export default {
       return children
     },
 
-    getChildVueComponentAttr(vm, attr) {
+    getChildVueComponentAttr (vm, attr) {
       if (vm == null || attr == null || attr === '') {
         return null
       }

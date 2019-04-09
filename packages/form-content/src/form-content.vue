@@ -23,7 +23,7 @@ export default {
     this.calcContentHeight()
   },
   methods: {
-    calcContentHeight() {
+    calcContentHeight () {
       this.contentHeight = 'height:' + this.height + (this.height.indexOf('px') > 0 ? '' : 'px')
     }
   }

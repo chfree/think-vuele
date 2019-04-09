@@ -63,7 +63,7 @@ export default {
       const func = this.evalFunc || formatData
       return func(tmp)
     },
-    editableColumns: function() {
+    editableColumns: function () {
       const editableColumns = []
       this.columns.forEach((column) => {
         if (column.editable) {
@@ -74,7 +74,7 @@ export default {
     }
   },
   methods: {
-    handleEdit(trIndex, row) {
+    handleEdit (trIndex, row) {
       if (this.isEditNow) {
         this.$message.warning('一次只能编辑一条数据')
         return
@@ -85,10 +85,10 @@ export default {
       this.isEditNow = true
       row.editable = true
     },
-    handleSaveEdit(trIndex, row) {
+    handleSaveEdit (trIndex, row) {
       const that = this
 
-      this.$emit('row-save', trIndex, row, this.currentEdit, function(result) {
+      this.$emit('row-save', trIndex, row, this.currentEdit, function (result) {
         if (!result) {
           that.cancelEdit(row)
         } else {
@@ -99,15 +99,15 @@ export default {
         }
       })
     },
-    handleCancelEdit(trIndex, row) {
+    handleCancelEdit (trIndex, row) {
       this.cancelEdit(row)
     },
-    cancelEdit(row) {
+    cancelEdit (row) {
       row.editable = false
       this.currentEdit = {}
       this.isEditNow = false
     },
-    tableEditNow() {
+    tableEditNow () {
       return this.isEditNow
     }
   }

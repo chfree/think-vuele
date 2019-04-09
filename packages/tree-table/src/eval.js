@@ -1,9 +1,9 @@
 'use strict'
 import Vue from 'vue'
-export default function treeToArray(data, expandAll, parent = null, level = null) {
+export default function treeToArray (data, expandAll, parent = null, level = null) {
   let tmp = []
   let index = 0
-  Array.from(data).forEach(function(record) {
+  Array.from(data).forEach(function (record) {
     if (record.hidden) {
       return
     }

@@ -23,34 +23,34 @@ export default {
     bgColor: { type: String, required: false, default: '' },
     titleHeight: { type: String, required: false, default: '36px' },
     LeftIconSrc: { type: String, required: false, default: '' },
-    rightIconSrc: { type: String, required: false, default: require('@/assets/person-center/my-person-center/shuaxin.png') },
+    rightIconSrc: { type: String, required: false, default: '' },
     title: { type: String, required: false, default: '' }
   },
   data: () => ({
   }),
   computed: {
-    tcTitle() {
+    tcTitle () {
       return {
         height: this.titleHeight,
         lineHeight: this.titleHeight,
         backgroundColor: this.bgColor
       }
     },
-    iconStyle() {
+    iconStyle () {
       return {
         width: this.iconSize + 'px',
         height: this.iconSize + 'px',
         marginTop: ((parseInt(this.titleHeight, 10) - this.iconSize) / 2) + 'px'
       }
     },
-    iconContainerHeight() {
+    iconContainerHeight () {
       return {
         height: (parseInt(this.titleHeight, 10) - this.iconSize / 2) + 'px'
       }
     }
   },
   methods: {
-    rightClick() {
+    rightClick () {
       this.$emit('right-click')
     }
   }

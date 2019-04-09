@@ -21,6 +21,11 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'keyword-spacing': [2, {
+      'before': true,
+      'after': true
+    }],
+    'space-before-blocks': [2, 'always'],
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development

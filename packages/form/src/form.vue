@@ -14,16 +14,16 @@ export default {
   computed: {
   },
   methods: {
-    validate(callback) {
+    validate (callback) {
       this.$refs.form.validate(callback)
     },
-    resetFields() {
+    resetFields () {
       this.$refs.form.resetFields()
     },
-    clearValidate() {
+    clearValidate () {
       this.$refs.form.clearValidate()
     },
-    validateField(field) {
+    validateField (field) {
       this.$refs.form.validateField(field)
     }
   }

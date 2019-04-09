@@ -17,12 +17,12 @@ export default {
   }),
   computed: {
   },
-  mounted() {
+  mounted () {
     this.dialogWrapper = this.$tcUtil.getVueComponent(this, 'el-dialog')
     this.calcFootbarHeight()
   },
   methods: {
-    calcFootbarHeight() {
+    calcFootbarHeight () {
       this.footbarHeight = this.dialogWrapper.$attrs['footbar-height']
 
       this.footbarStyle = {

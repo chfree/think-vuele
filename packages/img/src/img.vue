@@ -12,18 +12,18 @@ export default {
   },
   data: () => ({
     downloadFile: '/api/v1/basic/file/fileUrl/',
-    defaultImg: require('@/assets/logo/ccb_logo_45_1.png')
+    defaultImg: require('main/assets/logo.png')
   }),
   computed: {
   },
   methods: {
-    fileUrl: function() {
+    fileUrl: function () {
       if (this.$tcUtil.isNull(this.fileId)) {
         return this.defaultImg
       }
       return process.env.API_HOST + this.downloadFile + this.fileId
     },
-    imgError() {
+    imgError () {
       this.$refs.img.src = this.defaultImg
     }
   }

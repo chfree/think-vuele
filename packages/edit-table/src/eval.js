@@ -1,6 +1,6 @@
 'use strict'
 import Vue from 'vue'
-export default function formatData(data) {
+export default function formatData (data) {
   var index = 0
   Array.from(data).forEach((row) => {
     Vue.set(row, 'editable', false)
