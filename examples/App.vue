@@ -1,24 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <tc-img />
-    <router-view/>
+    <main-header v-if="lang !== 'play'"></main-header>
+    <div class="main-cnt">
+      <router-view></router-view>
+    </div>
+    <main-footer v-if="lang !== 'play' && !isComponent"></main-footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    lang () {
+      return 'zh-CN'
+    },
+    isComponent () {
+      return /^component-/.test(this.$route.name || '')
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
