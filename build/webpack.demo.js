@@ -18,7 +18,7 @@ const webpackConfig = {
   entry: isProd ? {
     docs: './examples/main.js',
     'tennetcn-ui': './src/index.js'
-  } : (isPlay ? './examples/play.js' : './tennetcn/main.js'),
+  } : (isPlay ? './examples/play.js' : './examples/main.js'),
   output: {
     path: path.resolve(process.cwd(), './examples/tennetcn-ui/'),
     publicPath: process.env.CI_ENV || '',
