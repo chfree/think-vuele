@@ -1,46 +1,32 @@
-const path = require('path');
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const utils = require('./utils')
 
-const buildConfig = require('./build-config');
+const buildConfig = require('./build-config')
 
-const isProd = process.env.NODE_ENV === 'production';
-const isPlay = !!process.env.PLAY_ENV;
+const isProd = process.env.NODE_ENV === 'production'
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
-  entry: isProd ? {
-    docs: './examples/main.js',
-    'tennetcn-ui': './src/index.js'
-  } : (isPlay ? './examples/play.js' : './tennetcn/main.js'),
+  entry: {
+    app: './examples/main.js'
+  },
   output: {
-    path: path.resolve(process.cwd(), './examples/tennetcn-ui/'),
-    publicPath: process.env.CI_ENV || '',
-    filename: '[name].[hash:7].js',
-    chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
+    path: path.resolve(__dirname, '../dist'),
+    filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
+    chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: buildConfig.alias,
     modules: ['node_modules']
-  },
-  devServer: {
-    host: '0.0.0.0',
-    port: 8089,
-    publicPath: '/',
-    noInfo: true
-  },
-  performance: {
-    hints: false
-  },
-  stats: {
-    children: false
   },
   module: {
     rules: [
@@ -103,7 +89,13 @@ const webpackConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './examples/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      }
     }),
     new CopyWebpackPlugin([{ from: 'examples/versions.json' }]),
     new ProgressBarPlugin(),
@@ -122,19 +114,14 @@ const webpackConfig = {
   optimization: {
     minimizer: []
   }
-};
+}
 
 if (isProd) {
-  webpackConfig.externals = {
-    vue: 'Vue',
-    'vue-router': 'VueRouter',
-    'highlight.js': 'hljs'
-  };
   webpackConfig.plugins.push(
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:7].css'
+      filename: utils.assetsPath('css/[name].[chunkhash:8].css')
     })
-  );
+  )
   webpackConfig.optimization.minimizer.push(
     new UglifyJsPlugin({
       cache: true,
@@ -142,7 +129,7 @@ if (isProd) {
       sourceMap: false
     }),
     new OptimizeCSSAssetsPlugin({})
-  );
+  )
 }
 
-module.exports = webpackConfig;
+module.exports = webpackConfig
