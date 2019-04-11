@@ -21,7 +21,7 @@
         <a href="https://github.com/ElementUI/awesome-element" class="footer-main-link" target="_blank">Awesome Element</a>
       </div>
       <div class="footer-social">
-        <p class="footer-social-title">Element {{ version && version.slice(0, 3) }} Fullerene</p>
+        <p class="footer-social-title">Current Version {{ version  }}</p>
         <el-popover
           ref="weixin"
           placement="top"
@@ -40,6 +40,11 @@
         </a>
       </div>
     </div>
+    <div style="text-align:center;font-size:14px;color:#3a4e64;">
+      <span>Copyright©2019 Tennetcn</span>
+      <span> | </span>
+      <span>鄂ICP备15015935号-2</span>
+    </div>
   </footer>
 </template>
 
@@ -48,7 +53,7 @@
     background-color: #F7FBFD;
     width: 100%;
     padding: 40px 150px;
-    // margin-top: -340px;
+    margin-top: -340px;
     box-sizing: border-box;
     height: 340px;
 

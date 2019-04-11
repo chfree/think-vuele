@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/styles/common.css'
+import './assets/styles/fonts/style.css'
 import TennetcnUI from 'main/index'
 import ElementUI from 'element-ui'
 
