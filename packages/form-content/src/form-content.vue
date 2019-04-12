@@ -17,13 +17,13 @@ export default {
   }),
   computed: {
   },
-  created  () {
+  created() {
     this.dialogWrapper = this.$tcUtil.getVueComponent(this, 'el-dialog')
     this.height = this.dialogWrapper.$attrs['content-height']
     this.calcContentHeight()
   },
   methods: {
-    calcContentHeight () {
+    calcContentHeight() {
       this.contentHeight = 'height:' + this.height + (this.height.indexOf('px') > 0 ? '' : 'px')
     }
   }

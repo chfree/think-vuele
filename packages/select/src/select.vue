@@ -17,7 +17,7 @@ export default {
   data: () => ({
   }),
   methods: {
-    selectChange: function (val) {
+    selectChange: function(val) {
       this.$emit('input', val)
     }
   }

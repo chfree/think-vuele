@@ -1,6 +1,6 @@
 import TcBadge from './src/badge'
 
-TcBadge.install = function (Vue) {
+TcBadge.install = function(Vue) {
   Vue.component(TcBadge.name, TcBadge)
 }
 

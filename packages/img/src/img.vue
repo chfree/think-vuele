@@ -17,13 +17,13 @@ export default {
   computed: {
   },
   methods: {
-    fileUrl: function () {
+    fileUrl: function() {
       if (this.$tcUtil.isNull(this.fileId)) {
         return this.defaultImg
       }
       return process.env.API_HOST + this.downloadFile + this.fileId
     },
-    imgError () {
+    imgError() {
       this.$refs.img.src = this.defaultImg
     }
   }

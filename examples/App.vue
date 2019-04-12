@@ -12,10 +12,10 @@
 export default {
   name: 'App',
   computed: {
-    lang () {
+    lang() {
       return 'zh-CN'
     },
-    isComponent () {
+    isComponent() {
       return /^component-/.test(this.$route.name || '')
     }
   }

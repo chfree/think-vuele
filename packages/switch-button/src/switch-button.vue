@@ -18,7 +18,7 @@ export default {
   data: () => ({
   }),
   methods: {
-    itemClick: function (val) {
+    itemClick: function(val) {
       this.$emit('input', val)
     }
   }

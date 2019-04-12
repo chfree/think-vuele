@@ -1,6 +1,6 @@
 import TcPager from './src/pager'
 
-TcPager.install = function (Vue) {
+TcPager.install = function(Vue) {
   Vue.component(TcPager.name, TcPager)
 }
 

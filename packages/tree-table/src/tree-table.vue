@@ -61,7 +61,7 @@ export default {
   },
   computed: {
     // 格式化数据源
-    formatData: function () {
+    formatData: function() {
       let tmp
       if (!Array.isArray(this.data)) {
         tmp = [this.data]
@@ -75,48 +75,48 @@ export default {
     }
   },
   methods: {
-    showRow: function (row) {
+    showRow: function(row) {
       const show = (row.row.parent ? (row.row.parent._expanded && row.row.parent._show) : true)
       row.row._show = show
       return show ? 'animation:treeTableShow 1s;-webkit-animation:treeTableShow 1s;' : 'display:none;'
     },
     // 切换下级是否展开
-    toggleExpanded: function (trIndex) {
+    toggleExpanded: function(trIndex) {
       const record = this.formatData[trIndex]
       record._expanded = !record._expanded
 
       this.$emit('toggle-expanded', record)
     },
     // 图标显示
-    iconShow (index, record) {
+    iconShow(index, record) {
       return (index === 0 && record.children && record.children.length > 0)
     },
-    toggleRowSelection (row, selected) {
+    toggleRowSelection(row, selected) {
       this.$refs.eltable.toggleRowSelection(row, selected)
     },
-    handleCurrentChange (currentRow, oldCurrentRow) {
+    handleCurrentChange(currentRow, oldCurrentRow) {
       if (this.selectionType === 'single') {
         this.clearSelection()
         this.$refs.eltable.toggleRowSelection(currentRow, true)
       }
     },
-    handleSelect (selection, row) {
+    handleSelect(selection, row) {
       if (this.selectionType === 'single') {
         this.clearSelection()
         this.setCurrentRow(row)
         this.$refs.eltable.toggleRowSelection(row, true)
       }
     },
-    handleSelectAll (selection) {
+    handleSelectAll(selection) {
       if (this.selectionType === 'single') {
         this.$message.warning('单选模式下，暂时不支持多选')
         this.clearSelection()
       }
     },
-    setCurrentRow (currentRow) {
+    setCurrentRow(currentRow) {
       this.$refs.eltable.setCurrentRow(currentRow)
     },
-    clearSelection () {
+    clearSelection() {
       this.$refs.eltable.clearSelection()
     }
   }

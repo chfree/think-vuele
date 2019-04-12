@@ -9,7 +9,7 @@ import {
   isNull
 } from '.'
 
-const install = function (Vue, opts = {}) {
+const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil = Vue.prototype.$tcUtil || {}
   Vue.prototype.$tcUtil.isNull = isNull
   Vue.prototype.$tcUtil.findComponentDownward = findComponentDownward

@@ -1,6 +1,6 @@
 import TcCard from './src/card'
 
-TcCard.install = function (Vue) {
+TcCard.install = function(Vue) {
   Vue.component(TcCard.name, TcCard)
 }
 

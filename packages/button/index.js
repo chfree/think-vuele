@@ -1,6 +1,6 @@
 import TcButton from './src/button'
 
-TcButton.install = function (Vue) {
+TcButton.install = function(Vue) {
   Vue.component(TcButton.name, TcButton)
 }
 

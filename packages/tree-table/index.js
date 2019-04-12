@@ -1,6 +1,6 @@
 import TcTreeTable from './src/tree-table'
 
-TcTreeTable.install = function (Vue) {
+TcTreeTable.install = function(Vue) {
   Vue.component(TcTreeTable.name, TcTreeTable)
 }
 

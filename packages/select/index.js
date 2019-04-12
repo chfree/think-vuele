@@ -1,6 +1,6 @@
 import TcSelect from './src/select'
 
-TcSelect.install = function (Vue) {
+TcSelect.install = function(Vue) {
   Vue.component(TcSelect.name, TcSelect)
 }
 

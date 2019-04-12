@@ -1,6 +1,6 @@
 import TcRadio from './src/radio'
 
-TcRadio.install = function (Vue) {
+TcRadio.install = function(Vue) {
   Vue.component(TcRadio.name, TcRadio)
 }
 

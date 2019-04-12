@@ -1,6 +1,6 @@
 import TcTag from './src/tag'
 
-TcTag.install = function (Vue) {
+TcTag.install = function(Vue) {
   Vue.component(TcTag.name, TcTag)
 }
 

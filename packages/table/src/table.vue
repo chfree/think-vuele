@@ -50,18 +50,18 @@ export default {
   data: () => ({
   }),
   computed: {
-    formatData: function () {
+    formatData: function() {
       return this.data
     },
-    columnFormate: function () {
+    columnFormate: function() {
       return this.columns.filter(item => !(item.hideen))
     }
   },
   methods: {
-    setCurrentRow (currentRow) {
+    setCurrentRow(currentRow) {
       this.$refs.eltable.setCurrentRow(currentRow)
     },
-    toggleRowSelection (row, selected) {
+    toggleRowSelection(row, selected) {
       this.$refs.eltable.toggleRowSelection(row, selected)
       if (selected) {
         this.$emit('select-row', row)
@@ -69,13 +69,13 @@ export default {
         this.$emit('un-select-row', row)
       }
     },
-    toggleAllSelection () {
+    toggleAllSelection() {
       this.$refs.eltable.toggleAllSelection()
     },
-    clearSelection () {
+    clearSelection() {
       this.$refs.eltable.clearSelection()
     },
-    clearCurrentChange () {
+    clearCurrentChange() {
       const { $el, highlightCurrentRow } = this.$refs.eltable
       if ($el && highlightCurrentRow) {
         const trs = $el.querySelector('tbody').children || []
@@ -86,13 +86,13 @@ export default {
         })
       }
     },
-    myHandleCurrentChange (currentRow, oldCurrentRow) {
+    myHandleCurrentChange(currentRow, oldCurrentRow) {
       if (this.selectionType === 'single') {
         this.clearSelection()
         this.toggleRowSelection(currentRow, true)
       }
     },
-    myHandleSelect (selection, row) {
+    myHandleSelect(selection, row) {
       if (this.selectionType === 'single') {
         this.clearSelection()
         if (selection.length > 0) {
@@ -103,13 +103,13 @@ export default {
         }
       }
     },
-    myHandleSelectAll (selection) {
+    myHandleSelectAll(selection) {
       if (this.selectionType === 'single') {
         this.$message.warning('单选模式下，暂时不支持多选')
         this.clearSelection()
       }
     },
-    myHandleSelectionChange (selection) {
+    myHandleSelectionChange(selection) {
       if (this.selectionType === 'multi') {
         this.$emit('select-rows', selection)
       }

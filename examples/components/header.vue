@@ -411,7 +411,7 @@ import Tennetcn from 'main/index.js'
 const { version } = Tennetcn
 
 export default {
-  data () {
+  data() {
     return {
       active: '',
       versions: [],
@@ -435,20 +435,20 @@ export default {
   },
 
   computed: {
-    lang () {
+    lang() {
       return this.$route.path.split('/')[1] || 'zh-CN'
     },
-    displayedLang () {
+    displayedLang() {
       return this.langs[this.lang] || '中文'
     },
-    langConfig () {
+    langConfig() {
       return compoLang.filter(config => config.lang === this.lang)[0]['header']
     },
-    isComponentPage () {
+    isComponentPage() {
       return /^component/.test(this.$route.name)
     }
   },
-  mounted () {
+  mounted() {
     const host = location.hostname
     this.showThemeConfigurator = host.match('localhost') || host.match('elenet')
     if (!this.showThemeConfigurator) {
@@ -463,27 +463,27 @@ export default {
     }
   },
   methods: {
-    switchVersion (version) {
+    switchVersion(version) {
       if (version === this.version) return
       location.href = `${location.origin}/${this.versions[version]}/${location.hash} `
     },
 
-    switchLang (targetLang) {
+    switchLang(targetLang) {
       if (this.lang === targetLang) return
       localStorage.setItem('ELEMENT_LANGUAGE', targetLang)
       this.$router.push(this.$route.path.replace(this.lang, targetLang))
     },
 
-    handleVerDropdownToggle (visible) {
+    handleVerDropdownToggle(visible) {
       this.verDropdownVisible = visible
     },
 
-    handleLangDropdownToggle (visible) {
+    handleLangDropdownToggle(visible) {
       this.langDropdownVisible = visible
     }
   },
 
-  created () {
+  created() {
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = _ => {
       if (xhr.readyState === 4 && xhr.status === 200) {

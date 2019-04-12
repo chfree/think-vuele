@@ -1,6 +1,6 @@
 import TcToolbarLeft from './src/toolbar-left'
 
-TcToolbarLeft.install = function (Vue) {
+TcToolbarLeft.install = function(Vue) {
   Vue.component(TcToolbarLeft.name, TcToolbarLeft)
 }
 

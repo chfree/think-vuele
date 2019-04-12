@@ -19,16 +19,16 @@ export default {
   data: () => ({
   }),
   computed: {
-    pageSizeArray: function () {
+    pageSizeArray: function() {
       return this.pageSize.split(',')
     }
   },
   methods: {
-    pagerChange: function (val) {
+    pagerChange: function(val) {
       this.pager.pageIndex = val
       this.$emit('pagerChange', val, this.pager.pageSize)
     },
-    sizeChange: function (val) {
+    sizeChange: function(val) {
       this.pager.pageSize = val
       this.$emit('pagerChange', this.pager.pageIndex, val)
       this.$emit('sizeChange', this.pager.pageIndex, val)

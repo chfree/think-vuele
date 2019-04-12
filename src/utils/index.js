@@ -7,7 +7,7 @@ export {
   findBrothersComponents
 } from './find-components'
 
-function isNull (obj) {
+function isNull(obj) {
   return obj == null || obj === undefined || obj === ''
 }
 export { isNull }

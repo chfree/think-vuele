@@ -25,7 +25,7 @@ export default {
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 }
   },
-  data () {
+  data() {
     return {
       isShow: this.showDialog,
       footbarHeight: 50,
@@ -39,42 +39,42 @@ export default {
   computed: {
   },
   watch: {
-    isShow (val) {
+    isShow(val) {
       this.$emit('update:showDialog', val)
     },
-    showDialog (val) {
+    showDialog(val) {
       this.isShow = val
     }
   },
-  mounted () {
+  mounted() {
     this.$tcUtil.addResizeCall(this.calcRender)
     this.calcRender()
   },
-  destroyed () {
+  destroyed() {
     this.$tcUtil.clearResizeCallAll()
   },
   methods: {
-    calcRender () {
+    calcRender() {
       this.calcHeight()
       this.calcDialogHeight()
       this.calcMarginTop()
     },
-    opened () {
+    opened() {
       this.getChildVueComponentAttr(this, 'opened')
       this.$emit('opened')
     },
-    calcDialogHeight () {
+    calcDialogHeight() {
       this.dialogHeight = 'height:' + (this.currentHeight + this.footbarHeight) + 'px'
     },
-    calcMarginTop () {
+    calcMarginTop() {
       this.marginTop = (window.innerHeight - this.titleHeight - this.currentHeight - this.footbarHeight) / 2 + 'px'
     },
-    calcHeight () {
+    calcHeight() {
       this.currentHeight = 0
       if (this.height.indexOf('%') > 0) {
         this.currentHeight = window.innerHeight * parseFloat(this.height) / 100
       } else {
-        this.currentHeight = Number.parseInt(this.height)
+        this.currentHeight = Number.parseInt(this.height, 10)
       }
       var formContent = this.findComponentDownward(this, 'TcFormContent')
       if (formContent != null) {
@@ -83,7 +83,7 @@ export default {
       }
     },
     // 由一个组件，向下找到最近的指定组件
-    findComponentDownward (context, componentName) {
+    findComponentDownward(context, componentName) {
       const childrens = context.$children
       let children = null
 
@@ -103,7 +103,7 @@ export default {
       return children
     },
 
-    getChildVueComponentAttr (vm, attr) {
+    getChildVueComponentAttr(vm, attr) {
       if (vm == null || attr == null || attr === '') {
         return null
       }

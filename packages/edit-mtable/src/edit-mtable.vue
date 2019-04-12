@@ -42,7 +42,7 @@ export default {
   data: () => ({
   }),
   computed: {
-    formatData: function () {
+    formatData: function() {
       let tmp
       if (!Array.isArray(this.data)) {
         tmp = [this.data]
@@ -52,7 +52,7 @@ export default {
       const func = this.evalFunc || formatData
       return func(tmp)
     },
-    editableColumns: function () {
+    editableColumns: function() {
       const editableColumns = []
       this.columns.forEach((column) => {
         if (column.editable) {

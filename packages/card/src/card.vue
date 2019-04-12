@@ -29,28 +29,28 @@ export default {
   data: () => ({
   }),
   computed: {
-    tcTitle () {
+    tcTitle() {
       return {
         height: this.titleHeight,
         lineHeight: this.titleHeight,
         backgroundColor: this.bgColor
       }
     },
-    iconStyle () {
+    iconStyle() {
       return {
         width: this.iconSize + 'px',
         height: this.iconSize + 'px',
         marginTop: ((parseInt(this.titleHeight, 10) - this.iconSize) / 2) + 'px'
       }
     },
-    iconContainerHeight () {
+    iconContainerHeight() {
       return {
         height: (parseInt(this.titleHeight, 10) - this.iconSize / 2) + 'px'
       }
     }
   },
   methods: {
-    rightClick () {
+    rightClick() {
       this.$emit('right-click')
     }
   }

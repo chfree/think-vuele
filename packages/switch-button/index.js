@@ -1,6 +1,6 @@
 import TcSwitchButton from './src/switch-button'
 
-TcSwitchButton.install = function (Vue) {
+TcSwitchButton.install = function(Vue) {
   Vue.component(TcSwitchButton.name, TcSwitchButton)
 }
 

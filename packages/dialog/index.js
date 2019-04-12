@@ -1,6 +1,6 @@
 import TcDialog from './src/dialog'
 
-TcDialog.install = function (Vue) {
+TcDialog.install = function(Vue) {
   Vue.component(TcDialog.name, TcDialog)
 }
 

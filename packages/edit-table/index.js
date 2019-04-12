@@ -1,6 +1,6 @@
 import TcEditTable from './src/edit-table'
 
-TcEditTable.install = function (Vue) {
+TcEditTable.install = function(Vue) {
   Vue.component(TcEditTable.name, TcEditTable)
 }
 

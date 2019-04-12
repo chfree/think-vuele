@@ -1,6 +1,6 @@
 import TcTree from './src/tree'
 
-TcTree.install = function (Vue) {
+TcTree.install = function(Vue) {
   Vue.component(TcTree.name, TcTree)
 }
 

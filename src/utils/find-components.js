@@ -3,7 +3,7 @@
  * @param {组件上下文对象} context
  * @param {组件名称} componentName
  */
-function findComponentDownward (context, componentName) {
+function findComponentDownward(context, componentName) {
   const childrens = context.$children
   let children = null
 
@@ -25,7 +25,7 @@ function findComponentDownward (context, componentName) {
 export { findComponentDownward }
 
 // 由一个组件，向上找到最近的指定组件
-function findComponentUpward (context, componentName) {
+function findComponentUpward(context, componentName) {
   let parent = context.$parent
   let name = parent.$options.name
 
@@ -39,7 +39,7 @@ function findComponentUpward (context, componentName) {
 export { findComponentUpward }
 
 // 由一个组件，向上找到所有的指定组件
-function findComponentsUpward (context, componentName) {
+function findComponentsUpward(context, componentName) {
   let parents = []
   const parent = context.$parent
 
@@ -53,7 +53,7 @@ function findComponentsUpward (context, componentName) {
 export { findComponentsUpward }
 
 // 由一个组件，向下找到所有指定的组件
-function findComponentsDownward (context, componentName) {
+function findComponentsDownward(context, componentName) {
   return context.$children.reduce((components, child) => {
     if (child.$options.name === componentName) components.push(child)
     const foundChilds = findComponentsDownward(child, componentName)
@@ -65,7 +65,7 @@ export { findComponentsDownward }
 
 // 由一个组件，找到指定组件的兄弟组件
 // exceptMe，是否把本身除外
-function findBrothersComponents (context, componentName, exceptMe = true) {
+function findBrothersComponents(context, componentName, exceptMe = true) {
   let res = context.$parent.$children.filter(item => {
     return item.$options.name === componentName
   })

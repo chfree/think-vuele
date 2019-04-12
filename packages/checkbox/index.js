@@ -1,6 +1,6 @@
 import TcCheckbox from './src/checkbox'
 
-TcCheckbox.install = function (Vue) {
+TcCheckbox.install = function(Vue) {
   Vue.component(TcCheckbox.name, TcCheckbox)
 }
 

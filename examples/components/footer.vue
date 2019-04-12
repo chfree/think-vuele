@@ -166,22 +166,22 @@ import Tennetcn from 'main/index.js'
 const { version } = Tennetcn
 
 export default {
-  data () {
+  data() {
     return {
       version
     }
   },
 
   computed: {
-    lang () {
+    lang() {
       return this.$route.path.split('/')[1] || 'zh-CN'
     },
 
-    langConfig () {
+    langConfig() {
       return compoLang.filter(config => config.lang === this.lang)[0]['footer']
     },
 
-    gitterLink () {
+    gitterLink() {
       return this.lang === 'zh-CN' ? 'https://gitter.im/ElemeFE/element' : 'https://gitter.im/element-en/Lobby'
     }
   }
