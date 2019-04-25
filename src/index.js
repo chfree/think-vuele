@@ -78,11 +78,13 @@ const components = [
   TcCard,
   TcImg
 ]
+import ElementUI from 'element-ui'
 
 const install = function(Vue, opts = {}) {
   components.forEach(component => {
     Vue.use(component)
   })
+  Vue.use(ElementUI)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

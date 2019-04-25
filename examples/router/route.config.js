@@ -99,5 +99,4 @@ route = route.concat([{
   path: '*',
   redirect: defaultPath
 }])
-
 export default route
