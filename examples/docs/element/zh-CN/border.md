@@ -1,5 +1,5 @@
 <script>
-  import bus from '../../bus';
+  import bus from '../../../bus';
   const varMap = {
     '$--box-shadow-light': 'boxShadowLight',
     '$--box-shadow-base': 'boxShadowBase',

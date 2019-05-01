@@ -198,7 +198,7 @@
   <el-scrollbar class="page-component__scroll" ref="componentScrollBar">
   <div class="page-container page-component" :class="{'theme-config': isThemeConfigVisible}">
     <el-scrollbar class="page-component__nav">
-      <side-nav :data="navsData[lang]" :base="`/${ lang }/component`"></side-nav>
+      <side-nav :data="navsData[lang]" :base="`/element/${ lang }/component`"></side-nav>
     </el-scrollbar>
     <div class="page-component__content" :class="{'theme-config': isThemeConfigVisible}">
       <router-view class="content"></router-view>
@@ -221,7 +221,6 @@
 <script>
   import bus from '../../bus'
   import navsData from '../../router/nav.config.json'
-  // import throttle from 'throttle-debounce/throttle'
 
   export default {
     data() {

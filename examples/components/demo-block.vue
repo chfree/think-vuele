@@ -251,10 +251,11 @@
 
     computed: {
       lang() {
-        return this.$route.path.split('/')[1]
+        return this.$route.path.split('/')[2] || 'zh-CN'
       },
 
       langConfig() {
+        console.log('this.lang', this.lang)
         return compoLang.filter(config => config.lang === this.lang)[0]['demo-block']
       },
 

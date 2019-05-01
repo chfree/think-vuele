@@ -1,5 +1,5 @@
 <script>
-  import bus from '../../bus';
+  import bus from '../../../bus';
   const varMap = [
     '$--font-size-extra-large',
     '$--font-size-large',
@@ -68,12 +68,12 @@
 
 ### 字体
 <div class="demo-term-box">
-<img src="../../assets/images/term-pingfang.png" alt="">
-<img src="../../assets/images/term-hiragino.png" alt="">
-<img src="../../assets/images/term-microsoft.png" alt="">
-<img src="../../assets/images/term-sf.png" alt="">
-<img src="../../assets/images/term-helvetica.png" alt="">
-<img src="../../assets/images/term-arial.png" alt="">
+<img src="../../../assets/images/term-pingfang.png" alt="">
+<img src="../../../assets/images/term-hiragino.png" alt="">
+<img src="../../../assets/images/term-microsoft.png" alt="">
+<img src="../../../assets/images/term-sf.png" alt="">
+<img src="../../../assets/images/term-helvetica.png" alt="">
+<img src="../../../assets/images/term-arial.png" alt="">
 </div>
 
 ### 字号

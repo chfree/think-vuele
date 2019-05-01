@@ -13,16 +13,16 @@ const load = function(lang, path) {
   return LOAD_MAP[lang](path)
 }
 
-const LOAD_DOCS_MAP = {
+const LOAD_ELEMENT_DOCS_MAP = {
   'zh-CN': path => {
     return r => require.ensure([], () =>
-      r(require(`../docs/zh-CN${path}.md`)),
+      r(require(`../docs/element/zh-CN${path}.md`)),
     'zh-CN')
   }
 }
 
-const loadDocs = function(lang, path) {
-  return LOAD_DOCS_MAP[lang](path)
+const loadElementDocs = function(lang, path) {
+  return LOAD_ELEMENT_DOCS_MAP[lang](path)
 }
 
 const registerRoute = (navConfig) => {
@@ -30,14 +30,14 @@ const registerRoute = (navConfig) => {
   Object.keys(navConfig).forEach((lang, index) => {
     let navs = navConfig[lang]
     route.push({
-      path: `/${lang}/component`,
-      redirect: `/${lang}/component/installation`,
-      component: load(lang, 'component'),
+      path: `/element/${lang}/component`,
+      redirect: `/element/${lang}/component/installation`,
+      component: load(lang, 'element-component'),
       children: []
     })
     route.push({
       path: `/${lang}/custom`,
-      component: load(lang, 'custom'),
+      component: load(lang, 'custom-component'),
       children: []
     })
     navs.forEach(nav => {
@@ -58,9 +58,9 @@ const registerRoute = (navConfig) => {
     })
   })
   function addRoute(page, lang, index) {
-    const component = page.path === '/changelog'
-      ? load(lang, 'changelog')
-      : loadDocs(lang, page.path)
+    const component = page.path === '/element-changelog'
+      ? load(lang, 'element-changelog')
+      : loadElementDocs(lang, page.path)
     let child = {
       path: page.path.slice(1),
       meta: {
@@ -71,10 +71,9 @@ const registerRoute = (navConfig) => {
       name: 'component-' + lang + (page.title || page.name),
       component: component.default || component
     }
-
     route[index].children.push(child)
   }
-
+  console.log(route, 'route')
   return route
 }
 

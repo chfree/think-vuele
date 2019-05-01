@@ -275,7 +275,7 @@
             <router-link active-class="active" :to="`/${ lang }/custom`">自定义组件</router-link>
           </li>
           <li class="nav-item">
-            <router-link active-class="active" :to="`/${ lang }/component`">Element组件</router-link>
+            <router-link active-class="active" :to="`/element/${ lang }/component`">Element组件</router-link>
           </li>
         </ul>
       </div>
@@ -296,7 +296,7 @@ export default {
 
   computed: {
     lang() {
-      return this.$route.path.split('/')[1] || 'zh-CN'
+      return 'zh-CN'
     },
     isComponentPage() {
       return /^component/.test(this.$route.name)
