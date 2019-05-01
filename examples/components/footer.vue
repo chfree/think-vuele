@@ -2,42 +2,12 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
-        <h4>{{ langConfig.links }}</h4>
-        <a href="https://github.com/ElemeFE/element" class="footer-main-link" target="_blank">{{ langConfig.repo }}</a>
-        <a href="https://github.com/ElemeFE/element/releases" class="footer-main-link" target="_blank">{{ langConfig.changelog }}</a>
-        <a href="https://github.com/ElemeFE/element/blob/dev/FAQ.md" class="footer-main-link" target="_blank">{{ langConfig.faq }}</a>
-        <a href="https://github.com/ElementUI/element-starter" class="footer-main-link" target="_blank">{{ langConfig.starter }}</a>
-        <a href="https://github.com/ElementUI/element-theme" class="footer-main-link" target="_blank">{{ langConfig.theme }}</a>
-        <a href="https://github.com/ElementUI/theme-chalk-preview" class="footer-main-link" target="_blank">{{ langConfig.preview }}</a>
-        <a href="https://github.com/elemefe/element-react" class="footer-main-link" target="_blank">Element-React</a>
-        <a href="https://github.com/ElemeFE/element-angular" class="footer-main-link" target="_blank">Element-Angular</a>
-      </div>
-      <div class="footer-main">
-        <h4>{{ langConfig.community }}</h4>
-        <a :href="gitterLink" class="footer-main-link" target="_blank">{{ langConfig.gitter }}</a>
-        <a href="https://github.com/ElemeFE/element/issues" class="footer-main-link" target="_blank">{{ langConfig.feedback }}</a>
-        <a :href="`https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.${ lang }.md`" class="footer-main-link" target="_blank">{{ langConfig.contribution }}</a>
-        <a href="https://segmentfault.com/t/element-ui" class="footer-main-link" target="_blank">SegmentFault</a>
-        <a href="https://github.com/ElementUI/awesome-element" class="footer-main-link" target="_blank">Awesome Element</a>
+        <h4>Element</h4>
+        <a href="https://element.eleme.cn/#/zh-CN" class="footer-main-link" target="_blank">官网</a>
+        <a href="https://github.com/ElemeFE/element" class="footer-main-link" target="_blank">代码仓库</a>
       </div>
       <div class="footer-social">
         <p class="footer-social-title">Current Version {{ version  }}</p>
-        <el-popover
-          ref="weixin"
-          placement="top"
-          width="120"
-          popper-class="footer-popover"
-          trigger="hover">
-          <div class="footer-popover-title">{{ langConfig.eleme }} UED</div>
-          <img src="" alt="">
-        </el-popover>
-        <i class="doc-icon-weixin elementdoc" v-popover:weixin></i>
-        <a href="https://github.com/elemefe" target="_blank">
-          <i class="doc-icon-github elementdoc"></i>
-        </a>
-        <a :href="gitterLink" target="_blank">
-          <i class="doc-icon-gitter elementdoc"></i>
-        </a>
       </div>
     </div>
     <div style="text-align:center;font-size:14px;color:#3a4e64;">
@@ -161,7 +131,6 @@
   }
 </style>
 <script>
-import compoLang from '../i18n/component.json'
 import Tennetcn from 'main/index.js'
 const { version } = Tennetcn
 
@@ -175,14 +144,6 @@ export default {
   computed: {
     lang() {
       return this.$route.path.split('/')[1] || 'zh-CN'
-    },
-
-    langConfig() {
-      return compoLang.filter(config => config.lang === this.lang)[0]['footer']
-    },
-
-    gitterLink() {
-      return this.lang === 'zh-CN' ? 'https://gitter.im/ElemeFE/element' : 'https://gitter.im/element-en/Lobby'
     }
   }
 }

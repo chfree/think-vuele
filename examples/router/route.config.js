@@ -35,6 +35,11 @@ const registerRoute = (navConfig) => {
       component: load(lang, 'component'),
       children: []
     })
+    route.push({
+      path: `/${lang}/custom`,
+      component: load(lang, 'custom'),
+      children: []
+    })
     navs.forEach(nav => {
       if (nav.href) return
       if (nav.groups) {

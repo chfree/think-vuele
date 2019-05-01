@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="text-align:center;margin-top:40px;font-size:28px;">
-      基于Vue和element进行再次封装的UI组件
+      custom
     </div>
   </div>
 </template>
