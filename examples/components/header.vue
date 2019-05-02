@@ -272,7 +272,7 @@
          </h1>
         <ul class="nav">
           <li class="nav-item">
-            <router-link active-class="active" :to="`/${ lang }/custom`">自定义组件</router-link>
+            <router-link active-class="active" :to="`/vuele/${ lang }/component`">Vuele组件</router-link>
           </li>
           <li class="nav-item">
             <router-link active-class="active" :to="`/element/${ lang }/component`">Element组件</router-link>

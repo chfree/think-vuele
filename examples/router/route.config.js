@@ -36,8 +36,8 @@ const registerRoute = (navConfig) => {
       children: []
     })
     route.push({
-      path: `/${lang}/custom`,
-      component: load(lang, 'custom-component'),
+      path: `/vuele/${lang}/component`,
+      component: load(lang, 'vuele-component'),
       children: []
     })
     navs.forEach(nav => {

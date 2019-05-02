@@ -2,6 +2,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
+        <h4>Vuele</h4>
+      </div>
+      <div class="footer-main">
         <h4>Element</h4>
         <a href="https://element.eleme.cn/#/zh-CN" class="footer-main-link" target="_blank">官网</a>
         <a href="https://github.com/ElemeFE/element" class="footer-main-link" target="_blank">代码仓库</a>
