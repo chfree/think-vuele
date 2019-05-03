@@ -34,7 +34,6 @@
 
     .side-nav {
       height: 100%;
-      padding-top: 50px;
       padding-bottom: 50px;
       padding-right: 0;
 
@@ -220,7 +219,7 @@
 </template>
 <script>
   import bus from '../../bus'
-  import navsData from '../../router/nav.config.json'
+  import navsData from '../../router/element.nav.config.json'
 
   export default {
     data() {

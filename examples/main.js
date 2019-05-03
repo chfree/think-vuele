@@ -17,6 +17,7 @@ import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import demoBlock from './components/demo-block'
 import FooterNav from './components/footer-nav'
+import FooterNavVuele from './components/footer-nav-vuele'
 
 Vue.use(TennetcnUI)
 Vue.use(ElementUI)
@@ -27,6 +28,7 @@ Vue.component('main-header', MainHeader)
 Vue.component('side-nav', SideNav)
 Vue.component('demo-block', demoBlock)
 Vue.component('footer-nav', FooterNav)
+Vue.component('footer-nav-vuele', FooterNavVuele)
 
 router.afterEach(route => {
   // https://github.com/highlightjs/highlight.js/issues/909#issuecomment-131686186

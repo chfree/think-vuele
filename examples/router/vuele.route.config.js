@@ -1,6 +1,4 @@
-import langs from '../i18n/route'
-import navConfig from './element.nav.config'
-import vueleNavConfig from './vuele.route.config'
+import navConfig from './vuele.nav.config'
 
 const LOAD_MAP = {
   'zh-CN': name => {
@@ -17,7 +15,7 @@ const load = function(lang, path) {
 const LOAD_ELEMENT_DOCS_MAP = {
   'zh-CN': path => {
     return r => require.ensure([], () =>
-      r(require(`../docs/element/zh-CN${path}.md`)),
+      r(require(`../docs/vuele/zh-CN${path}.md`)),
     'zh-CN')
   }
 }
@@ -31,9 +29,9 @@ const registerElementRoute = (navConfig) => {
   Object.keys(navConfig).forEach((lang, index) => {
     let navs = navConfig[lang]
     route.push({
-      path: `/element/${lang}/component`,
-      redirect: `/element/${lang}/component/installation`,
-      component: load(lang, 'element-component'),
+      path: `/vuele/${lang}/component`,
+      redirect: `/vuele/${lang}/component/installation`,
+      component: load(lang, 'vuele-component'),
       children: []
     })
     navs.forEach(nav => {
@@ -54,8 +52,8 @@ const registerElementRoute = (navConfig) => {
     })
   })
   function addRoute(page, lang, index) {
-    const component = page.path === '/element-changelog'
-      ? load(lang, 'element-changelog')
+    const component = page.path === '/vuele-changelog'
+      ? load(lang, 'vuele-changelog')
       : loadElementDocs(lang, page.path)
     let child = {
       path: page.path.slice(1),
@@ -64,7 +62,7 @@ const registerElementRoute = (navConfig) => {
         description: page.description,
         lang
       },
-      name: 'component-' + lang + (page.title || page.name),
+      name: 'vuele-component-' + lang + (page.title || page.name),
       component: component.default || component
     }
     route[index].children.push(child)
@@ -73,30 +71,4 @@ const registerElementRoute = (navConfig) => {
 }
 
 let route = registerElementRoute(navConfig)
-route = route.concat(vueleNavConfig)
-
-const generateMiscRoutes = function(lang) {
-  let indexRoute = {
-    path: `/${lang}`, // 首页
-    meta: { lang },
-    name: 'home' + lang,
-    component: load(lang, 'index')
-  }
-
-  return [indexRoute]
-}
-
-langs.forEach(lang => {
-  route = route.concat(generateMiscRoutes(lang.lang))
-})
-
-let defaultPath = '/zh-CN'
-
-route = route.concat([{
-  path: '/',
-  redirect: defaultPath
-}, {
-  path: '*',
-  redirect: defaultPath
-}])
 export default route

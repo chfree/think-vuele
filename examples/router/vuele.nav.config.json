@@ -1,0 +1,87 @@
+{
+  "zh-CN": [
+    {
+      "name": "更新日志",
+      "path": "/vuele-changelog"
+    },
+    {
+      "name": "开发指南",
+      "children": [
+        {
+          "path": "/installation",
+          "name": "安装"
+        },
+        {
+          "path": "/quickstart",
+          "name": "快速上手"
+        }
+      ]
+    },
+    {
+      "name": "组件",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "path": "/card",
+              "title": "Layout 布局"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon 图标"
+            }
+          ]
+        },
+        {
+          "groupName": "Form",
+          "list": [
+            {
+              "path": "/select",
+              "title": "Select 选择器"
+            }
+          ]
+        },
+        {
+          "groupName": "Data",
+          "list": [
+            {
+              "path": "/table",
+              "title": "Table 表格"
+            },
+            {
+              "path": "/pager",
+              "title": "pager 分页"
+            }
+          ]
+        },
+        {
+          "groupName": "Notice",
+          "list": [
+            {
+              "path": "/message-box",
+              "title": "MessageBox 弹框"
+            }
+          ]
+        },
+        {
+          "groupName": "Others",
+          "list": [
+            {
+              "path": "/dialog",
+              "title": "Dialog 对话框"
+            },
+            {
+              "path": "/tooltip",
+              "title": "Tooltip 文字提示"
+            },
+            {
+              "path": "/card",
+              "title": "Card 卡片"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

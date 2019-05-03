@@ -122,6 +122,13 @@
     :class="{ 'is-fade': isFade }"
     :style="navStyle">
     <ul>
+      <li class="nav-item sponsors">	
+        <ul class="pure-menu-list sub-nav">	
+          <li class="nav-item" style="height:60px;line-height:60px;font-size:20px;font-weight:800;color:#999;">	
+            {{docType}}
+          </li>	
+        </ul>	
+      </li>
       <li
         class="nav-item"
         v-for="(item, key) in data"
@@ -215,6 +222,15 @@
       },
       lang() {
         return this.$route.meta.lang
+      },
+      docType() {
+        console.log(this.$route)
+        if (/^\/vuele/.test(this.$route.path || '')) {
+          return 'Vuele'
+        }
+        if (/^\/element/.test(this.$route.path || '')) {
+          return 'Element'
+        }
       },
       langConfig() {
         return compoLang.filter(config => config.lang === this.lang)[0]['nav']
