@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './demo-styles/index.scss'
 import './assets/styles/common.css'
 import './assets/styles/fonts/style.css'
+
 import TennetcnUI from 'main/index'
 import ElementUI from 'element-ui'
 
@@ -18,6 +19,9 @@ import SideNav from './components/side-nav'
 import demoBlock from './components/demo-block'
 import FooterNav from './components/footer-nav'
 import FooterNavVuele from './components/footer-nav-vuele'
+
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import 'remixicon/fonts/remixicon.css'
 
 Vue.use(TennetcnUI)
 Vue.use(ElementUI)

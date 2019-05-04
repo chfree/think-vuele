@@ -24,8 +24,8 @@
           "groupName": "Basic",
           "list": [
             {
-              "path": "/card",
-              "title": "Layout 布局"
+              "path": "/block",
+              "title": "Block 容器"
             },
             {
               "path": "/icon",

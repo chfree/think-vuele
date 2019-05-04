@@ -34,7 +34,8 @@ import {
   TcEditTable,
   TcEditMtable,
   TcCard,
-  TcImg
+  TcImg,
+  TcBlock
 } from '../packages/tennetcn-ui'
 
 import utilLib from './utils/util-lib'
@@ -76,7 +77,8 @@ const components = [
   TcEditTable,
   TcEditMtable,
   TcCard,
-  TcImg
+  TcImg,
+  TcBlock
 ]
 import ElementUI from 'element-ui'
 
@@ -130,5 +132,6 @@ export default {
   TcEditTable,
   TcEditMtable,
   TcCard,
-  TcImg
+  TcImg,
+  TcBlock
 }
