@@ -97,7 +97,7 @@
       },
 
       updateNav() {
-        this.currentComponent = '/' + this.$route.path.split('/')[3]
+        this.currentComponent = '/' + this.$route.path.split('/')[4]
         for (let i = 0, len = this.nav.length; i < len; i++) {
           if (this.nav[i].path === this.currentComponent) {
             this.currentIndex = i
@@ -109,7 +109,7 @@
       },
 
       handleNavClick(direction) {
-        this.$router.push(`/${ this.lang }/component${ direction === 'prev' ? this.leftNav.path : this.rightNav.path }`)
+        this.$router.push(`/vuele/${ this.lang }/component${ direction === 'prev' ? this.leftNav.path : this.rightNav.path }`)
       }
     },
 

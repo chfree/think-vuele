@@ -136,7 +136,7 @@
   <div class="page-changelog">
     <div class="heading">
       <el-button class="fr">
-        <a href="https://github.com/ElemeFE/element/releases" target="_blank">GitHub Releases</a>
+        <a href="https://github.com/chfree/think-vuele" target="_blank">GitHub Releases</a>
       </el-button>
       更新日志
     </div>
@@ -146,7 +146,7 @@
   </div>
 </template>
 <script>
-  import ChangeLog from '../../docs/element/zh-CN/CHANGELOG.zh-CN.md'
+  import ChangeLog from '../../docs/vuele/zh-CN/CHANGELOG.zh-CN.md'
 
   export default {
     components: {
