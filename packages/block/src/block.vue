@@ -1,6 +1,6 @@
 <template>
   <div ref="blockContainer" class="block-container">
-    <div class="block-title" :style="titleStyle">
+    <div v-if="showTitle" class="block-title" :style="titleStyle">
       <slot name="title">
         <span class="block-title-left"></span>
         <span>{{title}}</span>
@@ -33,6 +33,12 @@ export default {
       return {
         height: (this.height - this.titleHeight) + 'px'
       }
+    },
+    showTitle: function() {
+      if (this.$slots.title !== undefined && this.$slots.title !== null) {
+        return true
+      }
+      return this.title !== '' && this.title !== null && this.title !== undefined
     }
   },
   mounted() {
@@ -50,7 +56,7 @@ export default {
 <style scoped lang="scss">
 .block-container{
   border: 1px solid #cfd9e5;
-  box-shadow: 2px 2px 2px #f4f0f0;
+  box-shadow: 0px 2px 4px 0px #f4f0f0;
   .block-title{
     padding: 5px;
     font-size: 15px;
