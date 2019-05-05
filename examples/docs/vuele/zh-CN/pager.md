@@ -28,9 +28,12 @@ export default {
 
 | name | 说明 | 类型            | 可选值  | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
-| pager | 分页信息 | Object          | - | — |
+| pager | 分页信息 | Object          | — | — |
 | layout | 组件布局，子组件名用逗号分隔 | String          | `sizes`, `prev`, `pager`, `next`, `jumper`, `->`, `total`, `slot` | `total`, `prev`, `pager`, `next`, `sizes` |
-| pageSizes | 每页显示个数选择器的选项设置 | String          | - | 10,30,50,100 |
+| pageSizes | 每页显示个数选择器的选项设置 | String          | — | 10,30,50,100 |
+| ~~current-page~~ | 不在提供，请使用pager对象 | —          | — | — |
+| ~~page-size~~ | 不在提供，请使用pager对象 | —          | — | — |
+| ~~total~~ | 不在提供，请使用pager对象 | —          | — | — |
 
 
 pager:为一个分页对象，必须为以下结构
@@ -45,5 +48,5 @@ pager:为一个分页对象，必须为以下结构
 ### Events
 | 事件名称 | 说明 | 回调参数 |
 |---------- |-------- |---------- |
-| pagerChange | pageIndex和pageSize发生变化时触发 | `pageIndex`,`pageSize` |
-| sizeChange | pageSize发生变化时触发 | `pageIndex`,`pageSize` |
+| pager-Change | pageIndex和pageSize发生变化时触发 | `pageIndex`,`pageSize` |
+| size-Change | pageSize发生变化时触发 | `pageIndex`,`pageSize` |

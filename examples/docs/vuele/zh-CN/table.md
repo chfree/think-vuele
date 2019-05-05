@@ -47,7 +47,7 @@ Table与el-table的使用完全一致；另外提供的几个扩展属性便于�
 | fit   | 列的宽度是否自撑开   | Boolean          | — | true |
 | selection   | 是否显示checkbox   | Boolean          | — | false |
 | selectionType   | 选择模式   | String          | single,multi | single |
-| columns   | 表格列定义   | Array          | — | - |
+| columns   | 表格列定义   | Array          | — | — |
 
 
 #### Columns Attributes
