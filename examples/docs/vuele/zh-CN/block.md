@@ -30,6 +30,29 @@ test
 ```
 :::
 
+### 阴影模式
+:::demo
+```html
+<el-row :gutter="12">
+  <el-col :span="8">
+    <tc-block>
+    test
+    </tc-block>
+  </el-col>
+  <el-col :span="8">
+    <tc-block shadow="hover">
+    test
+    </tc-block>
+  </el-col>
+  <el-col :span="8">
+    <tc-block shadow="never">
+    test
+    </tc-block>
+  </el-col>
+</el-row>
+```
+:::
+
 ### Slots
 | name | 说明 |
 |------|--------|

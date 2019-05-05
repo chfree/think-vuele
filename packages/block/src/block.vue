@@ -1,5 +1,5 @@
 <template>
-  <div ref="blockContainer" class="block-container">
+  <div ref="blockContainer" class="block-container" :class="boxShadow">
     <div v-if="showTitle" class="block-title" :style="titleStyle">
       <slot name="title">
         <span class="block-title-left"></span>
@@ -16,7 +16,10 @@
 export default {
   name: 'TcBlock',
   props: {
-    title: { type: String, default: '' }
+    title: { type: String, default: '' },
+    shadow: {type: String, default: 'always', validator: function(value) {
+      return ['always', 'hover', 'never'].indexOf(value) !== -1
+    }}
   },
   data: () => ({
     height: 100,
@@ -39,6 +42,14 @@ export default {
         return true
       }
       return this.title !== '' && this.title !== null && this.title !== undefined
+    },
+    boxShadow: function() {
+      if (this.shadow === 'always') {
+        return 'box-shadow'
+      }
+      if (this.shadow === 'hover') {
+        return 'box-shadow-hover'
+      }
     }
   },
   mounted() {
@@ -56,7 +67,6 @@ export default {
 <style scoped lang="scss">
 .block-container{
   border: 1px solid #cfd9e5;
-  box-shadow: 0px 2px 4px 0px #f4f0f0;
   .block-title{
     padding: 5px;
     font-size: 15px;
@@ -79,5 +89,11 @@ export default {
   .block-content{
     padding: 5px;
   }
+}
+.box-shadow{
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.box-shadow-hover:hover{
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
