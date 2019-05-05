@@ -1,6 +1,24 @@
+
 ## Select
 
 Select与el-select的使用完全一致；另外提供的几个扩展属性便于使用
+
+### 使用providers数据源
+:::demo
+```html
+<tc-select v-model="value" :providers="sexProviders" />
+<script>
+  export default {
+    data() {
+      return {
+        value:'01',
+        sexProviders: [{id:'1',text:'男',value:'01'},{id:'2',text:'女',value:'02'}]
+      }
+    }
+  }
+</script>
+```
+:::
 
 ### Attributes
 
