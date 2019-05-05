@@ -14,13 +14,13 @@ export default {
     pager: { type: Object, required: false, default: null },
     small: { type: Boolean, required: false, default: false },
     layout: { type: String, required: false, default: 'total, prev, pager, next, sizes' },
-    pageSize: { type: String, required: false, default: '10,30,50,100' }
+    pageSizes: { type: String, required: false, default: '10,30,50,100' }
   },
   data: () => ({
   }),
   computed: {
     pageSizeArray: function() {
-      return this.pageSize.split(',')
+      return this.pageSizes.split(',')
     }
   },
   methods: {
