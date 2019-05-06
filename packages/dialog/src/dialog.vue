@@ -47,11 +47,11 @@ export default {
     }
   },
   mounted() {
-    this.$tcUtil.addResizeCall(this.calcRender)
+    // this.$tcUtil.addResizeCall(this.calcRender)
     this.calcRender()
   },
   destroyed() {
-    this.$tcUtil.clearResizeCallAll()
+    // this.$tcUtil.clearResizeCallAll()
   },
   methods: {
     calcRender() {

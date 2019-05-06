@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     openConfirm(){
-      this.$confirm.warning('是否确认删除').then((rsl)=>{
+      this.$confirm.warning('是否确认删除').then(()=>{
         console.log('then')
       }).catch(()=>{
         console.log('catch')
