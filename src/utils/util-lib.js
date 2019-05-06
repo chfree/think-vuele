@@ -6,7 +6,8 @@ import {
   findComponentsUpward,
   findComponentsDownward,
   findBrothersComponents,
-  isNull
+  isNull,
+  confirm
 } from '.'
 
 const install = function(Vue, opts = {}) {
@@ -21,6 +22,9 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$moment = Vue.prototype.$moment || {}
   Vue.prototype.$moment.formatDate = formatDate
   Vue.prototype.$moment.formatDateTime = formatDateTime
+
+  Vue.prototype.$confirm = Vue.prototype.$confirm || {}
+  Vue.prototype.$confirm.warning = confirm
 }
 
 export default install

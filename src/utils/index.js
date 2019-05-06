@@ -1,4 +1,5 @@
 export { formatDate, formatDateTime } from './date'
+export { confirm } from './message-box'
 export {
   findComponentDownward,
   findComponentUpward,
@@ -11,3 +12,4 @@ function isNull(obj) {
   return obj == null || obj === undefined || obj === ''
 }
 export { isNull }
+

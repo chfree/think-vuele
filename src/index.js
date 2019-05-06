@@ -83,10 +83,10 @@ const components = [
 import ElementUI from 'element-ui'
 
 const install = function(Vue, opts = {}) {
+  Vue.use(ElementUI)
   components.forEach(component => {
     Vue.use(component)
   })
-  Vue.use(ElementUI)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
