@@ -19,7 +19,7 @@ export default {
   name: 'TcDialog',
   directives: { elDragDialog },
   props: {
-    title: { type: String, required: false, default: '弹出窗' },
+    title: { type: String, required: false, default: 'dialog' },
     icon: { type: String, required: false, default: 'el-icon-time' },
     showDialog: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
