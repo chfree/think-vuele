@@ -8,7 +8,7 @@
 :::demo
 ```html
 <tc-button @click="openDialog">打开dialog</tc-button>
-<tc-dialog :show-dialog.sync="showDialog" title="test" width="300px" height="500">
+<tc-dialog :show-dialog.sync="showDialog" title="test" width="400px" height="300px">
 test
 </tc-dialog>
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- eslint-disable -->
-    <el-dialog v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible.sync="isShow" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :footbar-height="footbarHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
+    <el-dialog v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible.sync="isShow" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
         <slot name="title">{{ title }}</slot>
@@ -28,9 +28,7 @@ export default {
   data() {
     return {
       isShow: this.showDialog,
-      footbarHeight: 50,
       titleHeight: 40,
-      throttleExtId: null,
       dialogHeight: '',
       marginTop: '',
       currentHeight: 0
@@ -47,11 +45,9 @@ export default {
     }
   },
   mounted() {
-    // this.$tcUtil.addResizeCall(this.calcRender)
     this.calcRender()
   },
   destroyed() {
-    // this.$tcUtil.clearResizeCallAll()
   },
   methods: {
     calcRender() {
@@ -60,14 +56,12 @@ export default {
       this.calcMarginTop()
     },
     opened() {
-      this.getChildVueComponentAttr(this, 'opened')
-      this.$emit('opened')
     },
     calcDialogHeight() {
-      this.dialogHeight = 'height:' + (this.currentHeight + this.footbarHeight) + 'px'
+      this.dialogHeight = 'height:' + (this.currentHeight - this.titleHeight) + 'px'
     },
     calcMarginTop() {
-      this.marginTop = (window.innerHeight - this.titleHeight - this.currentHeight - this.footbarHeight) / 2 + 'px'
+      this.marginTop = (window.innerHeight - this.currentHeight) / 2 + 'px'
     },
     calcHeight() {
       this.currentHeight = 0
@@ -76,51 +70,6 @@ export default {
       } else {
         this.currentHeight = Number.parseInt(this.height, 10)
       }
-      var formContent = this.findComponentDownward(this, 'TcFormContent')
-      if (formContent != null) {
-        formContent.height = this.currentHeight + 'px'
-        formContent.calcContentHeight()
-      }
-    },
-    // 由一个组件，向下找到最近的指定组件
-    findComponentDownward(context, componentName) {
-      const childrens = context.$children
-      let children = null
-
-      if (childrens.length) {
-        for (var i = 0; i < childrens.length; i++) {
-          var child = childrens[i]
-          const name = child.$options.name
-          if (name === componentName) {
-            children = child
-            break
-          } else {
-            children = this.findComponentDownward(child, componentName)
-            if (children) break
-          }
-        }
-      }
-      return children
-    },
-
-    getChildVueComponentAttr(vm, attr) {
-      if (vm == null || attr == null || attr === '') {
-        return null
-      }
-      if (vm.$attrs.hasOwnProperty(attr)) {
-        var fn = vm.$attrs[attr]
-        if (fn === '') {
-          fn = attr
-        }
-        vm[fn]()
-        return vm
-      }
-      if (vm.$children == null || vm.$children === undefined) {
-        return null
-      }
-      vm.$children.forEach(item => {
-        return this.getChildVueComponentAttr(item, attr)
-      })
     }
   }
 }
@@ -130,9 +79,6 @@ export default {
 .tc-dialog-base {
   .el-dialog__header {
     padding: 10px 10px;
-  }
-
-  .el-dialog__header {
     background-color: #1379d2;
     .el-dialog__title,
     .tc-dialog-title {
@@ -143,7 +89,7 @@ export default {
   }
 
   .el-dialog__headerbtn {
-    top: 6px;
+    top: 8px;
     right: 10px;
     font-size: 20px;
   }
@@ -168,7 +114,7 @@ export default {
   // bottom:10%;
 }
 .el-dialog .el-dialog__header{
-  height: 38px;
+  height: 20px;
   line-height: inherit;
 }
 </style>
