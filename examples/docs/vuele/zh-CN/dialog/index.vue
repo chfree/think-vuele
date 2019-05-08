@@ -21,7 +21,7 @@
 
 <script>
 import testIndex from './testIndex'
-import fixedButtom from './fixedButtom'
+import fixedButtom from './fixed-buttom'
 export default {
   components: { testIndex, fixedButtom },
   data() {
