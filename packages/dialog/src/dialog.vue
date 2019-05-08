@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- eslint-disable -->
-    <el-dialog v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible.sync="isShow" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
+    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible.sync="isShow" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
         <slot name="title">{{ title }}</slot>
@@ -9,12 +9,15 @@
       <div :style="dialogHeight" class="tc-dialog-body-container">
         <slot></slot>
       </div>
+      <div :style="fixedButtonStyle">
+      </div>
     </el-dialog>
   </div>
 </template>
 
 <script>
 import elDragDialog from 'main/directives/el-dragDialog' // base on element-ui
+import { findComponentDownward } from 'main/utils/find-components'
 export default {
   name: 'TcDialog',
   directives: { elDragDialog },
@@ -31,10 +34,16 @@ export default {
       titleHeight: 40,
       dialogHeight: '',
       marginTop: '',
-      currentHeight: 0
+      currentHeight: 0,
+      fixedButtomHeight: 0
     }
   },
   computed: {
+    fixedButtonStyle: function() {
+      return {
+        height: this.fixedButtomHeight + 'px'
+      }
+    }
   },
   watch: {
     isShow(val) {
@@ -56,9 +65,12 @@ export default {
       this.calcMarginTop()
     },
     opened() {
+      var tcFixedButtom = findComponentDownward(this.$refs.elDialog, 'TcFixedButtom')
+      this.fixedButtomHeight = tcFixedButtom.$el.offsetHeight
+      this.calcDialogHeight()
     },
     calcDialogHeight() {
-      this.dialogHeight = 'height:' + (this.currentHeight - this.titleHeight) + 'px'
+      this.dialogHeight = 'height:' + (this.currentHeight - this.titleHeight - this.fixedButtomHeight) + 'px'
     },
     calcMarginTop() {
       this.marginTop = (window.innerHeight - this.currentHeight) / 2 + 'px'
@@ -79,7 +91,7 @@ export default {
 .tc-dialog-base {
   .el-dialog__header {
     padding: 10px 10px;
-    background-color: #1379d2;
+    background-color: #5e656a;
     .el-dialog__title,
     .tc-dialog-title {
       color: #fff;

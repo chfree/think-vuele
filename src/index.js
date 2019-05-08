@@ -10,9 +10,6 @@ import {
   TcToolbarRight,
   TcSelect,
   TcFieldset,
-  TcFormContainer,
-  TcFormContent,
-  TcFormFootbar,
   TcTable,
   TcTreeTable,
   TcButton,
@@ -35,7 +32,8 @@ import {
   TcEditMtable,
   TcCard,
   TcImg,
-  TcBlock
+  TcBlock,
+  TcFixedButtom
 } from '../packages/tennetcn-ui'
 
 import utilLib from './utils/util-lib'
@@ -53,9 +51,6 @@ const components = [
   TcToolbarRight,
   TcSelect,
   TcFieldset,
-  TcFormContainer,
-  TcFormContent,
-  TcFormFootbar,
   TcTable,
   TcTreeTable,
   TcButton,
@@ -78,7 +73,8 @@ const components = [
   TcEditMtable,
   TcCard,
   TcImg,
-  TcBlock
+  TcBlock,
+  TcFixedButtom
 ]
 import ElementUI from 'element-ui'
 
@@ -108,9 +104,6 @@ export default {
   TcToolbarRight,
   TcSelect,
   TcFieldset,
-  TcFormContainer,
-  TcFormContent,
-  TcFormFootbar,
   TcTable,
   TcTreeTable,
   TcButton,
@@ -133,5 +126,6 @@ export default {
   TcEditMtable,
   TcCard,
   TcImg,
-  TcBlock
+  TcBlock,
+  TcFixedButtom
 }

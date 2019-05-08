@@ -11,11 +11,12 @@ function findComponentDownward(context, componentName) {
     for (var i = 0; i < childrens.length; i++) {
       var child = childrens[i]
       const name = child.$options.name
+      console.log(name, 'findComponentDownward')
       if (name === componentName) {
         children = child
         break
       } else {
-        children = this.findComponentDownward(child, componentName)
+        children = findComponentDownward(child, componentName)
         if (children) break
       }
     }
