@@ -20,7 +20,7 @@
 ### 基础用法
 ```html
 <tc-button @click="openDialog">打开dialog</tc-button>
-<tc-dialog :show-dialog.sync="showDialog" title="test" width="400px" height="300px">
+<tc-dialog :visible.sync="showDialog" title="test" width="400px" height="300px">
 test
 </tc-dialog>
 <script>
@@ -42,7 +42,7 @@ export default {
 ### 引用组件
 ```html
 <tc-button @click="openDialog1">打开dialog1</tc-button>
-<tc-dialog :show-dialog.sync="showDialog1" title="test1" width="400px" height="300px">
+<tc-dialog :visible.sync="showDialog1" title="test1" width="400px" height="300px">
   <test-index />
 </tc-dialog>
 
@@ -76,7 +76,7 @@ testIndex
 
 ### 组件内固定底部
 ```html
-<tc-dialog :show-dialog.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
+<tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
   <fixed-buttom />
 </tc-dialog>
 
@@ -126,9 +126,8 @@ fixedButtom
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
-| showDialog   | 控制显示dialog   | Boolean          | — | — |
+| visible   | 控制显示dialog   | Boolean          | — | — |
 | title   | dialog的标题   | String          | — | dialog |
 | width   | dialog的宽度   | String          | 百分比和数值 | — |
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String          | — | el-icon-time |
-

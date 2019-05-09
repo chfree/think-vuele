@@ -24,9 +24,9 @@
     </tc-form>
     <tc-fixed-buttom>
       <tc-button type="primary" size="mini">立即创建</tc-button>
-      <tc-button size="mini">取消</tc-button>
+      <tc-button size="mini" @click="$parent.hide()">取消1</tc-button>
     </tc-fixed-buttom>
-    <tc-dialog :show-dialog.sync="showDialog1" append-to-body title="组件内固定底部-child" width="450px" height="350px">
+    <tc-dialog ref="childDialog" :visible.sync="showDialog1" append-to-body title="组件内固定底部-child" width="450px" height="350px">
       <fixed-buttom-child />
     </tc-dialog>
   </div>
@@ -47,6 +47,8 @@ export default {
   methods: {
     openSearch() {
       this.showDialog1 = true
+    },
+    cancel() {
     }
   }
 }

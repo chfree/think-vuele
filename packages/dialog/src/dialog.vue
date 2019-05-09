@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div v-show="visible">
     <!-- eslint-disable -->
-    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible.sync="isShow" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
+    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible="visible" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
-        <slot name="title">{{ title }}</slot>
+        <slot name="title">{{ title }} - {{ visible }}</slot>
       </div>
       <div :style="dialogHeight" class="tc-dialog-body-container">
-        <slot></slot>
+        <slot :visible.sync="visible"></slot>
       </div>
       <div :style="fixedButtonStyle">
       </div>
@@ -24,13 +24,12 @@ export default {
   props: {
     title: { type: String, required: false, default: 'dialog' },
     icon: { type: String, required: false, default: 'el-icon-time' },
-    showDialog: { type: Boolean, required: false, default: false },
+    visible: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 }
   },
   data() {
     return {
-      isShow: this.showDialog,
       titleHeight: 40,
       dialogHeight: '',
       marginTop: '',
@@ -46,11 +45,8 @@ export default {
     }
   },
   watch: {
-    isShow(val) {
-      this.$emit('update:showDialog', val)
-    },
-    showDialog(val) {
-      this.isShow = val
+    visible(val) {
+      this.$emit('update:visible', val)
     }
   },
   mounted() {
@@ -66,6 +62,9 @@ export default {
     },
     opened() {
       var tcFixedButtom = findComponentDownward(this.$refs.elDialog, 'TcFixedButtom')
+      if (tcFixedButtom === null) {
+        return
+      }
       this.fixedButtomHeight = tcFixedButtom.$el.offsetHeight
       this.calcDialogHeight()
     },
