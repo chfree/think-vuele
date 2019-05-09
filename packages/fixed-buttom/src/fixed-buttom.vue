@@ -28,6 +28,7 @@ export default {
   margin-bottom: 0px;
   background-color: #eee;
   width: 100%;
+  height: 48px;
 }
 .box-middle-center{
   display: -webkit-box;
