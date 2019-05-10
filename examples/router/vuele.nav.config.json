@@ -50,6 +50,14 @@
               "title": "Table 表格"
             },
             {
+              "path": "/tree-table",
+              "title": "TreeTable 表格树"
+            },
+            {
+              "path": "/edit-table",
+              "title": "EditTable 可编辑表格"
+            },
+            {
               "path": "/pager",
               "title": "Pager 分页"
             }

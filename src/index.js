@@ -29,7 +29,6 @@ import {
   TcSwitch,
   TcTabs,
   TcEditTable,
-  TcEditMtable,
   TcImg,
   TcBlock,
   TcFixedButtom
@@ -69,7 +68,6 @@ const components = [
   TcSwitch,
   TcTabs,
   TcEditTable,
-  TcEditMtable,
   TcImg,
   TcBlock,
   TcFixedButtom
@@ -121,7 +119,6 @@ export default {
   TcSwitch,
   TcTabs,
   TcEditTable,
-  TcEditMtable,
   TcImg,
   TcBlock,
   TcFixedButtom

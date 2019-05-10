@@ -1,7 +1,7 @@
-import TcEditTable from './src/edit-table'
+import TcEditMtable from './src/edit-table'
 
-TcEditTable.install = function(Vue) {
-  Vue.component(TcEditTable.name, TcEditTable)
+TcEditMtable.install = function(Vue) {
+  Vue.component(TcEditMtable.name, TcEditMtable)
 }
 
-export default TcEditTable
+export default TcEditMtable
