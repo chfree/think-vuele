@@ -30,7 +30,6 @@ import {
   TcTabs,
   TcEditTable,
   TcEditMtable,
-  TcCard,
   TcImg,
   TcBlock,
   TcFixedButtom
@@ -71,7 +70,6 @@ const components = [
   TcTabs,
   TcEditTable,
   TcEditMtable,
-  TcCard,
   TcImg,
   TcBlock,
   TcFixedButtom
@@ -124,7 +122,6 @@ export default {
   TcTabs,
   TcEditTable,
   TcEditMtable,
-  TcCard,
   TcImg,
   TcBlock,
   TcFixedButtom

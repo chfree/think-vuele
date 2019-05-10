@@ -70,14 +70,6 @@
             {
               "path": "/dialog",
               "title": "Dialog 对话框"
-            },
-            {
-              "path": "/tooltip",
-              "title": "Tooltip 文字提示"
-            },
-            {
-              "path": "/card",
-              "title": "Card 卡片"
             }
           ]
         }
