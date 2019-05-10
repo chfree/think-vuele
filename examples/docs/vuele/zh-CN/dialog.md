@@ -111,7 +111,7 @@ fixedButtom
     </tc-form>
     <tc-fixed-buttom style="height:50px;">
       <tc-button type="primary" size="mini">立即创建</tc-button>
-      <tc-button size="mini">取消</tc-button>
+      <tc-button size="mini" @click="$parent.hide()">取消</tc-button>
     </tc-fixed-buttom>
   </div>
 </template>
