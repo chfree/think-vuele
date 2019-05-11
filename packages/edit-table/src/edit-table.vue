@@ -1,6 +1,14 @@
 <template>
   <div>
-    <tc-table :data="formatData" :columns="columns" v-bind="$attrs" class="tb-edit" v-on="$listeners">
+    <tc-table 
+      :data="formatData" 
+      :columns="columns" 
+      :border="border"
+      :stripe="stripe"
+      :fit="fit" 
+      v-bind="$attrs" 
+      class="tb-edit" 
+      v-on="$listeners">
       <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot v-if="!toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">
           <span>{{ value }}</span>
