@@ -5,6 +5,7 @@
       :columns="columns" 
       :border="border"
       :stripe="stripe"
+      :selection="selection"
       :fit="fit" 
       v-bind="$attrs" 
       class="tb-edit" 
@@ -16,7 +17,7 @@
         <slot v-if="toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope" name="editable">
           <div :class="{'editable-control' : isSignleMode}">
             <tc-date-picker v-if="toObject(column).type === 'date'" v-model="scope.row[columnName]" type="date" size="mini"></tc-date-picker>
-            <tc-select v-if="toObject(column).type === 'select'" :providers="toObject(column).providers" v-model="scope.row[columnName]" size="mini"></tc-select>
+            <tc-select v-else-if="toObject(column).type === 'select'" :providers="toObject(column).providers" v-model="scope.row[columnName]" size="mini"></tc-select>
             <tc-input v-else v-model="scope.row[columnName]" type="text" size="mini"></tc-input>
           </div>
           <span :class="{'editable-span' : isSignleMode, 'editable-span-hide': !isSignleMode}">{{ value }}</span>
@@ -34,7 +35,9 @@ export default {
   name: 'TcEditTable',
   mixins: [table],
   props: {
-    editmode: { type: String, required: false, default: 'single' }
+    editmode: { type: String, required: false, default: 'single', validator: function(value) {
+      return ['single', 'multi'].indexOf(value) !== -1
+    }}
   },
   data: () => ({
   }),
