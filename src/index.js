@@ -1,3 +1,4 @@
+import './styles/index.scss'
 import {
   TcSwitchButton,
   TcDialog,

@@ -78,6 +78,10 @@
             {
               "path": "/dialog",
               "title": "Dialog 对话框"
+            },
+            {
+              "path": "/loading",
+              "title": "Loading 特效"
             }
           ]
         }
