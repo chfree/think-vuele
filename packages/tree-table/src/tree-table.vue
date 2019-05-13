@@ -1,12 +1,15 @@
 <template>
-  <el-table ref="eltable" :data="formatData" :row-style="showRow" v-bind="$attrs" :stripe="stripe" :border="border" :fit="fit" highlight-current-row v-on="$listeners" @current-change="handleCurrentChange" @select="handleSelect" @select-all="handleSelectAll">
-    <el-table-column v-if="selection" type="selection" width="45">
-    </el-table-column>
-    <el-table-column v-if="sequence" label="序号" align="center" width="55">
-      <template slot-scope="scope">
-        {{ scope.$index + 1 }}
-      </template>
-    </el-table-column>
+  <tc-table ref="eltable" 
+  :data="formatData" 
+  :row-style="showRow" 
+  v-bind="$attrs" 
+  :stripe="stripe" 
+  :border="border" 
+  :fit="fit" 
+  v-on="$listeners" 
+  @current-change="handleCurrentChange" 
+  @select="handleSelect" 
+  @select-all="handleSelectAll">
     <el-table-column v-if="hier" label="层级" align="left" width="100">
       <template slot-scope="scope">
         {{ scope.row.hier }}
@@ -37,27 +40,21 @@
       </template>
     </el-table-column>
     <slot />
-  </el-table>
+  </tc-table>
 </template>
 
 <script>
 
 import treeToArray from './eval'
+import table from '../../table/src/table'
 export default {
   name: 'TcTreeTable',
+  mixins: [table],
   props: {
-    sequence: { type: Boolean, required: false, default: true },
-    selection: { type: Boolean, required: false, default: false },
-    border: { type: Boolean, required: false, default: true },
-    stripe: { type: Boolean, required: false, default: true },
-    fit: { type: Boolean, required: false, default: true },
-    data: { type: [Array, Object], required: true },
     hier: { type: Boolean, required: false, default: false },
-    columns: { type: Array, default: () => [] },
     evalFunc: { type: Function, required: false, default: null },
     evalArgs: { type: Array, default: () => [] },
-    expandAll: { type: Boolean, default: false },
-    selectionType: { type: String, required: false, default: 'single' }
+    expandAll: { type: Boolean, default: false }
   },
   computed: {
     // 格式化数据源
@@ -69,7 +66,7 @@ export default {
         tmp = this.data
       }
       const func = this.evalFunc || treeToArray
-      const args = this.evalArgs ? Array.concat([tmp, this.expandAll], this.evalArgs) : [tmp, this.expandAll]
+      const args = this.evalArgs ? [tmp, this.expandAll].concat(this.evalArgs) : [tmp, this.expandAll]
       const result = func.apply(null, args)
       return result
     }
