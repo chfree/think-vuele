@@ -26,7 +26,7 @@
   "style": "lib/theme-chalk/index.css",
   "dependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
-    "element-ui": "^2.7.2",
+    "element-ui": "^2.8.2",
     "moment": "^2.24.0",
     "vue": "^2.5.16",
     "vue-moment": "^4.0.0",

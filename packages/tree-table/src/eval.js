@@ -26,8 +26,7 @@ export default function treeToArray(data, expandAll, parent = null, level = null
     }
     tmp.push(record)
     if (record.children && record.children.length > 0) {
-      const children = treeToArray(record.children, expandAll, record, _level)
-      tmp = tmp.concat(children)
+      treeToArray(record.children, expandAll, record, _level)
     }
   })
   return tmp
