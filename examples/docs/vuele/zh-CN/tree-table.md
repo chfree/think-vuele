@@ -4,7 +4,7 @@
 ### 基础表格
 :::demo
 ```html
-<tc-tree-table :columns="columns" :data="tableData"/>
+<tc-tree-table :columns="columns" :data="tableData" row-key="name"/>
 
 <script>
   export default {

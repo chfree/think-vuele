@@ -1,79 +1,53 @@
 <template>
   <div>
-    <el-table ref="eltable" 
+    <tc-table ref="eltable" 
     :data="formatData" 
     :row-style="showRow" 
     v-bind="$attrs" 
     :stripe="stripe" 
     :border="border" 
     :fit="fit" 
+    :sequence="sequenceFalse"
     v-on="$listeners" 
-    row-key="name"
     @current-change="handleCurrentChange" 
     @select="handleSelect" 
     @select-all="handleSelectAll">
       <el-table-column v-if="selection" type="selection" width="45">
       </el-table-column>
-      <!-- <el-table-column v-if="sequence" label="序号" align="center" width="55">
-        <template slot-scope="scope">
-          {{ scope.$index + 1 }}
-        </template>
-      </el-table-column> -->
       <el-table-column v-if="hier" label="层级" align="left" width="100">
         <template slot-scope="scope">
           {{ scope.row.hier }}
         </template>
       </el-table-column>
-      <!-- <el-table-column v-if="columns.length===0" width="150">
-        <template slot-scope="scope">
-          <span v-for="space in scope.row._level" :key="space" class="ms-tree-space" />
-          <span v-if="iconShow(0,scope.row)" class="tree-ctrl" @click="toggleExpanded(scope.$index)">
-            <i v-if="!scope.row._expanded" class="el-icon-plus" />
-            <i v-else class="el-icon-minus" />
-          </span>
-          {{ scope.$index }}
-        </template>
-      </el-table-column> -->
       <el-table-column v-for="(column, index) in columns" v-else :key="column.name" :label="column.text" :width="column.width" :align="column.align==null?'center':column.align">
         <template slot-scope="scope">
-          <!-- Todo -->
-          <!-- eslint-disable-next-line vue/no-confusing-v-for-v-if -->
-          <!-- <span v-for="space in scope.row._level" v-if="index === 0" :key="space" class="ms-tree-space" /> -->
-          <!-- <span v-if="iconShow(index,scope.row)" class="tree-ctrl" @click="toggleExpanded(scope.$index)">
-            <i v-if="!scope.row._expanded" class="el-icon-plus" />
-            <i v-else class="el-icon-minus" />
-          </span> -->
           <slot :value="scope.row[column.name]" :columnName="column.name" :rowData="scope.row" :scope="scope">
             {{ scope.row[column.name] }}
           </slot>
         </template>
       </el-table-column>
       <slot />
-    </el-table>
+    </tc-table>
   </div>
 </template>
 
 <script>
 
 import treeToArray from './eval'
-// import table from '../../table/src/table'
+import table from '../../table/src/table'
 export default {
   name: 'TcTreeTable',
+  mixins: [table],
   props: {
-    sequence: { type: Boolean, required: false, default: true },
-    selection: { type: Boolean, required: false, default: false },
-    border: { type: Boolean, required: false, default: true },
-    stripe: { type: Boolean, required: false, default: true },
-    fit: { type: Boolean, required: false, default: true },
-    data: { type: [Array, Object], required: true },
     hier: { type: Boolean, required: false, default: false },
-    columns: { type: Array, default: () => [] },
     evalFunc: { type: Function, required: false, default: null },
     evalArgs: { type: Array, default: () => [] },
-    expandAll: { type: Boolean, default: false },
-    selectionType: { type: String, required: false, default: 'single' }
+    expandAll: { type: Boolean, default: false }
   },
   computed: {
+    sequenceFalse: function() {
+      return false
+    },
     // 格式化数据源
     formatData: function() {
       let tmp
