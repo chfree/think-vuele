@@ -8,12 +8,11 @@
     :border="border" 
     :fit="fit" 
     :sequence="sequenceFalse"
+    :selection="selection"
     v-on="$listeners" 
     @current-change="handleCurrentChange" 
     @select="handleSelect" 
     @select-all="handleSelectAll">
-      <el-table-column v-if="selection" type="selection" width="45">
-      </el-table-column>
       <el-table-column v-if="hier" label="层级" align="left" width="100">
         <template slot-scope="scope">
           {{ scope.row.hier }}
