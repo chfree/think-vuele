@@ -9,10 +9,7 @@
     :fit="fit" 
     :sequence="sequenceFalse"
     :selection="selection"
-    v-on="$listeners" 
-    @current-change="handleCurrentChange" 
-    @select="handleSelect" 
-    @select-all="handleSelectAll">
+    v-on="$listeners" >
       <el-table-column v-if="hier" label="层级" align="left" width="100">
         <template slot-scope="scope">
           {{ scope.row.hier }}
@@ -62,8 +59,6 @@ export default {
     }
   },
   created() {
-    console.log(this.data, 'data')
-    console.log(this.formatData)
   },
   methods: {
     showRow: function(row) {
@@ -71,38 +66,8 @@ export default {
       row.row._show = show
       return show ? 'animation:treeTableShow 1s;-webkit-animation:treeTableShow 1s;' : 'display:none;'
     },
-    // 切换下级是否展开
-    toggleExpanded: function(trIndex) {
-      const record = this.formatData[trIndex]
-      record._expanded = !record._expanded
-
-      this.$emit('toggle-expanded', record)
-    },
-    // 图标显示
-    iconShow(index, record) {
-      return (index === 0 && record.children && record.children.length > 0)
-    },
     toggleRowSelection(row, selected) {
       this.$refs.eltable.toggleRowSelection(row, selected)
-    },
-    handleCurrentChange(currentRow, oldCurrentRow) {
-      if (this.selectionType === 'single') {
-        this.clearSelection()
-        this.$refs.eltable.toggleRowSelection(currentRow, true)
-      }
-    },
-    handleSelect(selection, row) {
-      if (this.selectionType === 'single') {
-        this.clearSelection()
-        this.setCurrentRow(row)
-        this.$refs.eltable.toggleRowSelection(row, true)
-      }
-    },
-    handleSelectAll(selection) {
-      if (this.selectionType === 'single') {
-        this.$message.warning('单选模式下，暂时不支持多选')
-        this.clearSelection()
-      }
     },
     setCurrentRow(currentRow) {
       this.$refs.eltable.setCurrentRow(currentRow)

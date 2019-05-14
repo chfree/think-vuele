@@ -1,7 +1,7 @@
 ## TreeTable
 树形表格，可以以树形结构展示数据的表格
 
-### 基础表格
+### 基础树形表格
 :::demo
 ```html
 <tc-tree-table :columns="columns" :data="tableData" row-key="name"/>
@@ -34,7 +34,7 @@
 ```
 :::
 
-### 选中基础表格
+### 选中基础树形表格
 :::demo
 ```html
 <tc-tree-table :columns="columns" :data="tableData" row-key="name" selection/>
@@ -67,7 +67,7 @@
 ```
 :::
 
-### 选中基础表格
+### 选中基础树形表格无限加载
 :::demo
 ```html
 <tc-tree-table :columns="columns" :data="tableData" row-key="name" selection lazy :load="load" />
@@ -98,12 +98,13 @@
     },
     methods: {
       load(tree, treeNode, resolve) {
-        console.log('loading')
+        console.log('loading', treeNode)
         resolve([
          {
           title: '配置管理1',
-          name: 'setting1',
+          name: 'setting1' + (treeNode.level === undefined ? '1' : treeNode.level),
           address: '/admin/setting1',
+          hasChildren: true
         }])
       }
     }
