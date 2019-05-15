@@ -6,9 +6,10 @@
       :border="border"
       :stripe="stripe"
       :selection="selection"
+      :sequence="sequence"
       :fit="fit" 
       v-bind="$attrs" 
-      class="tb-edit" 
+      class="tb-edit-tree"
       v-on="$listeners">
       <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot v-if="!toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">
@@ -65,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss">
-.tb-edit{
+.tb-edit-tree{
   td{
     padding: 5px 0px !important;
     height: 45px !important;
@@ -78,10 +79,14 @@ export default {
     display: none;
   }
   .current-row .editable-control {
-    display: block
+    display: inline-block
   }
   .current-row .editable-span {
     display: none
   }
+  .el-table__indent{
+    display: inherit !important;
+  }
 }
+
 </style>

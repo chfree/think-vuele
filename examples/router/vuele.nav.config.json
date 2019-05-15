@@ -58,6 +58,10 @@
               "title": "EditTable 可编辑表格"
             },
             {
+              "path": "/edit-tree-table",
+              "title": "EditTreeTable 可编辑表格树"
+            },
+            {
               "path": "/pager",
               "title": "Pager 分页"
             }

@@ -1,35 +1,31 @@
 <template>
   <div>
-    <tc-table ref="eltable" 
-    :data="formatData"
-    :columns="formatColumns"
-    :row-style="showRow" 
+    <tc-edit-table ref="eltable" 
+    :data="formatData" 
+    :row-style="showRow"
+    :columns="columns"
     v-bind="$attrs" 
     :stripe="stripe" 
     :border="border" 
     :fit="fit" 
+    :editmode="editmode"
     :sequence="sequence"
     :selection="selection"
     v-on="$listeners" >
-       <template slot-scope="{ value, columnName, rowData, column, scope }">
-        <slot :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">
-          {{ value }}
-        </slot>
-       </template>
-       <slot />
-    </tc-table>
+      <slot />
+    </tc-edit-table>
   </div>
 </template>
 
 <script>
 
 import treeToArray from './eval'
-import table from '../../table/src/table'
+import table from '../../edit-table/src/edit-table'
 export default {
-  name: 'TcTreeTable',
+  name: 'TcEditTreeTable',
   mixins: [table],
   props: {
-    hier: { type: Boolean, required: false, default: true },
+    hier: { type: Boolean, required: false, default: false },
     sequence: { type: Boolean, required: false, default: false },
     evalFunc: { type: Function, required: false, default: null },
     evalArgs: { type: Array, default: () => [] },
@@ -48,12 +44,6 @@ export default {
       const args = this.evalArgs ? [tmp, this.expandAll].concat(this.evalArgs) : [tmp, this.expandAll]
       const result = func.apply(null, args)
       return result
-    },
-    formatColumns: function() {
-      if (this.hier) {
-        this.columns.push({text: '层级', name: 'hier', width: '100', align: 'left'})
-      }
-      return this.columns
     }
   },
   created() {
@@ -72,9 +62,6 @@ export default {
     },
     clearSelection() {
       this.$refs.eltable.clearSelection()
-    },
-    toObject(observer) {
-      return Object.assign({}, observer)
     }
   }
 }
