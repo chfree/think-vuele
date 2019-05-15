@@ -1,6 +1,11 @@
 ## Table
 Table与el-table的使用完全一致；另外提供的几个扩展属性便于使用
 
+##### 继承关系
+```
+TcTable > ElTable
+```
+
 ### 基础表格
 :::demo
 ```html

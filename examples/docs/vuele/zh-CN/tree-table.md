@@ -1,5 +1,9 @@
 ## TreeTable
 树形表格，可以以树形结构展示数据的表格
+##### 继承关系
+```
+TcTreeTable > TcTable > ElTable
+```
 
 ### 基础树形表格
 :::demo
@@ -112,3 +116,13 @@
 </script>
 ```
 :::
+
+### Attributes
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+|------  |-----|---- |----- |---- |
+| hier | 是否显示层级编码 | Boolean | — | false |
+| evalFunc | 格式化数据函数 | Function | — | null |
+| evalArgs | 格式化数据的参数 | [] | — | [] |
+| expandAll | 是否全部展开 | Boolean | — | false |
+| sequence | 是否显示序号 | Boolean | — | false |

@@ -7,7 +7,7 @@
     :stripe="stripe" 
     :border="border" 
     :fit="fit" 
-    :sequence="sequenceFalse"
+    :sequence="sequence"
     :selection="selection"
     v-on="$listeners" >
       <el-table-column v-if="hier" label="层级" align="left" width="100">
@@ -36,14 +36,12 @@ export default {
   mixins: [table],
   props: {
     hier: { type: Boolean, required: false, default: false },
+    sequence: { type: Boolean, required: false, default: false },
     evalFunc: { type: Function, required: false, default: null },
     evalArgs: { type: Array, default: () => [] },
     expandAll: { type: Boolean, default: false }
   },
   computed: {
-    sequenceFalse: function() {
-      return false
-    },
     // 格式化数据源
     formatData: function() {
       let tmp

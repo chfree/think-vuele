@@ -3,6 +3,11 @@
 
 Select与el-select的使用完全一致；另外提供的几个扩展属性便于使用
 
+##### 继承关系
+```
+TcSelect > ElSelect
+```
+
 ### 使用providers数据源
 :::demo
 ```html

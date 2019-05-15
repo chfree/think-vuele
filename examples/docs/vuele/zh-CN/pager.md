@@ -3,6 +3,11 @@ Pager与el-pagination的使用完全一致；
 
 觉得pagination这个名字太长了，所以进行了再次封装，并改写了几个回调
 
+##### 继承关系
+```
+TcPager > ElPagination
+```
+
 ### 基础用法
 :::demo
 ```html

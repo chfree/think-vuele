@@ -17,6 +17,11 @@
 ## Dialog
 信息化管理系统中经常使用到，el中提供的太大众化，因此进行业务组件的上的样式封装
 
+##### 继承关系
+```
+TcDialog > ElDialog
+```
+
 ### 基础用法
 ```html
 <tc-button @click="openDialog">打开dialog</tc-button>

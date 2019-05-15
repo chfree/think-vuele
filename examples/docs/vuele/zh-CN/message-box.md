@@ -1,6 +1,10 @@
 ## MessageBox
 简化了el-message-box的用法
 
+##### 继承关系
+```
+MessageBox > el-message-box
+```
 ### 基础用法
 :::demo
 ```html
