@@ -16,7 +16,7 @@
           <span>{{ value }}</span>
         </slot>
         <slot v-if="toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope" name="editable">
-          <div :class="{'editable-control' : isSignleMode}">
+          <div :class="{'editable-control' : isSignleMode, 'editable-container': !isSignleMode}">
             <tc-date-picker v-if="toObject(column).type === 'date'" v-model="scope.row[columnName]" type="date" size="mini"></tc-date-picker>
             <tc-select v-else-if="toObject(column).type === 'select'" :providers="toObject(column).providers" v-model="scope.row[columnName]" size="mini"></tc-select>
             <tc-input v-else v-model="scope.row[columnName]" type="text" size="mini"></tc-input>
@@ -81,11 +81,11 @@ export default {
   .current-row .editable-control {
     display: inline-block
   }
+  .editable-container{
+    display: inline-block
+  }
   .current-row .editable-span {
     display: none
-  }
-  .el-table__indent{
-    display: inherit !important;
   }
 }
 
