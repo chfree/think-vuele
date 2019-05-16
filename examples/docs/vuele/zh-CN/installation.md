@@ -7,6 +7,7 @@
 ```shell
 npm i tennetcn-ui -S
 ```
+如果安装了`tennetcn-ui`则自动依赖`element-ui`
 
 ### Hello world
 
