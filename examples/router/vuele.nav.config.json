@@ -77,6 +77,15 @@
           ]
         },
         {
+          "groupName": "Video",
+          "list": [
+            {
+              "path": "/xg-player",
+              "title": "xgplayer 播放器"
+            }
+          ]
+        },
+        {
           "groupName": "Others",
           "list": [
             {

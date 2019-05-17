@@ -33,7 +33,8 @@ import {
   TcImg,
   TcBlock,
   TcFixedButtom,
-  TcEditTreeTable
+  TcEditTreeTable,
+  TcXgPlayer
 } from '../packages/tennetcn-ui'
 
 import utilLib from './utils/util-lib'
@@ -73,7 +74,8 @@ const components = [
   TcImg,
   TcBlock,
   TcFixedButtom,
-  TcEditTreeTable
+  TcEditTreeTable,
+  TcXgPlayer
 ]
 import ElementUI from 'element-ui'
 
@@ -125,5 +127,6 @@ export default {
   TcImg,
   TcBlock,
   TcFixedButtom,
-  TcEditTreeTable
+  TcEditTreeTable,
+  TcXgPlayer
 }

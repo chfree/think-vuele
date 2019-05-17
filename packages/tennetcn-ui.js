@@ -32,4 +32,5 @@ export { default as TcImg } from './img'
 export { default as TcBlock } from './block'
 export { default as TcFixedButtom } from './fixed-buttom'
 export { default as TcEditTreeTable } from './edit-tree-table'
+export { default as TcXgPlayer } from './xg-player'
 
