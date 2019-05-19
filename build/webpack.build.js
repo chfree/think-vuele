@@ -11,7 +11,7 @@ const utils = require('./utils')
 
 const buildConfig = require('./build-config')
 
-const isProd = process.env.NODE_ENV === 'production'
+var isProd = process.env.NODE_ENV === 'production'
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
@@ -54,7 +54,11 @@ const webpackConfig = {
       {
         test: /\.(scss|css)$/,
         use: [
-          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+          isProd ? {
+            loader:MiniCssExtractPlugin.loader,
+            options:{
+              publicPath: '../../'}
+          }: 'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -76,12 +80,21 @@ const webpackConfig = {
         ]
       },
       {
-        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         // todo: 这种写法有待调整
         query: {
           limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
+          name: utils.assetsPath('./img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        // todo: 这种写法有待调整
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('./fonts/[name].[hash:7].[ext]')
         }
       }
     ]
