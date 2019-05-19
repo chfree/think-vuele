@@ -1,5 +1,24 @@
 ## 更新日志
 
+### 0.0.3
+
+*2019-05-19*
+
+#### 新功能
+- 描述
+  - 加入了tc-edit-table
+  - 加入了tc-tree-table
+  - 加入了tc-edit-tree-table
+  - 加入了tc-xg-player
+  - 加入了icon示例
+  - 加入了tc-pager
+  - 加入了纯css的loading示例
+  - 加入了tc-block
+  - 加入了tc-select
+  - 加入了tc-dialog
+  - 加入了tc-table
+  - 加入了message的简化用法
+
 ### 0.0.2
 
 *2019-05-04*
