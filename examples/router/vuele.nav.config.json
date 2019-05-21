@@ -62,6 +62,10 @@
               "title": "EditTreeTable 可编辑表格树"
             },
             {
+              "path": "/hot-table",
+              "title": "Handsontable"
+            },
+            {
               "path": "/pager",
               "title": "Pager 分页"
             }
@@ -81,7 +85,7 @@
           "list": [
             {
               "path": "/xg-player",
-              "title": "xgplayer 播放器"
+              "title": "Xgplayer 播放器"
             }
           ]
         },
