@@ -1,7 +1,12 @@
+## Handsontable
+handsontable 可编辑表格
+
+### 基础示例
+:::demo
+```html
+<tc-hot-table :data="data"/>
 <script>
-  import { HotTable } from '@handsontable/vue'
-  import 'handsontable/dist/handsontable.full.css'
-  export default {
+export default {
     data: function() {
       return {
         data: [
@@ -11,15 +16,34 @@
           ["2018", 30, 15, 12, 13]
         ],
       };
-    },
-    components: {
-      HotTable
     }
   }
 </script>
+```
+:::
 
-## Loading
-handsontable 可编辑表格
+### 滚动表格
+:::demo
+```html
+<tc-hot-table :data="data" height="300" colWidths="100" rowHeights="23" />
+<script>
+export default {
+    data: function() {
+      return {
+        data: this.$hotTable.helper.createSpreadsheetData(100, 100)
+      }
+    }
+  }
+</script>
+```
+:::
 
-### 基础示例
-<hot-table :data="data" :rowHeaders="true" :colHeaders="true"></hot-table>
+### Attributes
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+|------  |-----|---- |----- |---- |
+| height | 表格的高度 | String,Number | — | auto |
+| rowHeaders | 是否显示默认表格头 | Boolean | — | true |
+| colHeaders | 是否显示默认表格列 | Boolean | — | true |
+| colWidths | 列宽 | Number | — | - |
+| rowHeights | 行高 | Number | — | - |
