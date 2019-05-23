@@ -1,6 +1,8 @@
 ## Handsontable
 handsontable 可编辑表格
 
+官方地址参考[https://handsontable.com/](https://handsontable.com/)
+
 ### 基础示例
 :::demo
 ```html
@@ -115,8 +117,8 @@ export default {
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
 | height | 表格的高度 | String,Number | — | auto |
-| rowHeaders | 是否显示默认表格头 | Boolean,Array | — | true |
-| colHeaders | 是否显示默认表格列 | Boolean,Array | — | true |
+| rowHeaders | 是否显示默认表格头 | Boolean,Array | — | true,Array则为自定义表头内容 |
+| colHeaders | 是否显示默认表格列 | Boolean,Array | — | true,Array则为自定义表第一列的内容 |
 | colWidths | 列宽 | Number,Array | Number则每列相同，Array则自定义每列 | - |
 | rowHeights | 行高 | Number,Array | Number则每列相同，Array则自定义每列 | - |
 | fixedRowsTop | 固定的行数 | Number | — | - |
