@@ -1,0 +1,38 @@
+
+
+.handsontable th:first-child,
+.handsontable td:first-of-type,
+.handsontable .htNoFrame + th,
+.handsontable .htNoFrame + td {
+  border-left: 1px solid #ddd;
+}
+.handsontable.htRowHeaders thead tr th:nth-child(2) {
+  border-left: 1px solid #ddd;
+}
+.handsontable tr:first-child th,
+.handsontable tr:first-child td {
+  border-top: 1px solid #ddd;
+}
+
+.handsontable th,
+.handsontable td {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+  empty-cells: show;
+  position: relative;
+  padding: 0 4px;
+  overflow: hidden;
+  outline-width: 0;
+  white-space: pre-line;
+}
+.handsontable th.disabled,
+.handsontable td.disabled {
+  background-color: #fafafa;
+  color: #999999;
+}
+.handsontable th {
+  text-align: center;
+  font-weight: normal;
+  white-space: nowrap;
+}
