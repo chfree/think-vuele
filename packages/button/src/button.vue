@@ -17,9 +17,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.el-button.el-button--text{
-  padding: 0px;
-}
-</style>

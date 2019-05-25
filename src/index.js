@@ -11,7 +11,7 @@ import {
   TcEditTable,
   TcEditTreeTable,
   TcFieldset,
-  TcFixedButtom,
+  TcFixedBottom,
   TcForm,
   TcFormItem,
   TcHotTable,
@@ -45,7 +45,7 @@ const components = [
   TcEditTable,
   TcEditTreeTable,
   TcFieldset,
-  TcFixedButtom,
+  TcFixedBottom,
   TcForm,
   TcFormItem,
   TcHotTable,
@@ -77,7 +77,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.6',
+  version: '0.0.7',
   install,
   utilLib,
   TcBadge,
@@ -91,7 +91,7 @@ export default {
   TcEditTable,
   TcEditTreeTable,
   TcFieldset,
-  TcFixedButtom,
+  TcFixedBottom,
   TcForm,
   TcFormItem,
   TcHotTable,

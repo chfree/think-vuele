@@ -14,7 +14,7 @@
         <test-index />
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
-        <fixed-buttom />
+        <fixed-bottom />
       </tc-dialog>
        <tc-dialog :visible.sync="showDialog3" title="引用组件" width="40%" height="40%">
         <test-index />
@@ -25,9 +25,9 @@
 
 <script>
 import testIndex from './testIndex'
-import fixedButtom from './fixed-buttom'
+import fixedBottom from './fixed-bottom'
 export default {
-  components: { testIndex, fixedButtom },
+  components: { testIndex, fixedBottom },
   data() {
     return {
       showDialog: false,

@@ -34,13 +34,13 @@ export default {
       dialogHeight: '',
       marginTop: '',
       currentHeight: 0,
-      fixedButtomHeight: 0
+      fixedBottomHeight: 0
     }
   },
   computed: {
     fixedButtonStyle: function() {
       return {
-        height: this.fixedButtomHeight + 'px'
+        height: this.fixedBottomHeight + 'px'
       }
     }
   },
@@ -61,15 +61,15 @@ export default {
       this.calcMarginTop()
     },
     opened() {
-      var tcFixedButtom = findComponentDownward(this.$refs.elDialog, 'TcFixedButtom')
-      if (tcFixedButtom === null) {
+      var tcFixedBottom = findComponentDownward(this.$refs.elDialog, 'TcFixedBottom')
+      if (tcFixedBottom === null) {
         return
       }
-      this.fixedButtomHeight = tcFixedButtom.$el.offsetHeight
+      this.fixedBottomHeight = tcFixedBottom.$el.offsetHeight
       this.calcDialogHeight()
     },
     calcDialogHeight() {
-      this.dialogHeight = 'height:' + (this.currentHeight - this.titleHeight - this.fixedButtomHeight) + 'px'
+      this.dialogHeight = 'height:' + (this.currentHeight - this.titleHeight - this.fixedBottomHeight) + 'px'
     },
     calcMarginTop() {
       this.marginTop = (window.innerHeight - this.currentHeight) / 2 + 'px'
@@ -85,47 +85,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.tc-dialog-base {
-  .el-dialog__header {
-    padding: 10px 10px;
-    background-color: #5e656a;
-    .el-dialog__title,
-    .tc-dialog-title {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 800;
-    }
-  }
-
-  .el-dialog__headerbtn {
-    top: 8px;
-    right: 10px;
-    font-size: 20px;
-  }
-
-  .el-dialog__body{
-    padding: 0px;
-  }
-
-  .tc-dialog-body-container {
-    overflow: auto;
-  }
-  .tc-dialog-body-container .app-container{
-    padding: 0px !important;
-  }
-  .el-dialog__close.el-icon.el-icon-close{
-    color:#fff;
-  }
-}
-.el-dialog__wrapper{
-  overflow: hidden;
-  // top: 0%;
-  // bottom:10%;
-}
-.el-dialog .el-dialog__header{
-  height: 20px;
-  line-height: inherit;
-}
-</style>

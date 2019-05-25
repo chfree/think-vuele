@@ -1,12 +1,12 @@
 <template>
-  <div ref="blockContainer" class="block-container" :class="boxShadow">
-    <div v-if="showTitle" class="block-title" :style="titleStyle">
+  <div ref="blockContainer" class="tc-block-container" :class="boxShadow">
+    <div v-if="showTitle" class="tc-block-title" :style="titleStyle">
       <slot name="title">
-        <span class="block-title-left"></span>
+        <span class="tc-block-title-left"></span>
         <span>{{title}}</span>
       </slot>
     </div>
-    <div class="block-content" :style="contentStyle">
+    <div class="tc-block-content" :style="contentStyle">
       <slot></slot>
     </div>
   </div>
@@ -45,10 +45,10 @@ export default {
     },
     boxShadow: function() {
       if (this.shadow === 'always') {
-        return 'box-shadow'
+        return 'tc-box-shadow'
       }
       if (this.shadow === 'hover') {
-        return 'box-shadow-hover'
+        return 'tc-box-shadow-hover'
       }
     }
   },
@@ -63,37 +63,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.block-container{
-  border: 1px solid #cfd9e5;
-  .block-title{
-    padding: 5px;
-    font-size: 15px;
-    color: #333;
-    background-color: #f1f4fa;
-    padding-left: 15px;
-    border-bottom: 1px solid #cfd9e5;
-    vertical-align: middle;
-  }
-  .block-title-left{
-    width: 3px;
-    height: 15px;
-    margin-top: -2px;
-    background: #1379d2;
-    border-radius: 25%;
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: middle;
-  }
-  .block-content{
-    padding: 5px;
-  }
-}
-.box-shadow{
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
-.box-shadow-hover:hover{
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
-</style>

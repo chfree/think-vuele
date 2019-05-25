@@ -10,7 +10,7 @@
   "edit-table": "./packages/edit-table/index.js",
   "edit-tree-table": "./packages/edit-tree-table/index.js",
   "fieldset": "./packages/fieldset/index.js",
-  "fixed-buttom": "./packages/fixed-buttom/index.js",
+  "fixed-bottom": "./packages/fixed-bottom/index.js",
   "form": "./packages/form/index.js",
   "form-item": "./packages/form-item/index.js",
   "input": "./packages/input/index.js",

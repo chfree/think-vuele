@@ -82,7 +82,7 @@ testIndex
 ### 组件内固定底部
 ```html
 <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
-  <fixed-buttom />
+  <fixed-bottom />
 </tc-dialog>
 
 <script>
@@ -104,7 +104,7 @@ export default {
 </script>
 ```
 
-fixedButtom
+fixedBottom
 ```html
 <template>
   <div>
@@ -114,10 +114,10 @@ fixedButtom
       </tc-form-item>
       ...
     </tc-form>
-    <tc-fixed-buttom style="height:50px;">
+    <tc-fixed-bottom style="height:50px;">
       <tc-button type="primary" size="mini">立即创建</tc-button>
       <tc-button size="mini" @click="$parent.hide()">取消</tc-button>
-    </tc-fixed-buttom>
+    </tc-fixed-bottom>
   </div>
 </template>
 ```

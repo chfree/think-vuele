@@ -66,24 +66,3 @@ export default {
   }
 }
 </script>
-<style rel="stylesheet/css">
-@keyframes treeTableShow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes treeTableShow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.el-table td.el-table-column--selection, .el-table th.el-table-column--selection{
-  text-align: center !important;
-}
-</style>

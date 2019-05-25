@@ -1,0 +1,31 @@
+.tc-block-container{
+  border: 1px solid #cfd9e5;
+  .tc-block-title{
+    padding: 5px;
+    font-size: 15px;
+    color: #333;
+    background-color: #f1f4fa;
+    padding-left: 15px;
+    border-bottom: 1px solid #cfd9e5;
+    vertical-align: middle;
+  }
+  .tc-block-title-left{
+    width: 3px;
+    height: 15px;
+    margin-top: -2px;
+    background: #1379d2;
+    border-radius: 25%;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .tc-block-content{
+    padding: 5px;
+  }
+}
+.tc-box-shadow{
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.tc-box-shadow-hover:hover{
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}

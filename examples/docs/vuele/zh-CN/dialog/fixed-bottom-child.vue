@@ -22,20 +22,20 @@
         </tc-input>
       </tc-form-item>
     </tc-form>
-    <tc-fixed-buttom>
+    <tc-fixed-bottom>
       <tc-button type="primary" size="mini">立即创建</tc-button>
-      <tc-button size="mini" @click="$parent.hide()">取消1</tc-button>
-    </tc-fixed-buttom>
-    <tc-dialog ref="childDialog" :visible.sync="showDialog1" append-to-body title="组件内固定底部-child" width="450px" height="350px">
-      <fixed-buttom-child />
+      <tc-button size="mini">取消</tc-button>
+    </tc-fixed-bottom>
+    <tc-dialog :visible.sync="showDialog1" append-to-body title="组件内固定底部-child-child" width="500px" height="400px">
+      <fixed-bottom-child-child />
     </tc-dialog>
   </div>
 </template>
 
 <script>
-import fixedButtomChild from './fixed-buttom-child'
+import fixedBottomChildChild from './fixed-bottom-child-child'
 export default {
-  components: { fixedButtomChild },
+  components: { fixedBottomChildChild },
   data() {
     return {
       form: {
@@ -47,8 +47,6 @@ export default {
   methods: {
     openSearch() {
       this.showDialog1 = true
-    },
-    cancel() {
     }
   }
 }

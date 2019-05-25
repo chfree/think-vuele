@@ -19,14 +19,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.fieldset {
-  border: 1px solid #ddd;
-  margin: 5px;
-  min-inline-size: auto !important;
-}
-.fieldset-legend {
-  font-weight: 800;
-}
-</style>

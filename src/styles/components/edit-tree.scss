@@ -1,0 +1,22 @@
+.tb-edit-tree{
+  td{
+    padding: 5px 0px !important;
+    height: 45px !important;
+  }
+
+  .editable-control {
+    display: none
+  }
+  .editable-span-hide {
+    display: none;
+  }
+  .current-row .editable-control {
+    display: inline-block
+  }
+  .editable-container{
+    display: inline-block
+  }
+  .current-row .editable-span {
+    display: none
+  }
+}

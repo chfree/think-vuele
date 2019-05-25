@@ -23,9 +23,3 @@ export default {
   }
 }
 </script>
-
-<style scoped type="scss">
-.el-select{
-  display: inline;
-}
-</style>

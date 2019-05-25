@@ -36,10 +36,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.tc-pagination-container {
-  text-align: right;
-  margin-top: 5px;
-}
-</style>

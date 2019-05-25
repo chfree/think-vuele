@@ -22,10 +22,10 @@
         </tc-input>
       </tc-form-item>
     </tc-form>
-    <tc-fixed-buttom>
+    <tc-fixed-bottom>
       <tc-button type="primary" size="mini">立即创建</tc-button>
       <tc-button size="mini">取消</tc-button>
-    </tc-fixed-buttom>
+    </tc-fixed-bottom>
   </div>
 </template>
 

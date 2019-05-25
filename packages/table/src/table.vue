@@ -117,12 +117,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.el-table__body tr.current-row:hover{
-  background-color: #c7def5 !important;
-}
-.el-table--striped .el-table__body tr.el-table__row--striped.current-row td, .el-table__body tr.current-row>td{
-  background-color: #c7def5;
-}
-</style>

@@ -5,11 +5,11 @@ import App from './App'
 import router from './router'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
-import 'element-ui/lib/theme-chalk/index.css'
 import './demo-styles/index.scss'
 import './assets/styles/common.css'
 import './assets/styles/fonts/style.css'
-
+import 'main/styles/index.scss'
+import 'element-ui/lib/theme-chalk/index.css'
 import TennetcnUI from 'main/index'
 import ElementUI from 'element-ui'
 
