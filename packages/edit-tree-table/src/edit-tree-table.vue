@@ -87,7 +87,3 @@ export default {
   text-align: center !important;
 }
 </style>
-
-<style lang="scss" rel="stylesheet/scss" scoped>
-
-</style>

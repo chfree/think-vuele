@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .fieldset {
   border: 1px solid #ddd;
   margin: 5px;

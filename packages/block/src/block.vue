@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .block-container{
   border: 1px solid #cfd9e5;
   .block-title{
