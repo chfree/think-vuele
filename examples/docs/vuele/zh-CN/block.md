@@ -5,8 +5,12 @@
 ### 无title模式
 :::demo
 ```html
-<tc-block>
+<tc-block style="height:100px;">
 test
+</tc-block>
+
+<tc-block style="padding: 5px;">
+<div style="height:120px;background-color:#eee;"></div>
 </tc-block>
 ```
 :::
@@ -14,7 +18,7 @@ test
 ### title模式
 :::demo
 ```html
-<tc-block title="我是一个block">
+<tc-block title="我是一个block" style="height:100px;">
 test
 </tc-block>
 ```
@@ -23,7 +27,7 @@ test
 ### 自定义title模式
 :::demo
 ```html
-<tc-block>
+<tc-block style="height:100px;">
   <div slot="title" style="color:red;">我是自定义title</div>
   <div style="font-size:18px;">test</div>
 </tc-block>
@@ -35,17 +39,17 @@ test
 ```html
 <el-row :gutter="12">
   <el-col :span="8">
-    <tc-block>
+    <tc-block style="height:100px;">
     test
     </tc-block>
   </el-col>
   <el-col :span="8">
-    <tc-block shadow="hover">
+    <tc-block shadow="hover" style="height:100px;">
     test
     </tc-block>
   </el-col>
   <el-col :span="8">
-    <tc-block shadow="never">
+    <tc-block shadow="never" style="height:100px;">
     test
     </tc-block>
   </el-col>

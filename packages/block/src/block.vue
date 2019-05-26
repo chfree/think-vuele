@@ -34,7 +34,6 @@ export default {
     },
     contentStyle: function() {
       return {
-        height: (this.height - this.titleHeight) + 'px'
       }
     },
     showTitle: function() {
