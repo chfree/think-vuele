@@ -1,5 +1,5 @@
 <template>
-  <el-time-select :value="value" v-bind="$attrs" style="width: 100%;" v-on="$listeners">
+  <el-time-select :value="value" v-bind="$attrs" class="tc-time-picker" style="width: 100%;" v-on="$listeners">
   </el-time-select>
 </template>
 

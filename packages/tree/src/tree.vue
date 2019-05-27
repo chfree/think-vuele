@@ -1,5 +1,5 @@
 <template>
-  <el-tree v-bind="$attrs" v-on="$listeners">
+  <el-tree class="tc-tree" v-bind="$attrs" v-on="$listeners">
   </el-tree>
 </template>
 

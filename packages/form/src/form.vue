@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="form" v-bind="$attrs" onsubmit="return false" v-on="$listeners">
+  <el-form ref="form" v-bind="$attrs" class="tc-form" onsubmit="return false" v-on="$listeners">
     <slot></slot>
   </el-form>
 </template>

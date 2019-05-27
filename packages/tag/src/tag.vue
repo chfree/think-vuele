@@ -1,5 +1,5 @@
 <template>
-  <el-tag v-bind="$attrs" v-on="$listeners">
+  <el-tag class="tc-tag" v-bind="$attrs" v-on="$listeners">
   </el-tag>
 </template>
 

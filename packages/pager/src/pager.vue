@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tc-pagination-container">
+    <div class="tc-pager">
       <el-pagination :small="small" :total="pager.totalCount" :current-page="pager.pageIndex" :page-sizes="pageSizeArray" :layout="layout" :page-size="pager.pageSize" v-bind="$attrs" background @current-change="pagerChange" @size-change="sizeChange" v-on="$listeners">
       </el-pagination>
     </div>

@@ -1,21 +1,21 @@
 
 
-.handsontable th:first-child,
-.handsontable td:first-of-type,
-.handsontable .htNoFrame + th,
-.handsontable .htNoFrame + td {
+.tc-hot-table.handsontable th:first-child,
+.tc-hot-table.handsontable td:first-of-type,
+.tc-hot-table.handsontable .htNoFrame + th,
+.tc-hot-table.handsontable .htNoFrame + td {
   border-left: 1px solid #ddd;
 }
-.handsontable.htRowHeaders thead tr th:nth-child(2) {
+.tc-hot-table.handsontable.htRowHeaders thead tr th:nth-child(2) {
   border-left: 1px solid #ddd;
 }
-.handsontable tr:first-child th,
-.handsontable tr:first-child td {
+.tc-hot-table.handsontable tr:first-child th,
+.tc-hot-table.handsontable tr:first-child td {
   border-top: 1px solid #ddd;
 }
 
-.handsontable th,
-.handsontable td {
+.tc-hot-table.handsontable th,
+.tc-hot-table.handsontable td {
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   height: 30px;
@@ -27,17 +27,12 @@
   outline-width: 0;
   white-space: pre-line;
 }
-.handsontable th:last-child{
+.tc-hot-table.handsontable th:last-child{
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.handsontable th.disabled,
-.handsontable td.disabled {
+.tc-hot-table.handsontable th.disabled,
+.tc-hot-table.handsontable td.disabled {
   background-color: #fafafa;
   color: #999999;
 }
-/* .handsontable th {
-  text-align: center;
-  font-weight: normal;
-  white-space: nowrap;
-} */

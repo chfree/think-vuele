@@ -10,6 +10,7 @@
       empty-text=""
       highlight-current-row
       v-on="$listeners"
+      class="tc-table"
       @selection-change="myHandleSelectionChange"
       @current-change="myHandleCurrentChange"
       @select="myHandleSelect"

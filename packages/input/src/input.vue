@@ -1,5 +1,5 @@
 <template>
-  <el-input :value="value" v-bind="$attrs" v-on="$listeners">
+  <el-input :value="value" class="tc-input" v-bind="$attrs" v-on="$listeners">
     <slot slot="append" name="append" ></slot>
   </el-input>
 </template>

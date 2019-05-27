@@ -1,5 +1,5 @@
 <template>
-  <el-button v-bind="$attrs" v-on="$listeners">
+  <el-button class="tc-button" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </el-button>
 </template>

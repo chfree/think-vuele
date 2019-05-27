@@ -1,5 +1,5 @@
 <template>
-  <el-checkbox :value="value" v-bind="$attrs" v-on="$listeners">
+  <el-checkbox :value="value" class="tc-checkbox" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </el-checkbox>
 </template>

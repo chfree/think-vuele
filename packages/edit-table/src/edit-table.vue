@@ -9,7 +9,7 @@
       :sequence="sequence"
       :fit="fit" 
       v-bind="$attrs" 
-      class="tb-edit-tree"
+      class="tc-edit-table"
       v-on="$listeners">
       <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot v-if="!toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">

@@ -10,6 +10,7 @@
     :fit="fit" 
     :sequence="sequence"
     :selection="selection"
+    class="tc-tree-table"
     v-on="$listeners" >
        <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">

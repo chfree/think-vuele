@@ -1,17 +1,18 @@
 <template>
   <div>
     <tc-edit-table ref="eltable" 
-    :data="formatData" 
-    :row-style="showRow"
-    :columns="columns"
-    v-bind="$attrs" 
-    :stripe="stripe" 
-    :border="border" 
-    :fit="fit" 
-    :editmode="editmode"
-    :sequence="sequence"
-    :selection="selection"
-    v-on="$listeners" >
+      :data="formatData" 
+      :row-style="showRow"
+      :columns="columns"
+      v-bind="$attrs" 
+      :stripe="stripe" 
+      :border="border" 
+      :fit="fit" 
+      :editmode="editmode"
+      :sequence="sequence"
+      :selection="selection"
+      class="tc-edit-tree-table"
+      v-on="$listeners" >
       <slot />
     </tc-edit-table>
   </div>

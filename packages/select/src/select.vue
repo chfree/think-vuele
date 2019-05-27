@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-select :value="value" v-bind="$attrs" v-on="$listeners" @change="selectChange">
-      <el-option v-for="item in providers" :key="item.id" :label="item.text" :value="item.value"></el-option>
+    <el-select :value="value" class="tc-select" v-bind="$attrs" v-on="$listeners" @change="selectChange">
+      <el-option v-for="item in providers" :key="item.id" :label="item.text" :value="item.value" class="tc-option"></el-option>
     </el-select>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div v-show="visible">
     <!-- eslint-disable -->
-    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible="visible" :close-on-click-modal="false" :close-on-press-escape="false" :content-height="currentHeight+'px'" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
+    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible="visible" :close-on-click-modal="false" :close-on-press-escape="false" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
         <slot name="title">{{ title }} - {{ visible }}</slot>

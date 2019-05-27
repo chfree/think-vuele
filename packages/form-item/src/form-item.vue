@@ -1,5 +1,5 @@
 <template>
-  <el-form-item v-bind="$attrs">
+  <el-form-item class="tc-form-item" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </el-form-item>
 </template>

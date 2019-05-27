@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hot-table licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" 
+    <hot-table class="tc-hot-table" licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" 
     :height="height"
     :rowHeaders="rowHeaders" 
     :colHeaders="colHeaders" />
