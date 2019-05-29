@@ -6,7 +6,7 @@
         <span>{{title}}</span>
       </slot>
     </div>
-    <div class="tc-block-content" :style="contentStyle">
+    <div class="tc-block-content" :style="contentStyle" :class="contentClass">
       <slot></slot>
     </div>
   </div>
@@ -17,6 +17,8 @@ export default {
   name: 'TcBlock',
   props: {
     title: { type: String, default: '' },
+    contentStyle: { type: String, default: '' },
+    contentClass: { type: String, default: '' },
     shadow: {type: String, default: 'always', validator: function(value) {
       return ['always', 'hover', 'never'].indexOf(value) !== -1
     }}
@@ -30,10 +32,6 @@ export default {
       return {
         height: this.titleHeight + 'px',
         lineHeight: this.titleHeight + 'px'
-      }
-    },
-    contentStyle: function() {
-      return {
       }
     },
     showTitle: function() {

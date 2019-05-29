@@ -18,7 +18,7 @@ test
 ### title模式
 :::demo
 ```html
-<tc-block title="我是一个block" style="height:100px;">
+<tc-block title="我是一个block" style="height:100px;" content-style="color:red;padding:10px;">
 test
 </tc-block>
 ```
@@ -68,4 +68,6 @@ test
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
 | title   | 标题文本   | String | — | — |
+| content-style   | 正文的样式   | String | — | — |
+| content-class   | 正文的class样式名   | String | — | — |
 | shadow   | 标题文本   | String | `always`, `hover`, `never` | `always` |
