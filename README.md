@@ -1,6 +1,7 @@
 # think-vuele
 
-> A Vue.js project
+> vue+element进行优化封装的组件库，主要对标bootstrap的大集合UI框架limitless
+> 框架结构按element源码结构进行改造
 
 ## Build Setup
 
@@ -8,14 +9,11 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:8089
+npm run demo
 
 # build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+npm run dist
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+github暂时私有项目，项目在优化一段时间，进行开源
