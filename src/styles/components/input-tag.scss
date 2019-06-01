@@ -1,0 +1,66 @@
+.vue-input-tag-wrapper {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-left: 4px;
+  padding-top: 2px;
+  cursor: text;
+  text-align: left;
+  -webkit-appearance: textfield;
+  display: flex;
+  flex-wrap: wrap;
+}
+.vue-input-tag-wrapper .input-tag {
+  background-color: #f4f4f5;
+  border-radius: 2px;
+  border: 1px solid #e9e9eb;
+  color: #909399;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 2px;
+  margin-right: 4px;
+  padding: 4px;
+}
+.vue-input-tag-wrapper .input-tag .remove {
+  cursor: pointer;
+  font-weight: bold;
+  color: #909399;
+}
+.vue-input-tag-wrapper .input-tag .remove:hover {
+  text-decoration: none;
+}
+.vue-input-tag-wrapper .input-tag .remove:empty::before {
+  content: " x";
+}
+.vue-input-tag-wrapper .new-tag {
+  background: transparent;
+  border: 0;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  margin-top: 3px;
+  outline: none;
+  padding: 3px;
+  padding-left: 0;
+  flex-grow: 1;
+}
+.vue-input-tag-wrapper.read-only {
+  cursor: default;
+}
+
+.vue-input-tag-wrapper {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #606266;
+  font-size: inherit;
+  outline: 0;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
