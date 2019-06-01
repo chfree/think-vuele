@@ -3,6 +3,8 @@
 > vue+element进行优化封装的组件库，主要对标bootstrap的大集合UI框架limitless
 > 框架结构按element源码结构进行改造
 
+[![License](https://img.shields.io/npm/l/tennetcn-ui.svg)](https://www.npmjs.com/package/tennetcn-ui)
+
 ## Build Setup
 
 ``` bash
