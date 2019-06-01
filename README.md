@@ -4,6 +4,8 @@
 > 框架结构按element源码结构进行改造
 
 [![License](https://img.shields.io/npm/l/tennetcn-ui.svg)](https://www.npmjs.com/package/tennetcn-ui)
+[![Week Downloads](https://img.shields.io/npm/dw/tennetcn-ui.svg)](https://www.npmjs.com/package/tennetcn-ui)
+[![Version](https://img.shields.io/npm/v/tennetcn-ui.svg)](https://github.com/chfree/think-vuele)
 
 ## Build Setup
 
