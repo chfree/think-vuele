@@ -16,7 +16,8 @@ npm run demo
 npm run dist
 ```
 
-github暂时私有项目，项目在优化一段时间，进行开源
+### github
+[https://github.com/chfree/think-vuele](https://github.com/chfree/think-vuele)
 
 ### Keywords
 vue,element,vuele,ui,tennetcn-ui
