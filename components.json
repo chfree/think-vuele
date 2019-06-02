@@ -15,6 +15,7 @@
   "form-item": "./packages/form-item/index.js",
   "input": "./packages/input/index.js",
   "input-number": "./packages/input-number/index.js",
+  "input-tag": "./packages/input-tag/index.js",
   "pager": "./packages/pager/index.js",
   "radio": "./packages/radio/index.js",
   "select": "./packages/select/index.js",

@@ -79,7 +79,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.12',
+  version: '0.0.13',
   install,
   utilLib,
   TcBadge,
