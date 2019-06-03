@@ -4,7 +4,7 @@
     <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible="visible" :close-on-click-modal="false" :close-on-press-escape="false" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
-        <slot name="title">{{ title }} - {{ visible }}</slot>
+        <slot name="title">{{ title }}</slot>
       </div>
       <div :style="dialogHeight" class="tc-dialog-body-container">
         <slot :visible.sync="visible"></slot>
