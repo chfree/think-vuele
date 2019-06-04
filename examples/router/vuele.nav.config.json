@@ -103,6 +103,10 @@
             {
               "path": "/loading",
               "title": "Loading 特效"
+            },
+            {
+              "path": "/letter-avatar",
+              "title": "LetterAvatar"
             }
           ]
         }

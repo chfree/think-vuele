@@ -16,6 +16,7 @@
   "input": "./packages/input/index.js",
   "input-number": "./packages/input-number/index.js",
   "input-tag": "./packages/input-tag/index.js",
+  "letter-avatar": "./packages/letter-avatar/index.js",
   "pager": "./packages/pager/index.js",
   "radio": "./packages/radio/index.js",
   "select": "./packages/select/index.js",
