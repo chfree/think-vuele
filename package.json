@@ -1,6 +1,6 @@
 {
   "name": "tennetcn-ui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "vue+element ui kit than more",
   "author": "zfree <79763939@qq.com>",
   "private": false,
@@ -28,7 +28,7 @@
   "dependencies": {
     "@handsontable/vue": "^4.0.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
-    "element-ui": "^2.8.2",
+    "element-ui": "^2.9.1",
     "handsontable": "^7.0.3",
     "moment": "^2.24.0",
     "vue": "^2.5.16",

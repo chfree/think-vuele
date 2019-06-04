@@ -12,7 +12,7 @@
       <div :style="fixedButtonStyle">
       </div>
     </el-dialog>
-  </div>
+  </div> 
 </template>
 
 <script>
