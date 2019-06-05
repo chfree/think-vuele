@@ -1,26 +1,43 @@
 ## InputTag
 input tag文本框
 
-源码参照[`matiastucci/vue-input-tag`](https://github.com/matiastucci/vue-input-tag)，依赖的源码，压缩文件达到80kb，所以最后就只复制了相关文件
+源码参照[`JohMun/vue-tags-input`](https://github.com/JohMun/vue-tags-input)
 
-主要进行了样式与emement的融合优化
+进行了样式与emement的融合优化；
+:::tip
+修改了`vue-tags-input`的值绑定模式。
+原生用法的`tags`并不是绑定在`v-model`，此处进行了转换，直接绑定到`v-model`
+:::
+```
+<vue-tags-input
+  v-model="tag"
+  :tags="tags"
+  @tags-changed="newTags => tags = newTags"
+/>
+```
+:::warning
+修改后的`v-model`有一个缺陷，文本框输入的时候，`v-model`的对象是文本框的内容，而不是`tags`的内容，只有回车后，`v-model`的值才会被驱动到`tags`
+:::
 
 ### 基础用法
 :::demo
 ```html
-<tc-input-tag /> 
+<tc-block style="margin-bottom:10px;">
+tag: {{tag}}
+</tc-block>
+<tc-input-tag v-model="tag" />
+<script>
+export default {
+  data() {
+    return {
+      tag: ''
+    }
+  }
+}
+</script>
 ```
 :::
 
 ### Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
-| value | Tags to be render in the input | Array | — | [] |
-| placeholder | Placeholder to be shown when no tags | String | — | '' |
-| read-only | Set input to readonly | Boolean | - | false |
-| add-tag-on-blur | Add tag on input blur | Boolean | -  | false |
-| limit | Set a limit for the amount of tags | String or Number | -  | -1 (none) |
-| validate | Apply certain validator for user input. Choose from `email`, `url`, `text`, `digits` or `isodate`. Or pass a `function` or a `RegExp` object for custom validation | String or Function (allows async) or Object | -  | "" |
-| add-tag-on-keys | Keys that are going to add the new tag | Array | -  | [ 13 (return), 188 (comma), 9 (tab) ] |
-| allow-duplicates | Allow duplicate tags | Boolean  | - | false |
-| before-adding | Function (allows async) to normalize tag before adding. E.g `(tag) => tag.toUpperCase()` | Function | -  | null |
