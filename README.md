@@ -26,5 +26,25 @@ npm run dist
 ### Keywords
 vue,element,vuele,ui,tennetcn-ui
 
+### npm 安装
+
+推荐使用 npm 的方式安装，它能更好地和 [webpack](https://webpack.js.org/) 打包工具配合使用。
+
+```shell
+npm i tennetcn-ui -S
+```
+如果安装了`tennetcn-ui`则自动依赖`element-ui`
+
+`main.js`
+
+```
+import 'element-ui/lib/theme-chalk/index.css'
+import 'tennetcn-ui/lib/styles/index.css'
+import TennetcnUI from 'tennetcn-ui'
+
+Vue.use(TennetcnUI)
+```
+
+
 ### Demo
 [http://vuele.tennetcn.cn](http://vuele.tennetcn.cn)
