@@ -30,7 +30,7 @@ export default {
     value: { type: String, default: null },
     placeholder: { type: String, default: '添加标签' },
     addOnKey: { type: Array, default: ()=> [13, ','] },
-    defaultRegexp: { type: String, default: 'text' },
+    defaultRegexp: { type: String, default: '' },
     regexp: { type: String, default: '' }
   },
   data() {
@@ -61,7 +61,7 @@ export default {
       if (this.regexp !== null && this.regexp !== '') {
         return new RegExp(this.regexp)
       }
-      if (this.defaultRegexp !== null || this.defaultRegexp !== '') {
+      if (this.defaultRegexp !== null && this.defaultRegexp !== '') {
         return validators[this.defaultRegexp]
       }
       return null
