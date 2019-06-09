@@ -11,12 +11,12 @@ TcSelect > ElSelect
 ### 使用providers数据源
 :::demo
 ```html
-<tc-select v-model="value" :providers="sexProviders" />
+<tc-select v-model="sex" :providers="sexProviders" />
 <script>
   export default {
     data() {
       return {
-        value:'01',
+        sex:'01',
         sexProviders: [{id:'1',text:'男',value:'01'},{id:'2',text:'女',value:'02'}]
       }
     }

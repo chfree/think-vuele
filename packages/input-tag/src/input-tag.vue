@@ -20,14 +20,14 @@ const validators = {
   )
 }
 import vueTagsInput from '@johmun/vue-tags-input'
-
+import vnameMixin from 'main/mixins/vname-mixin.js'
 export default {
   name: 'TcInputTag',
+  mixins: [vnameMixin],
   components: {
     vueTagsInput
   },
   props: {
-    value: { type: String, default: null },
     placeholder: { type: String, default: '添加标签' },
     addOnKey: { type: Array, default: ()=> [13, ','] },
     defaultRegexp: { type: String, default: '' },

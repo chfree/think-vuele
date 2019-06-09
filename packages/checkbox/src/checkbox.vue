@@ -5,8 +5,10 @@
 </template>
 
 <script>
+import vnameMixin from 'main/mixins/vname-mixin.js'
 export default {
   name: 'TcCheckbox',
+  mixins: [vnameMixin],
   props: {
     value: { type: Boolean, required: false, default: false }
   },

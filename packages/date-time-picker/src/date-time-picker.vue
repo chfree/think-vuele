@@ -4,8 +4,10 @@
 </template>
 
 <script>
+import vnameMixin from 'main/mixins/vname-mixin.js'
 export default {
   name: 'TcDateTimePicker',
+  mixins: [vnameMixin],
   props: {
     type: { type: String, default: 'datetime' },
     value: { type: Object | String | Number, default: '' }
