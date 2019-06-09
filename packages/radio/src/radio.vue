@@ -1,5 +1,5 @@
 <template>
-  <el-radio :value="value" class="tc-radio" v-bind="$attrs" v-on="$listeners">
+  <el-radio :value="value" :vname="vname" class="tc-radio" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </el-radio>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <el-date-picker :value="value" class="tc-date-picker" v-bind="$attrs" :type="type" value-format="yyyy-MM-dd" style="width: 100%;" v-on="$listeners">
+  <el-date-picker :value="value" :vname="vname" class="tc-date-picker" v-bind="$attrs" :type="type" value-format="yyyy-MM-dd" style="width: 100%;" v-on="$listeners">
   </el-date-picker>
 </template>
 

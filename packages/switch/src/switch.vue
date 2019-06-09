@@ -1,5 +1,5 @@
 <template>
-  <el-switch class="tc-swtich" v-bind="$attrs" v-on="$listeners">
+  <el-switch class="tc-swtich" :vname="vname" v-bind="$attrs" v-on="$listeners">
   </el-switch>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <el-input-number :value="value" class="tc-input-number" v-bind="$attrs" v-on="$listeners">
+  <el-input-number :value="value" :vname="vname" class="tc-input-number" v-bind="$attrs" v-on="$listeners">
   </el-input-number>
 </template>
 
