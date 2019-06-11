@@ -12,7 +12,7 @@ export default {
   mixins: [vnameMixin],
   props: {
     providers: { type: Array, default: null },
-    value: { type: String, required: false, default: false }
+    value: { type: String, required: false, default: '' }
   },
   data: () => ({
   }),

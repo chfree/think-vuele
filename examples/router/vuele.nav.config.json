@@ -45,6 +45,10 @@
               "title": "RadioGroup 选择器"
             },
             {
+              "path": "/checkbox-group",
+              "title": "CheckboxGroup 选择器"
+            },
+            {
               "path": "/input-tag",
               "title": "InputTag 文本框"
             }

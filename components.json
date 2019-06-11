@@ -4,6 +4,8 @@
   "button": "./packages/button/index.js",
   "button-group": "./packages/button-group/index.js",
   "checkbox": "./packages/checkbox/index.js",
+  "checkbox-button": "./packages/checkbox-button/index.js",
+  "checkbox-group": "./packages/checkbox-group/index.js",
   "date-picker": "./packages/date-picker/index.js",
   "date-time-picker": "./packages/date-time-picker/index.js",
   "dialog": "./packages/dialog/index.js",
