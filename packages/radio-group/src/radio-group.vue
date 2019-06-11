@@ -1,5 +1,6 @@
 <template>
   <el-radio-group :value="value" :vname="vname" class="tc-radio-group" v-bind="$attrs" v-on="$listeners">
+    <el-radio-button v-for="item in providers" :key="item.id" :label="item.value" class="tc-radio-button">{{item.text}}</el-radio-button>
     <slot></slot>
   </el-radio-group>
 </template>
@@ -10,7 +11,8 @@ export default {
   name: 'TcRadioGroup',
   mixins: [vnameMixin],
   props: {
-    value: { type: Boolean, required: false, default: false }
+    providers: { type: Array, default: null },
+    value: { type: String, required: false, default: false }
   },
   data: () => ({
   }),

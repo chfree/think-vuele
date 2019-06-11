@@ -10,7 +10,7 @@ export default {
   name: 'TcRadioButton',
   mixins: [vnameMixin],
   props: {
-    value: { type: Boolean, required: false, default: false }
+    value: { type: String, required: false, default: false }
   },
   data: () => ({
   }),

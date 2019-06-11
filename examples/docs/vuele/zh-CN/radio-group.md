@@ -1,22 +1,22 @@
 
-## Select
+## RadioGroup
 
-tc-select与el-select的使用完全一致；另外提供的几个扩展属性便于使用
+tc-radio-group与el-radio-group的使用完全一致；另外提供的几个扩展属性便于使用
 
 ##### 继承关系
 ```
-TcSelect > ElSelect
+TcRadioGroup > ElRadioGroup
 ```
 
 ### 使用providers数据源
 :::demo
 ```html
-<tc-select v-model="sex" :providers="sexProviders" />
+<tc-radio-group  v-model="sex" :providers="sexProviders" />
 <script>
   export default {
     data() {
       return {
-        sex:'01',
+        sex:'02',
         sexProviders: [{id:'1',text:'男',value:'01'},{id:'2',text:'女',value:'02'}]
       }
     }
@@ -36,5 +36,5 @@ TcSelect > ElSelect
 | name | 说明 |
 |------|--------|
 | id | 循环中的:key |
-| text | 下拉框的文本 |
-| value | 下拉框的值 |
+| text | 选项的文本 |
+| value | 选项的值 |

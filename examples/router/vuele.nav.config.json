@@ -41,6 +41,10 @@
               "title": "Select 选择器"
             },
             {
+              "path": "/radio-group",
+              "title": "RadioGroup 选择器"
+            },
+            {
               "path": "/input-tag",
               "title": "InputTag 文本框"
             }
