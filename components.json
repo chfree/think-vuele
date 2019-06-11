@@ -19,6 +19,8 @@
   "letter-avatar": "./packages/letter-avatar/index.js",
   "pager": "./packages/pager/index.js",
   "radio": "./packages/radio/index.js",
+  "radio-button": "./packages/radio-button/index.js",
+  "radio-group": "./packages/radio-group/index.js",
   "select": "./packages/select/index.js",
   "switch": "./packages/switch/index.js",
   "table": "./packages/table/index.js",

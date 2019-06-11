@@ -1,6 +1,6 @@
 <template>
-  <div class="tc-input-tag">
-     <vue-tags-input v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
+  <div class="tc-input-tag-container">
+     <vue-tags-input class="tc-input-tag" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
      </vue-tags-input>
   </div>
 </template>
