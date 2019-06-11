@@ -49,6 +49,10 @@
               "title": "CheckboxGroup 选择器"
             },
             {
+              "path": "/input-money",
+              "title": "InputMoney 选择器"
+            },
+            {
               "path": "/input-tag",
               "title": "InputTag 文本框"
             }
