@@ -50,7 +50,11 @@
             },
             {
               "path": "/input-money",
-              "title": "InputMoney 选择器"
+              "title": "InputMoney 输入框"
+            },
+            {
+              "path": "/input-phone",
+              "title": "InputPhone 输入框"
             },
             {
               "path": "/input-tag",

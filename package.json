@@ -40,6 +40,7 @@
     "accounting-js": "^1.1.1",
     "element-ui": "^2.9.1",
     "handsontable": "^7.0.3",
+    "libphonenumber-js": "^1.7.19",
     "moment": "^2.24.0",
     "vue": "^2.5.16",
     "vue-moment": "^4.0.0",
