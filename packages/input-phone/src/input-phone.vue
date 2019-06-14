@@ -14,8 +14,8 @@ import { parsePhoneNumberFromString } from 'libphonenumber-js'
  *            regex 自定义正则
  */
 var regexValid = {
-  mobile: /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0-9]))\d{8}$/,
-  phone: /^(0\d{2}-?\d{8}(-\d{1,4})?)$|^(0\d{3}-?\d{7,8}(-\d{1,4})?)$/
+  mobile: /((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0-9]))\d{8}/,
+  phone: /(0\d{2}-?\d{8}(-\d{1,4})?)|(0\d{3}-?\d{7,8}(-\d{1,4})?)/
 }
 export default {
   name: 'TcInputPhone',
@@ -34,18 +34,14 @@ export default {
     blurHandle(e) {
       var resultPhone = e.target.value
       if (this.validType === 'common') {
-        this.libphoneValid(resultPhone)
+        resultPhone = this.libphoneValid(resultPhone)
       } else if (this.validType === 'phone' || this.validType === 'mobile') {
-        if (!regexValid[this.validType].test(resultPhone)) {
-          resultPhone = ''
-        }
+        resultPhone = (resultPhone.match(regexValid[this.validType]) || [''])[0]
       } else if (this.validType === 'mop') {
-        if (!regexValid.phone.test(resultPhone) && !regexValid.mobile.test(resultPhone)) {
-          resultPhone = ''
-        }
+        resultPhone = (resultPhone.match(regexValid.phone) || resultPhone.match(regexValid.mobile) || [''])[0]
       } else if (this.validType === 'regex') {
         if (this.regex !== null && !this.regex.test(resultPhone)) {
-          resultPhone = ''
+          resultPhone = (resultPhone.match(this.regex) || [''])[0]
         }
       }
       this.$emit('input', resultPhone)
