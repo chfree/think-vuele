@@ -49,6 +49,14 @@
               "title": "CheckboxGroup 选择器"
             },
             {
+              "path": "/input",
+              "title": "Input 输入框"
+            },
+            {
+              "path": "/input-number",
+              "title": "InputNumber 输入框"
+            },
+            {
               "path": "/input-money",
               "title": "InputMoney 输入框"
             },
