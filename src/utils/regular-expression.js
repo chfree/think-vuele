@@ -58,10 +58,13 @@ export const regularExpression = {
   // (负或)小数或数字、小数后N位
   getNegativeOrNumberDecimalN: function(length) {
     return '-((\\d+.\\d{0,' + length + '})|(\\d+))'
-  }
-}
-
-export const regularExpressionStrict = {
-  mobile: /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0-9]))\d{8}$/,
-  phone: /^(0\d{2}-?\d{8}(-\d{1,4})?)$|^(0\d{3}-?\d{7,8}(-\d{1,4})?)$/
+  },
+  // QQ
+  qq: '[1-9][0-9]{4,}',
+  // 邮编
+  zipCode: '[1-9]\d{5}(?!\d)',
+  // 中文字符
+  chineseChar: '[\u4e00-\u9fa5]',
+  // 身份证
+  idCard: '[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)'
 }
