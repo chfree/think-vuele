@@ -133,6 +133,15 @@
               "title": "LetterAvatar"
             }
           ]
+        },
+        {
+          "groupName": "工具组件",
+          "list": [
+            {
+              "path": "/regular-expression",
+              "title": "正则表达式"
+            }
+          ]
         }
       ]
     }
