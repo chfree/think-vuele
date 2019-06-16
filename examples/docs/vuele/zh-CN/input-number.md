@@ -26,5 +26,5 @@
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
-| regularType | 验证类型 | String | [regular-expression](/#/vuele/zh-CN/component/regular-expression) | — |
+| regular-type | 验证类型 | String | [regular-expression](/#/vuele/zh-CN/component/regular-expression) | — |
 | regex | 正则表达式字符串 | String | — | — |
