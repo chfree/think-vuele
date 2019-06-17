@@ -1,12 +1,13 @@
 ## 更新日志
 
-### 0.0.24
+### 0.0.25
 
 *2019-06-18*
 
-#### tc-table扩展
+#### 控件扩展
 - 描述
-  - 加入了getCurrentRow方法
+  - tc-table 加入了getCurrentRow方法
+  - tc-input-tag 加入了初始化默认值
 
 ### 0.0.23
 

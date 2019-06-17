@@ -42,6 +42,27 @@ export default {
 ```
 :::
 
+### 基础用法-默认值
+:::demo
+```html
+<tc-block style="margin-bottom:10px;">
+tag: {{tag}}
+</tc-block>
+<tc-input-tag v-model="tag" />
+<script>
+export default {
+  data() {
+    return {
+      tag: '测试,羽毛球'
+    }
+  },
+  methods: {
+  }
+}
+</script>
+```
+:::
+
 ### Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |

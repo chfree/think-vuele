@@ -1,6 +1,6 @@
 <template>
   <div class="tc-input-tag-container">
-     <vue-tags-input class="tc-input-tag" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
+     <vue-tags-input class="tc-input-tag" :tags="initTags" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
      </vue-tags-input>
   </div>
 </template>
@@ -21,6 +21,8 @@ const validators = {
 }
 import vueTagsInput from '@johmun/vue-tags-input'
 import vnameMixin from 'main/mixins/vname-mixin.js'
+import { isNull } from 'main/utils'
+
 export default {
   name: 'TcInputTag',
   mixins: [vnameMixin],
@@ -28,17 +30,25 @@ export default {
     vueTagsInput
   },
   props: {
+    value: { type: String, default: '' },
     placeholder: { type: String, default: '添加标签' },
     addOnKey: { type: Array, default: ()=> [13, ','] },
     defaultRegexp: { type: String, default: '' },
-    regexp: { type: String, default: '' }
+    regexp: { type: String, default: '' },
+    tags: { type: Array, default: null }
   },
   data() {
     return {
-      tag: ''
+      tag: '',
+      initTags: []
     }
   },
   computed: {
+  },
+  mounted() {
+    if (!isNull(this.value)) {
+      this.initTags = this.value.split(',')
+    }
   },
   watch: {
   },
