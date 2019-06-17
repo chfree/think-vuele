@@ -95,7 +95,7 @@ export default {
     },
     myHandleSelect(selection, row) {
       if (this.selectionType === 'single') {
-        this.clearSelection()
+        // this.clearSelection()
         if (selection.length > 0) {
           this.toggleRowSelection(row, true)
           this.setCurrentRow(row)
