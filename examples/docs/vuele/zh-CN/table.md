@@ -9,7 +9,11 @@ TcTable > ElTable
 ### 基础表格
 :::demo
 ```html
-<tc-table :columns="columns" :data="tableData"/>
+<tc-button-group style="margin-bottom:10px;">
+  <tc-button @click="getCurrentRow" size="mini">获取选中的数据</tc-button>
+  <tc-button @click="reload" size="mini">重新加载数据</tc-button>
+</tc-button-group>
+<tc-table ref="tcTable" :columns="columns" :data="tableData"/>
 
 <script>
   export default {
@@ -36,6 +40,17 @@ TcTable > ElTable
           address: '上海市普陀区金沙江路 1516 弄'
         }]
       }
+    },
+    methods: {
+      getCurrentRow() {
+        const currentRow = this.$refs.tcTable.getCurrentRow()
+        console.log(currentRow, 'currentRow')
+      },
+      reload() {
+        const reloadData = this.tableData
+        this.tableData = []
+      }
+
     }
   }
 </script>

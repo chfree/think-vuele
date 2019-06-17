@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { hasClass, removeClass } from 'element-ui/src/utils/dom'
+import { hasClass, removeClass } from 'element-ui/lib/utils/dom'
 export default {
   name: 'TcTable',
   props: {
@@ -49,7 +49,13 @@ export default {
     columns: { type: Array, default: () => [] }
   },
   data: () => ({
+    currentRow: null
   }),
+  watch: {
+    'data': function() {
+      this.currentRow = null
+    }
+  },
   computed: {
     formatData: function() {
       return this.data
@@ -61,6 +67,9 @@ export default {
   methods: {
     setCurrentRow(currentRow) {
       this.$refs.eltable.setCurrentRow(currentRow)
+    },
+    getCurrentRow() {
+      return this.currentRow
     },
     toggleRowSelection(row, selected) {
       this.$refs.eltable.toggleRowSelection(row, selected)
@@ -88,6 +97,7 @@ export default {
       }
     },
     myHandleCurrentChange(currentRow, oldCurrentRow) {
+      this.currentRow = currentRow
       if (this.selectionType === 'single') {
         this.clearSelection()
         this.toggleRowSelection(currentRow, true)
@@ -95,7 +105,6 @@ export default {
     },
     myHandleSelect(selection, row) {
       if (this.selectionType === 'single') {
-        // this.clearSelection()
         if (selection.length > 0) {
           this.toggleRowSelection(row, true)
           this.setCurrentRow(row)

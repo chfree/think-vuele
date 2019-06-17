@@ -93,7 +93,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.23',
+  version: '0.0.24',
   install,
   utilLib,
   TcBadge,
