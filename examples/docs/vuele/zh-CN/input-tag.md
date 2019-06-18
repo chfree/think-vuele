@@ -46,14 +46,16 @@ export default {
 :::demo
 ```html
 <tc-block style="margin-bottom:10px;">
-tag: {{tag}}
+tag: {{model.tag}}
 </tc-block>
-<tc-input-tag v-model="tag" />
+<tc-input-tag v-model="model.tag" />
 <script>
 export default {
   data() {
     return {
-      tag: '测试,羽毛球'
+      model: {
+        tag: '测试,羽毛球'
+      }
     }
   },
   methods: {

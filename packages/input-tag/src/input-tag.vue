@@ -35,7 +35,7 @@ export default {
     addOnKey: { type: Array, default: ()=> [13, ','] },
     defaultRegexp: { type: String, default: '' },
     regexp: { type: String, default: '' },
-    tags: { type: Array, default: null }
+    tags: { type: Array, default: ()=>{return []} }
   },
   data() {
     return {
@@ -47,8 +47,15 @@ export default {
   },
   mounted() {
     if (!isNull(this.value)) {
-      this.initTags = this.value.split(',')
+      this.initTags = this.tags.concat(this.value.split(','))
+    } else {
+      this.initTags = this.tags
     }
+    this.initTags = this.initTags.map(item => {
+      return {
+        text: item
+      }
+    })
   },
   watch: {
   },
