@@ -16,6 +16,17 @@ export default {
   data() {
     return {
     }
+  },
+  methods: {
+    beforeClose() {
+      console.log('beforeClose')
+    },
+    opened() {
+      console.log('opened')
+    },
+    closed() {
+      console.log('closed')
+    }
   }
 }
 </script>

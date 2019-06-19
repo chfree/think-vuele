@@ -136,3 +136,8 @@ fixedBottom
 | width   | dialog的宽度   | String          | 百分比和数值 | — |
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String          | — | el-icon-time |
+
+### Dialog 内部组件钩子函数
+#### beforeClose: 窗体关闭前的回调钩子，返回false则阻止关闭
+#### opened: 窗体打开时的回调钩子函数
+#### closed: 窗体关闭后的回调钩子函数

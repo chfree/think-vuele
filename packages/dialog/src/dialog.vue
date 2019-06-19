@@ -1,7 +1,19 @@
 <template>
   <div v-show="visible">
     <!-- eslint-disable -->
-    <el-dialog ref="elDialog" v-el-drag-dialog v-bind="$attrs" @opened="opened" :width="width" :visible="visible" :close-on-click-modal="false" :close-on-press-escape="false" :top="marginTop" custom-class="tc-dialog-base" v-on="$listeners">
+    <el-dialog ref="elDialog" 
+      v-el-drag-dialog 
+      v-bind="$attrs" 
+      @opened="opened" 
+      @closed="closed"
+      :width="width" 
+      :visible="visible" 
+      :close-on-click-modal="false" 
+      :close-on-press-escape="false" 
+      :top="marginTop"
+      :before-close="dialogBeforeClose"
+      custom-class="tc-dialog-base" 
+      v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
         <i :class="icon" />
         <slot name="title">{{ title }}</slot>
@@ -61,6 +73,31 @@ export default {
       this.calcMarginTop()
     },
     opened() {
+      // 计算底部
+      this.calcFixedBottom()
+
+      // 调用子级的opened
+      this.childrenOpened()
+    },
+    closed() {
+      // 调用子级的closed
+      this.childrenClosed()
+    },
+    childrenOpened() {
+      const openedCall = this.getChildrenMethod('opened')
+      if (openedCall === null) {
+        return
+      }
+      openedCall()
+    },
+    childrenClosed() {
+      const closedCall = this.getChildrenMethod('closed')
+      if (closedCall === null) {
+        return
+      }
+      closedCall()
+    },
+    calcFixedBottom() {
       var tcFixedBottom = findComponentDownward(this.$refs.elDialog, 'TcFixedBottom')
       if (tcFixedBottom === null) {
         return
@@ -81,6 +118,32 @@ export default {
       } else {
         this.currentHeight = Number.parseInt(this.height, 10)
       }
+    },
+    dialogBeforeClose(done) {
+      // 先向下找到eldialog，在找到子级即可
+      const beforeCloseCall = this.getChildrenMethod('beforeClose')
+      if (beforeCloseCall === null) {
+        done(true)
+        return
+      }
+      const result = beforeCloseCall()
+      if (result === false) {
+        done(false)
+        return
+      }
+      done(true)
+    },
+    getChildrenMethod(methodName) {
+      const dialogChildren = this.$refs.elDialog.$children
+      if (dialogChildren === null || dialogChildren.length <= 0) {
+        return null
+      }
+
+      const methodNameCall = dialogChildren[0][methodName]
+      if (methodNameCall === undefined) {
+        return null
+      }
+      return methodNameCall
     }
   }
 }
