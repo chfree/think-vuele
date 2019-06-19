@@ -21,11 +21,17 @@ export default {
     beforeClose() {
       console.log('beforeClose')
     },
-    opened() {
-      console.log('opened')
+    opened(isFirstOpened) {
+      console.log('opened', isFirstOpened)
     },
     closed() {
       console.log('closed')
+    },
+    open() {
+      console.log('open')
+    },
+    close() {
+      console.log('close')
     }
   }
 }

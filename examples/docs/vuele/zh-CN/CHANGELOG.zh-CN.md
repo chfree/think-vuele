@@ -1,6 +1,6 @@
 ## 更新日志
 
-### 0.0.28
+### 0.0.29
 
 *2019-06-20*
 
@@ -9,6 +9,7 @@
   - tc-table 加入了getCurrentRow方法
   - tc-input-tag 加入了初始化默认值
   - tc-dialog加入了beforeClose\opened\closed的钩子函数
+  - tc-dialog加入了open\close的钩子函数
 
 #### bug修复
 - 描述

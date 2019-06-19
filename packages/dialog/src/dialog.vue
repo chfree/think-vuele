@@ -6,6 +6,8 @@
       v-bind="$attrs" 
       @opened="opened" 
       @closed="closed"
+      @open="open"
+      @close="close"
       :width="width" 
       :visible="visible" 
       :close-on-click-modal="false" 
@@ -46,7 +48,8 @@ export default {
       dialogHeight: '',
       marginTop: '',
       currentHeight: 0,
-      fixedBottomHeight: 0
+      fixedBottomHeight: 0,
+      isFirstOpen: true
     }
   },
   computed: {
@@ -79,16 +82,31 @@ export default {
       // 调用子级的opened
       this.childrenOpened()
     },
+    open() {
+      this.childrenOpen()
+    },
     closed() {
       // 调用子级的closed
       this.childrenClosed()
+    },
+    close() {
+      this.childrenClose()
     },
     childrenOpened() {
       const openedCall = this.getChildrenMethod('opened')
       if (openedCall === null) {
         return
       }
-      openedCall()
+      openedCall(this.isFirstOpen)
+      this.isFirstOpen = false
+    },
+    childrenOpen() {
+      const openCall = this.getChildrenMethod('open')
+      console.log(openCall, 'openCall')
+      if (openCall === null) {
+        return
+      }
+      openCall()
     },
     childrenClosed() {
       const closedCall = this.getChildrenMethod('closed')
@@ -96,6 +114,13 @@ export default {
         return
       }
       closedCall()
+    },
+    childrenClose() {
+      const closeCall = this.getChildrenMethod('close')
+      if (closeCall === null) {
+        return
+      }
+      closeCall()
     },
     calcFixedBottom() {
       var tcFixedBottom = findComponentDownward(this.$refs.elDialog, 'TcFixedBottom')
