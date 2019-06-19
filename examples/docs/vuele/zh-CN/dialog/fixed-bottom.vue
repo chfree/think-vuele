@@ -1,8 +1,9 @@
 <template>
   <div style="">
+    {{formModel.name}}
     <tc-form label-width="80px" size="mini" style="padding:10px;">
-      <tc-form-item label="活动名称">
-        <tc-input v-model="form.name"></tc-input>
+      <tc-form-item label="活动名称-tag">
+        <tc-input-tag v-model="formModel.name"></tc-input-tag>
       </tc-form-item>
       <tc-form-item label="活动名称">
         <tc-input v-model="form.name"></tc-input>
@@ -36,13 +37,22 @@
 import fixedBottomChild from './fixed-bottom-child'
 export default {
   components: { fixedBottomChild },
+  props: {
+    model: { type: Object, default: null }
+  },
   data() {
     return {
       form: {
         name: ''
       },
-      showDialog1: false
+      showDialog1: false,
+      formModel: {}
     }
+  },
+  created() {
+  },
+  mounted() {
+    this.formModel = Object.assign({}, this.model)
   },
   methods: {
     openSearch() {

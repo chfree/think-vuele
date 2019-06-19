@@ -14,7 +14,7 @@
         <test-index />
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
-        <fixed-bottom />
+        <fixed-bottom :model="model" />
       </tc-dialog>
        <tc-dialog :visible.sync="showDialog3" title="引用组件" width="40%" height="40%">
         <test-index />
@@ -33,7 +33,10 @@ export default {
       showDialog: false,
       showDialog1: false,
       showDialog2: false,
-      showDialog3: false
+      showDialog3: false,
+      model: {
+        name: '写bug,调bug'
+      }
     }
   },
   methods: {
