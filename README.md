@@ -45,6 +45,46 @@ import TennetcnUI from 'tennetcn-ui'
 Vue.use(TennetcnUI)
 ```
 
+扩展了以下控件：
+```
+TcBadge,
+TcBlock,
+TcButton,
+TcButtonGroup,
+TcCheckbox,
+TcCheckboxButton,
+TcCheckboxGroup,
+TcDatePicker,
+TcDateTimePicker,
+TcDialog,
+TcEditTable,
+TcEditTreeTable,
+TcFieldset,
+TcFixedBottom,
+TcForm,
+TcFormItem,
+TcHotTable,
+TcInput,
+TcInputMoney,
+TcInputNumber,
+TcInputPhone,
+TcInputTag,
+TcLetterAvatar,
+TcPager,
+TcRadio,
+TcRadioButton,
+TcRadioGroup,
+TcSelect,
+TcSwitch,
+TcTable,
+TcTabs,
+TcTag,
+TcTimePicker,
+TcTree,
+TcTreeTable,
+TcXgPlayer
+```
+
 
 ### Demo
 [http://vuele.tennetcn.cn](http://vuele.tennetcn.cn)
