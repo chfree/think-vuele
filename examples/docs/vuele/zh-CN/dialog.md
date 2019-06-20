@@ -137,6 +137,7 @@ fixedBottom
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String  | — | el-icon-time |
 | loading   | 是否开启loading加载   | Boolean | — | false |
+| loadingAutoClose   | 是否自动关闭loading   | Boolean | — | true |
 | loadingText   | 开启loading时的提示文本   | String | — | 加载中 |
 | loadingOption   | 开启loading时的配置 | String | — | — |
 

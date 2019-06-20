@@ -39,3 +39,7 @@
   height: 20px;
   line-height: inherit;
 }
+
+.el-loading-mask.is-fullscreen{
+  z-index: 2100 !important;
+}

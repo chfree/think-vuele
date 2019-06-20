@@ -42,7 +42,8 @@ export default {
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 },
     loading: { type: Boolean, required: false, default: false },
-    loadingText: { type: String, required: false, default: '数据加载中' },
+    loadingAutoClose: { type: Boolean, required: false, default: true },
+    loadingText: { type: String, required: false, default: '加载中' },
     loadingOption: { type: Object, required: false, default: null }
 
   },
@@ -81,16 +82,17 @@ export default {
       this.calcMarginTop()
     },
     opened() {
-      if (this.loading) {
-        this.closeLoading()
-      }
       // 计算底部
       this.calcFixedBottom()
 
       // 调用子级的opened
       this.childrenOpened()
+      if (this.loading && this.loadingAutoClose) {
+        this.closeLoading()
+      }
     },
     open() {
+      // loading且不是第一次打开，第一次打开loading，会在后面
       if (this.loading) {
         this.startLoading()
       }
@@ -108,7 +110,11 @@ export default {
       if (openedCall === null) {
         return
       }
-      openedCall(this.isFirstOpen)
+      if (this.loading) {
+        openedCall(this.isFirstOpen, this.loadingInstance)
+      } else {
+        openedCall(this.isFirstOpen)
+      }
       this.isFirstOpen = false
     },
     childrenOpen() {
@@ -133,13 +139,13 @@ export default {
       closeCall()
     },
     startLoading() {
-      this.loadingOption = this.loadingOption || {
+      const option = this.loadingOption || {
         lock: true,
         text: this.loadingText,
         spinner: 'el-icon-loading',
         background: 'rgba(0, 0, 0, 0.7)'
       }
-      this.loadingInstance = this.$loading(this.loadingOption)
+      this.loadingInstance = this.$loading(option)
     },
     closeLoading() {
       this.loadingInstance.close()

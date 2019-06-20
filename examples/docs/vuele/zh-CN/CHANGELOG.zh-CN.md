@@ -1,8 +1,8 @@
 ## 更新日志
 
-### 0.0.29
+### 0.0.32
 
-*2019-06-20*
+*2019-06-21*
 
 #### 控件扩展
 - 描述
@@ -10,6 +10,7 @@
   - tc-input-tag 加入了初始化默认值
   - tc-dialog加入了beforeClose\opened\closed的钩子函数
   - tc-dialog加入了open\close的钩子函数
+  - tc-dialog加入了loading的控制
 
 #### bug修复
 - 描述
