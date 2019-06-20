@@ -102,7 +102,6 @@ export default {
     },
     childrenOpen() {
       const openCall = this.getChildrenMethod('open')
-      console.log(openCall, 'openCall')
       if (openCall === null) {
         return
       }

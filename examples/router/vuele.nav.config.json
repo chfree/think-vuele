@@ -140,6 +140,14 @@
             {
               "path": "/regular-expression",
               "title": "正则表达式"
+            },
+            {
+              "path": "/vname-mixin",
+              "title": "VNameMixin 混入"
+            },
+            {
+              "path": "/vevent-mixin",
+              "title": "VEventMixin 混入"
             }
           ]
         }

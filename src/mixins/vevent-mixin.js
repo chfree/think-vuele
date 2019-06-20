@@ -6,7 +6,7 @@ export default {
       if (!isNull(eventName)) {
         return null
       }
-      return this.$listeners[eventName]['fns'].name
+      return this.$listeners[eventName]['fns'].name.replace(' ', '_')
     }
   }
 }
