@@ -135,7 +135,10 @@ fixedBottom
 | title   | dialog的标题   | String          | — | dialog |
 | width   | dialog的宽度   | String          | 百分比和数值 | — |
 | height   | dialog的高度   | String          | 百分比和数值 | — |
-| icon   | dialog的图标   | String          | — | el-icon-time |
+| icon   | dialog的图标   | String  | — | el-icon-time |
+| loading   | 是否开启loading加载   | Boolean | — | false |
+| loadingText   | 开启loading时的提示文本   | String | — | 加载中 |
+| loadingOption   | 开启loading时的配置 | String | — | — |
 
 ### Dialog 内部组件钩子函数
 #### beforeClose: 窗体关闭前的回调钩子，返回false则阻止关闭

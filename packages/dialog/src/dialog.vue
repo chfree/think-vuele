@@ -40,7 +40,11 @@ export default {
     icon: { type: String, required: false, default: 'el-icon-time' },
     visible: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
-    height: { type: Number | String, required: false, default: -1 }
+    height: { type: Number | String, required: false, default: -1 },
+    loading: { type: Boolean, required: false, default: false },
+    loadingText: { type: String, required: false, default: '数据加载中' },
+    loadingOption: { type: Object, required: false, default: null }
+
   },
   data() {
     return {
@@ -49,7 +53,8 @@ export default {
       marginTop: '',
       currentHeight: 0,
       fixedBottomHeight: 0,
-      isFirstOpen: true
+      isFirstOpen: true,
+      loadingInstance: null
     }
   },
   computed: {
@@ -76,6 +81,9 @@ export default {
       this.calcMarginTop()
     },
     opened() {
+      if (this.loading) {
+        this.closeLoading()
+      }
       // 计算底部
       this.calcFixedBottom()
 
@@ -83,6 +91,9 @@ export default {
       this.childrenOpened()
     },
     open() {
+      if (this.loading) {
+        this.startLoading()
+      }
       this.childrenOpen()
     },
     closed() {
@@ -120,6 +131,18 @@ export default {
         return
       }
       closeCall()
+    },
+    startLoading() {
+      this.loadingOption = this.loadingOption || {
+        lock: true,
+        text: this.loadingText,
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      }
+      this.loadingInstance = this.$loading(this.loadingOption)
+    },
+    closeLoading() {
+      this.loadingInstance.close()
     },
     calcFixedBottom() {
       var tcFixedBottom = findComponentDownward(this.$refs.elDialog, 'TcFixedBottom')

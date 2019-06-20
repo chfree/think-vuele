@@ -10,7 +10,7 @@
       <tc-dialog :visible.sync="showDialog" title="基础用法" width="400px" height="300px">
         test
       </tc-dialog>
-      <tc-dialog :visible.sync="showDialog1" title="引用组件" width="400px" height="300px">
+      <tc-dialog :visible.sync="showDialog1" loading title="引用组件" width="400px" height="300px">
         <test-index />
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
