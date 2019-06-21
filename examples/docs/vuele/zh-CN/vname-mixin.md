@@ -27,8 +27,6 @@ vname: function() {
 
 #### 应用vname-mixin的控件
 ```
-TcButton,
-TcButtonGroup,
 TcCheckbox,
 TcCheckboxButton,
 TcCheckboxGroup,

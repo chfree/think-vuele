@@ -138,6 +138,10 @@
           "groupName": "工具组件",
           "list": [
             {
+              "path": "/utils",
+              "title": "工具包"
+            },
+            {
               "path": "/regular-expression",
               "title": "正则表达式"
             },
