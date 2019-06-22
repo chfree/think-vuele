@@ -19,6 +19,8 @@ input tag文本框
 ```
 :::warning
 修改后的`v-model`有一个缺陷，文本框输入的时候，`v-model`的对象是文本框的内容，而不是`tags`的内容，只有回车后，`v-model`的值才会被驱动到`tags`
+
+如果要清空tags，请请使用 v-model的绑定对象赋值null，赋值空，是指清空了值，但是显示的tags没有清空。为了将vue-tags-input封装到跟tc-input的一致性，而尽量少改动控件本身，只能作此妥协。
 :::
 
 ### 基础用法
@@ -49,6 +51,7 @@ export default {
 tag: {{model.tag}}
 </tc-block>
 <tc-input-tag v-model="model.tag" />
+<tc-button style="margin-top:10px;" @click="clearTag">清空值</tc-button>
 <script>
 export default {
   data() {
@@ -59,6 +62,9 @@ export default {
     }
   },
   methods: {
+    clearTag() {
+      this.model.tag = null
+    }
   }
 }
 </script>

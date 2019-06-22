@@ -60,6 +60,11 @@ export default {
     })
   },
   watch: {
+    value: function(newVal) {
+      if (newVal === null) {
+        this.initTags = []
+      }
+    }
   },
   methods: {
     tagsChange(newTags) {
