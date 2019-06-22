@@ -7,6 +7,7 @@ import { xxx } from 'tennetcn-ui/lib/utils
 ### isNull
 判断传入的变量是否可以为`空串('')`，`null`，`undefined`
 
+
 ### formatDate
 ```
 return moment(date).format('YYYY-MM-DD')
@@ -60,4 +61,26 @@ find 系列来源iview作者在掘金小册中的提供
  * @param {组件上下文对象} context
  * @param {组件名称} componentName
  * @param {是否把本身除外} exceptMe
+```
+
+
+### this.$tcUtil 绑定
+```
+isNull
+findComponentDownward
+findComponentUpward
+findComponentsUpward
+findComponentsDownward
+findBrothersComponents
+```
+
+### this.$moment 绑定
+```
+formatDate
+formatDateTime
+```
+
+### this.$confirm
+```
+warning = confirm
 ```
