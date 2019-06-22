@@ -141,7 +141,7 @@
             @blur="$emit('blur', $event)"
             @focus="focused = true; $emit('focus', $event)"
             @click="addOnlyFromAutocomplete ? false : selectedItem = null"
-          >
+          />
         </li>
       </ul>
     </div>
