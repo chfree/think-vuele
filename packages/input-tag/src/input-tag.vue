@@ -1,6 +1,6 @@
 <template>
   <div class="tc-input-tag-container">
-     <vue-tags-input class="tc-input-tag" :tags="ctags" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
+     <vue-tags-input class="tc-input-tag" :tags="initTags" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
      </vue-tags-input>
   </div>
 </template>
@@ -45,17 +45,19 @@ export default {
   },
   computed: {
     ctags: function() {
-      if (!isNull(this.value)) {
-        this.initTags = this.tags.concat(this.value.split(','))
-      } else {
-        this.initTags = this.tags
-      }
-      return this.initTags.map(item => {
-        return {
-          text: item
-        }
-      })
     }
+  },
+  mounted() {
+    if (!isNull(this.value)) {
+      this.initTags = this.tags.concat(this.value.split(','))
+    } else {
+      this.initTags = this.tags
+    }
+    this.initTags = this.initTags.map(item => {
+      return {
+        text: item
+      }
+    })
   },
   watch: {
   },
