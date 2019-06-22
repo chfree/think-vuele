@@ -36,7 +36,6 @@
   "style": "lib/theme-chalk/index.css",
   "dependencies": {
     "@handsontable/vue": "^4.0.0",
-    "@johmun/vue-tags-input": "^2.0.1",
     "accounting-js": "^1.1.1",
     "element-ui": "^2.9.1",
     "handsontable": "^7.0.3",

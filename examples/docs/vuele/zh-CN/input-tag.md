@@ -18,9 +18,15 @@ input tag文本框
 />
 ```
 :::warning
-修改后的`v-model`有一个缺陷，文本框输入的时候，`v-model`的对象是文本框的内容，而不是`tags`的内容，只有回车后，`v-model`的值才会被驱动到`tags`
+20190622之前：修改后的`v-model`有一个缺陷，文本框输入的时候，`v-model`的对象是文本框的内容，而不是`tags`的内容，只有回车后，`v-model`的值才会被驱动到`tags`
 
 如果要清空tags，请请使用 v-model的绑定对象赋值null，赋值空，是指清空了值，但是显示的tags没有清空。为了将vue-tags-input封装到跟tc-input的一致性，而尽量少改动控件本身，只能作此妥协。
+
+:::
+
+:::tip
+20190622之后：直接复制了该控件源码进行了修改，完美的解决了以上两个问题。去掉了input对v-model的联动；addtags后重新复制this.value；具体差异修改，参见源码；
+复制的源码版本为[2.0.1]
 :::
 
 ### 基础用法
@@ -52,6 +58,7 @@ tag: {{model.tag}}
 </tc-block>
 <tc-input-tag v-model="model.tag" />
 <tc-button style="margin-top:10px;" @click="clearTag">清空值</tc-button>
+<tc-button style="margin-top:10px;" @click="setValue">赋值</tc-button>
 <script>
 export default {
   data() {
@@ -63,7 +70,10 @@ export default {
   },
   methods: {
     clearTag() {
-      this.model.tag = null
+      this.model.tag = ''
+    },
+    setValue() {
+      this.model.tag = 'test,test1'
     }
   }
 }
@@ -79,8 +89,7 @@ export default {
 | add-on-key | 按下指定的键位后，如果符合条件会自动生成一个tag | Array | — | [13,','] |
 | add-only-from-autocomplete | If it's true, the user can add tags only via the autocomplete layer. | Boolean | — | false |
 | allow-edit-tags | 是否允许编辑tag | Boolean | — | false |
-| autocomplete-always-open | If it's true, the autocomplete layer is always shown, regardless if
- an input or an autocomplete items exists. | Boolean | — | false |
+| autocomplete-always-open | If it's true, the autocomplete layer is always shown, regardless if an input or an autocomplete items exists. | Boolean | — | false |
 | autocomplete-filter-duplicates | Defines if duplicate autocomplete items are filtered out from the view or not. | Boolean | — | true |
 | autocomplete-items | Expects an array containing objects inside. The objects can have the same properties as a tag object. | Array | — | [] |
 | autocomplete-min-length | The minimum character length which is required until the autocomplete layer is shown. | Number | — | 1 |

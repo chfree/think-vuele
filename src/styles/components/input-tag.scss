@@ -1,4 +1,153 @@
 .tc-input-tag-container{
+  $primary: #5C6BC0;
+  $error: #e54d42;
+  $success: #68cd86;
+  $warn: #ffb648;
+
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input[disabled] {
+    background-color: transparent;
+  }
+
+  .vue-tags-input {
+    max-width: 450px;
+    position: relative;
+    background-color: #fff;
+  }
+
+  div.vue-tags-input.disabled {
+    opacity: 0.5;
+
+    * {
+      cursor: default;
+    }
+  }
+
+  .ti-input {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 4px;
+    flex-wrap: wrap;
+  }
+
+  .ti-tags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    line-height: 1em;
+  }
+
+  .ti-tag {
+    background-color: $primary;
+    color: #fff;
+    border-radius: 2px;
+    display: flex;
+    padding: 3px 5px;
+    margin: 2px;
+    font-size: .85em;
+
+    &:focus {
+      outline: none;
+    }
+
+    .ti-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .ti-tag-center {
+      position: relative;
+    }
+
+    span {
+      line-height: .85em;
+    }
+
+    span.ti-hidden {
+      padding-left: 14px;
+      visibility: hidden;
+      height: 0px;
+      white-space: pre;
+    }
+
+    .ti-actions {
+      margin-left: 2px;
+      display: flex;
+      align-items: center;
+      font-size: 1.15em;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    &:last-child {
+      margin-right: 4px;
+    }
+
+    &.ti-invalid, &.ti-tag.ti-deletion-mark {
+      background-color: $error;
+    }
+  }
+
+  .ti-new-tag-input-wrapper {
+    display: flex;
+    flex: 1 0 auto;
+    padding: 3px 5px;
+    margin: 2px;
+    font-size: .85em;
+
+    input {
+      flex: 1 0 auto;
+      min-width: 100px;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  .ti-new-tag-input {
+    line-height: initial;
+  }
+
+  .ti-autocomplete {
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: 20;
+  }
+
+  .ti-item > div {
+    cursor: pointer;
+    padding: 3px 6px;
+    width: 100%;
+  }
+
+  .ti-selected-item {
+    background-color: $primary;
+    color: #fff;
+  }
+
+}
+
+
+.tc-input-tag-container{
   .ti-input{
     padding:2px 4px !important;
     border-color: #DCDFE6 !important;
@@ -13,5 +162,12 @@
   .vue-tags-input {
     width: 100% !important;
     max-width: inherit !important;
+  }
+
+  .ti-disabled {
+    background-color: #F5F7FA;
+    border-color: #E4E7ED;
+    color: #C0C4CC;
+    cursor: not-allowed;
   }
 }

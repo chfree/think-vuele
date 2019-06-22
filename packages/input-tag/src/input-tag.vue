@@ -1,6 +1,17 @@
 <template>
   <div class="tc-input-tag-container">
-     <vue-tags-input class="tc-input-tag" :tags="initTags" v-model="tag" :vname="vname" :placeholder="placeholder" :add-on-key="addOnKey" v-bind="$attrs" v-on="$listeners" @tags-changed="tagsChange" @before-adding-tag="checkTag">
+     <vue-tags-input 
+      class="tc-input-tag" 
+      :tags="initTags" 
+      v-model="tag" 
+      :vname="vname" 
+      :disabled="inputDisabled" 
+      :placeholder="placeholder" 
+      :add-on-key="addOnKey" 
+      v-bind="$attrs" 
+      v-on="$listeners" 
+      @tags-changed="tagsChange" 
+      @before-adding-tag="checkTag">
      </vue-tags-input>
   </div>
 </template>
@@ -19,7 +30,7 @@ const validators = {
     /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/
   )
 }
-import vueTagsInput from '@johmun/vue-tags-input'
+import vueTagsInput from './vue-tags-input'
 import vnameMixin from 'main/mixins/vname-mixin.js'
 import { isNull } from 'main/utils'
 
@@ -35,38 +46,57 @@ export default {
     addOnKey: { type: Array, default: ()=> [13, ','] },
     defaultRegexp: { type: String, default: '' },
     regexp: { type: String, default: '' },
+    disabled: { type: Boolean, default: false },
     tags: { type: Array, default: ()=>{return []} }
+  },
+  inject: {
+    elForm: {
+      default: ''
+    },
+    elFormItem: {
+      default: ''
+    }
   },
   data() {
     return {
-      tag: '',
-      initTags: []
+      tag: ''
     }
   },
   computed: {
-    ctags: function() {
+    inputDisabled() {
+      return this.disabled || (this.elForm || {}).disabled
+    },
+    initTags() {
+      var initTags = []
+      if (!isNull(this.value)) {
+        initTags = this.tags.concat(this.value.split(','))
+      } else {
+        initTags = this.tags
+      }
+      return initTags.map(item => {
+        return {
+          text: item
+        }
+      })
     }
   },
   mounted() {
-    if (!isNull(this.value)) {
-      this.initTags = this.tags.concat(this.value.split(','))
-    } else {
-      this.initTags = this.tags
-    }
-    this.initTags = this.initTags.map(item => {
-      return {
-        text: item
-      }
-    })
   },
   watch: {
-    value: function(newVal) {
-      if (newVal === null) {
-        this.initTags = []
-      }
-    }
   },
   methods: {
+    // setInitTags() {
+    //   if (!isNull(this.value)) {
+    //     this.initTags = this.tags.concat(this.value.split(','))
+    //   } else {
+    //     this.initTags = this.tags
+    //   }
+    //   this.initTags = this.initTags.map(item => {
+    //     return {
+    //       text: item
+    //     }
+    //   })
+    // },
     tagsChange(newTags) {
       let tags = newTags.map(item => item.text).join(',')
       this.$emit('input', tags)
