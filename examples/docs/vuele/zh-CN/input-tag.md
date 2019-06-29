@@ -5,7 +5,7 @@ input tag文本框
 
 [官网说明](http://www.vue-tags-input.com)
 
-进行了样式与emement的融合优化；并进行基于正则表达式验证的快捷模式提供。
+进行了样式与element的融合优化；并进行基于正则表达式验证的快捷模式提供。
 :::tip
 修改了`vue-tags-input`的值绑定模式。
 原生用法的`tags`并不是绑定在`v-model`，此处进行了转换，直接绑定到`v-model`

@@ -42,7 +42,7 @@ export default {
   },
   props: {
     value: { type: String, default: '' },
-    placeholder: { type: String, default: '添加标签' },
+    placeholder: { type: String, default: '' },
     addOnKey: { type: Array, default: ()=> [13, ','] },
     defaultRegexp: { type: String, default: '' },
     regexp: { type: String, default: '' },
@@ -64,7 +64,11 @@ export default {
   },
   computed: {
     inputDisabled() {
-      return this.disabled || (this.elForm || {}).disabled
+      const result = this.disabled || (this.elForm || {}).disabled
+      if (result) {
+        this.placeholder = ''
+      }
+      return result
     },
     initTags() {
       var initTags = []
@@ -85,18 +89,6 @@ export default {
   watch: {
   },
   methods: {
-    // setInitTags() {
-    //   if (!isNull(this.value)) {
-    //     this.initTags = this.tags.concat(this.value.split(','))
-    //   } else {
-    //     this.initTags = this.tags
-    //   }
-    //   this.initTags = this.initTags.map(item => {
-    //     return {
-    //       text: item
-    //     }
-    //   })
-    // },
     tagsChange(newTags) {
       let tags = newTags.map(item => item.text).join(',')
       this.$emit('input', tags)
