@@ -19,6 +19,7 @@
           <div :class="{'editable-control' : isSignleMode, 'editable-container': !isSignleMode}">
             <tc-date-picker v-if="toObject(column).type === 'date'" v-model="scope.row[columnName]" type="date" size="mini"></tc-date-picker>
             <tc-select v-else-if="toObject(column).type === 'select'" :providers="toObject(column).providers" v-model="scope.row[columnName]" size="mini"></tc-select>
+            <tc-checkbox v-else-if="toObject(column).type === 'checkbox'" v-model="scope.row[columnName]" size="mini"></tc-checkbox>
             <tc-input v-else v-model="scope.row[columnName]" type="text" size="mini"></tc-input>
           </div>
           <span :class="{'editable-span' : isSignleMode, 'editable-span-hide': !isSignleMode}">{{ value }}</span>
