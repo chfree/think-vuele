@@ -67,6 +67,10 @@
             {
               "path": "/input-tag",
               "title": "InputTag 文本框"
+            },
+            {
+              "path": "/form",
+              "title": "Form 表单"
             }
           ]
         },
