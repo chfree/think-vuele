@@ -32,8 +32,11 @@
 <script>
 import elDragDialog from 'main/directives/el-dragDialog' // base on element-ui
 import { findComponentDownward } from 'main/utils/find-components'
+import emitter from 'element-ui/src/mixins/emitter'
+
 export default {
   name: 'TcDialog',
+  mixins: [emitter],
   directives: { elDragDialog },
   props: {
     title: { type: String, required: false, default: 'dialog' },
@@ -46,6 +49,11 @@ export default {
     loadingText: { type: String, required: false, default: '加载中' },
     loadingOption: { type: Object, required: false, default: null }
 
+  },
+  provide() {
+    return {
+      tcDialog: this
+    }
   },
   data() {
     return {
@@ -90,6 +98,7 @@ export default {
       if (this.loading && this.loadingAutoClose) {
         this.closeLoading()
       }
+      this.broadcast('TcButton', 'tcDialogOpened')
     },
     open() {
       // loading且不是第一次打开，第一次打开loading，会在后面

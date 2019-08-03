@@ -11,7 +11,7 @@
         test
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog1" loading title="引用组件" width="400px" height="300px">
-        <test-index />
+        <test-index :model="model"/>
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
         <fixed-bottom :model="model" />
@@ -35,7 +35,8 @@ export default {
       showDialog2: false,
       showDialog3: false,
       model: {
-        name: '写bug,调bug'
+        name: '写bug,调bug',
+        disabled: false
       }
     }
   },
@@ -44,10 +45,12 @@ export default {
       this.showDialog = true
     },
     openDialog1() {
-      this.showDialog1 = true
+      this.showDialog2 = true
+      this.model.disabled = true
     },
     openDialog2() {
       this.showDialog2 = true
+      this.model.disabled = false
     },
     openDialog3() {
       this.showDialog3 = true

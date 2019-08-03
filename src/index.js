@@ -84,7 +84,7 @@ import ElementUI from 'element-ui'
 const install = function(Vue, opts = {}) {
   Vue.use(ElementUI)
   components.forEach(component => {
-    Vue.use(component)
+    Vue.component(component.name, component)
   })
 }
 
