@@ -1,6 +1,5 @@
 <template>
   <el-button ref="mainButton" class="tc-button" :vevent="vevent" v-bind="$attrs" v-on="$listeners">
-    {{forceEnabled}}
     <slot></slot>
   </el-button>
 </template>

@@ -38,10 +38,7 @@ import {
   TcXgPlayer
 } from '../packages/tennetcn-ui'
 
-import utilLib from './utils/util-lib'
-
 const components = [
-  utilLib,
   TcBadge,
   TcBlock,
   TcButton,
@@ -81,8 +78,11 @@ const components = [
 ]
 import ElementUI from 'element-ui'
 
+import utilLib from './utils/util-lib'
+
 const install = function(Vue, opts = {}) {
   Vue.use(ElementUI)
+  Vue.use(utilLib)
   components.forEach(component => {
     Vue.component(component.name, component)
   })
@@ -93,7 +93,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.37',
+  version: '0.0.39',
   install,
   utilLib,
   TcBadge,
