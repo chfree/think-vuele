@@ -41,7 +41,9 @@ TcTreeTable > TcTable > ElTable
 ### 选中基础树形表格
 :::demo
 ```html
-<tc-tree-table :columns="columns" :data="tableData" row-key="name" selection/>
+<tc-tree-table ref="treeTable" :columns="columns" :data="tableData" row-key="name" selection/>
+
+<tc-button @click="getData">获取数据</tc-button>
 
 <script>
   export default {
@@ -64,6 +66,12 @@ TcTreeTable > TcTable > ElTable
             address: '/admin/system/user'
           }]
         }]
+      }
+    },
+    methods: {
+      getData() {
+        const currentRow = this.$refs.treeTable.getCurrentRow()
+        console.log(currentRow, 'currentRow')
       }
     }
   }

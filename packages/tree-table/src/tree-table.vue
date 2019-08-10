@@ -72,7 +72,7 @@ export default {
       this.$refs.eltable.setCurrentRow(currentRow)
     },
     getCurrentRow() {
-      return this.$refs.eltable.setCurrentRow()
+      return this.$refs.eltable.getCurrentRow()
     },
     clearSelection() {
       this.$refs.eltable.clearSelection()
