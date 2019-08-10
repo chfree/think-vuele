@@ -30,7 +30,7 @@ export default {
   name: 'TcTreeTable',
   mixins: [table],
   props: {
-    hier: { type: Boolean, required: false, default: true },
+    hier: { type: Boolean, required: false, default: false },
     sequence: { type: Boolean, required: false, default: false },
     evalFunc: { type: Function, required: false, default: null },
     evalArgs: { type: Array, default: () => [] },
@@ -70,6 +70,9 @@ export default {
     },
     setCurrentRow(currentRow) {
       this.$refs.eltable.setCurrentRow(currentRow)
+    },
+    getCurrentRow() {
+      return this.$refs.eltable.setCurrentRow()
     },
     clearSelection() {
       this.$refs.eltable.clearSelection()
