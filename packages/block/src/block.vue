@@ -25,7 +25,7 @@ export default {
   },
   data: () => ({
     height: 100,
-    titleHeight: 30
+    titleHeight: 25
   }),
   computed: {
     titleStyle: function() {

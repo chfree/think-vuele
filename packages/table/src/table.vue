@@ -14,6 +14,7 @@
       @selection-change="myHandleSelectionChange"
       @current-change="myHandleCurrentChange"
       @select="myHandleSelect"
+      @row-click="myRowClick"
       @select-all="myHandleSelectAll">
       <el-table-column v-if="selection" type="selection" width="45" align="center">
       </el-table-column>
@@ -49,7 +50,8 @@ export default {
     columns: { type: Array, default: () => [] }
   },
   data: () => ({
-    currentRow: null
+    currentRow: null,
+    multipleSelection: []
   }),
   watch: {
     'data': function() {
@@ -70,6 +72,9 @@ export default {
     },
     getCurrentRow() {
       return this.currentRow
+    },
+    getSelection() {
+      return this.multipleSelection
     },
     toggleRowSelection(row, selected) {
       this.$refs.eltable.toggleRowSelection(row, selected)
@@ -100,7 +105,12 @@ export default {
       this.currentRow = currentRow
       if (this.selectionType === 'single') {
         this.clearSelection()
-        this.toggleRowSelection(currentRow, true)
+        this.$refs.eltable.toggleRowSelection(currentRow)
+      }
+    },
+    myRowClick(row, column, event) {
+      if (this.selectionType === 'multi') {
+        this.$refs.eltable.toggleRowSelection(row)
       }
     },
     myHandleSelect(selection, row) {
@@ -123,6 +133,7 @@ export default {
       if (this.selectionType === 'multi') {
         this.$emit('select-rows', selection)
       }
+      this.multipleSelection = selection
     }
   }
 }
