@@ -146,6 +146,10 @@
               "title": "工具包"
             },
             {
+              "path": "/random",
+              "title": "随机"
+            },
+            {
               "path": "/regular-expression",
               "title": "正则表达式"
             },

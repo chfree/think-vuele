@@ -32,7 +32,7 @@ const validators = {
 }
 import vueTagsInput from './vue-tags-input'
 import vnameMixin from 'main/mixins/vname-mixin.js'
-import { isNull } from 'main/utils'
+import { isEmpty } from 'main/utils'
 
 export default {
   name: 'TcInputTag',
@@ -72,7 +72,7 @@ export default {
     },
     initTags() {
       var initTags = []
-      if (!isNull(this.value)) {
+      if (!isEmpty(this.value)) {
         initTags = this.tags.concat(this.value.split(','))
       } else {
         initTags = this.tags

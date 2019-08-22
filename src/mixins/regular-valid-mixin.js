@@ -1,5 +1,5 @@
 import { regularExpression } from 'main/utils/regular-expression.js'
-import { isNull } from 'main/utils'
+import { isEmpty } from 'main/utils'
 export default {
   props: {
     regularType: { type: String, default: null },
@@ -8,7 +8,7 @@ export default {
   methods: {
     regularValid(type, value) {
       const regExpression = this.queryExpression(type)
-      if (isNull(regExpression)) {
+      if (isEmpty(regExpression)) {
         return value
       }
 
@@ -16,12 +16,12 @@ export default {
       return regexp.test(value)
     },
     regularMatch(type, value) {
-      if (isNull(value)) {
+      if (isEmpty(value)) {
         return value
       }
 
       const regExpression = this.queryExpression(type)
-      if (isNull(regExpression)) {
+      if (isEmpty(regExpression)) {
         return value
       }
 
@@ -31,7 +31,7 @@ export default {
       return results[0]
     },
     queryExpression(type) {
-      if (isNull(type)) {
+      if (isEmpty(type)) {
         return this.regex
       }
       var regExpression = ''

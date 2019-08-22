@@ -6,13 +6,31 @@ import {
   findComponentsUpward,
   findComponentsDownward,
   findBrothersComponents,
+  isEmpty,
+  isArray,
+  isString,
+  isNumber,
+  isBoolean,
+  isUndefined,
   isNull,
+  isObject,
+  isFunction,
+  isDate,
   confirm
 } from '.'
 
 const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil = Vue.prototype.$tcUtil || {}
+  Vue.prototype.$tcUtil.isEmpty = isEmpty
+  Vue.prototype.$tcUtil.isArray = isArray
+  Vue.prototype.$tcUtil.isString = isString
+  Vue.prototype.$tcUtil.isNumber = isNumber
+  Vue.prototype.$tcUtil.isBoolean = isBoolean
+  Vue.prototype.$tcUtil.isUndefined = isUndefined
   Vue.prototype.$tcUtil.isNull = isNull
+  Vue.prototype.$tcUtil.isObject = isObject
+  Vue.prototype.$tcUtil.isFunction = isFunction
+  Vue.prototype.$tcUtil.isDate = isDate
   Vue.prototype.$tcUtil.findComponentDownward = findComponentDownward
   Vue.prototype.$tcUtil.findComponentUpward = findComponentUpward
   Vue.prototype.$tcUtil.findComponentsUpward = findComponentsUpward

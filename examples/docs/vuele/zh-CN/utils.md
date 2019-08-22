@@ -1,10 +1,10 @@
 ## Utils工具包
 提供一些常用的工具包,引入方式
 ```
-import { xxx } from 'tennetcn-ui/lib/utils
+import { xxx } from 'tennetcn-ui/lib/utils'
 ```
 
-### isNull
+### isEmpty
 判断传入的变量是否可以为`空串('')`，`null`，`undefined`
 
 
@@ -66,7 +66,7 @@ find 系列来源iview作者在掘金小册中的提供
 
 ### this.$tcUtil 绑定
 ```
-isNull
+isEmpty
 findComponentDownward
 findComponentUpward
 findComponentsUpward

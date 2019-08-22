@@ -1,12 +1,12 @@
-import { isNull } from 'main/utils'
+import { isEmpty } from 'main/utils'
 export default {
   computed: {
     vevent: function() {
       const eventName = (Object.keys(this.$listeners) || [''])[0]
-      if (isNull(eventName)) {
+      if (isEmpty(eventName)) {
         return null
       }
-      if (isNull(this.$listeners[eventName])) {
+      if (isEmpty(this.$listeners[eventName])) {
         return null
       }
       return this.$listeners[eventName]['fns'].name.replace(' ', '_')

@@ -8,7 +8,7 @@
 ```
 vevent: function() {
   const eventName = (Object.keys(this.$listeners) || [''])[0]
-  if (!isNull(eventName)) {
+  if (isEmpty(eventName)) {
     return null
   }
   return this.$listeners[eventName]['fns'].name.replace(' ', '_')
