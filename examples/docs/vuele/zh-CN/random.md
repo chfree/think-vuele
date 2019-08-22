@@ -7,6 +7,7 @@
         defaultInt: '0',
         defaultLength: '0',
         defaultFloat: '0',
+        defaultUUID: '0',
         numShowStyle: {
           padding: '5px',
           border: '1px solid #eee',
@@ -26,6 +27,9 @@
       },
       nextFloat(leftLen,rightLen) {
         this.defaultFloat = random.nextFloat(leftLen,rightLen)
+      },
+      uuid() {
+        this.defaultUUID = random.uuid()
       }
     }
   }
@@ -103,3 +107,17 @@ random.nextFloat(leftLen, rightLen)
 <tc-button @click='nextFloat()'>random.nextFloat()</tc-button>
 <tc-button @click='nextFloat(2)'>random.nextFloat(2)</tc-button>
 <tc-button @click='nextFloat(3,3)'>random.nextFloat(3,3)</tc-button>
+
+### uuid
+代码来自于[https://github.com/jchook/uuid-random](https://github.com/jchook/uuid-random)
+
+```
+random.uuid()
+```
+
+产生一个uuid
+
+<div :style="numShowStyle">
+{{defaultUUID}}
+</div>
+<tc-button @click='uuid()'>random.uuid()</tc-button>

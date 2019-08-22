@@ -1,4 +1,5 @@
-import { isEmpty } from './common'
+import { isEmpty } from '../common'
+import { uuid, isUUID } from './uuid'
 function next() {
   return Math.random()
 }
@@ -58,7 +59,9 @@ const random = {
   next,
   nextInt,
   nextLength,
-  nextFloat
+  nextFloat,
+  isUUID,
+  uuid
 }
 
 export default random
