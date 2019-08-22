@@ -7,6 +7,42 @@ import { xxx } from 'tennetcn-ui/lib/utils'
 ### isEmpty
 判断传入的变量是否可以为`空串('')`，`null`，`undefined`
 
+### isArray
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object array]'
+```
+### isString
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object string]'
+```
+### isNumber
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object number]'
+```
+### isBoolean
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object boolean]'
+```
+### isUndefined
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object undefined]'
+```
+### isNull
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object null]'
+```
+### isObject
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object object]'
+```
+### isFunction
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object function]'
+```
+### isDate
+```
+Object.prototype.toString.call(obj).toLowerCase() === '[object date]'
+```
 
 ### formatDate
 ```
@@ -67,6 +103,15 @@ find 系列来源iview作者在掘金小册中的提供
 ### this.$tcUtil 绑定
 ```
 isEmpty
+isArray
+isString
+isNumber
+isBoolean
+isUndefined
+isNull
+isObject
+isFunction
+isDate
 findComponentDownward
 findComponentUpward
 findComponentsUpward
