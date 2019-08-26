@@ -105,7 +105,9 @@ export default {
       this.currentRow = currentRow
       if (this.selectionType === 'single') {
         this.clearSelection()
-        this.$refs.eltable.toggleRowSelection(currentRow)
+        if (currentRow !== null) {
+          this.$refs.eltable.toggleRowSelection(currentRow)
+        }
       }
     },
     myRowClick(row, column, event) {
