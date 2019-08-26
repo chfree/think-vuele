@@ -1,13 +1,14 @@
-.demo-block .box{
+.demo-block .box [class*="loader-"] {
+  font-size: 40px;
+}
+.box{
   color: #d60b52;
   -webkit-transition: .3s color, .3s border;
   transition: .3s color, .3s border;
   text-align: center;
   line-height: 120px;
 }
-.demo-block .box [class*="loader-"] {
-  font-size: 40px;
-}
+
 [class*="loader-"] {
   display: inline-block;
   width: 1em;
