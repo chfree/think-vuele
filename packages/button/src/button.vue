@@ -1,5 +1,5 @@
 <template>
-  <el-button ref="mainButton" class="tc-button" :vevent="vevent" v-bind="$attrs" v-on="$listeners">
+  <el-button ref="mainButton" class="tc-button" :type="type" :icon="icon" :native-type="nativeType" :vevent="vevent" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </el-button>
 </template>
@@ -11,6 +11,9 @@ export default {
   componentName: 'TcButton',
   mixins: [veventMixin],
   props: {
+    type: {type: String, default: 'default'},
+    icon: {type: String, default: ''},
+    nativeType: {type: String, default: 'button'},
     forceEnabled: {type: Boolean, default: false}
   },
   data: () => ({
