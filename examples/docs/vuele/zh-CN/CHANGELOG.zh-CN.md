@@ -1,8 +1,8 @@
 ## 更新日志
 
-### 0.0.45
+### 0.0.46
 
-*2019-08-27*
+*2019-08-30*
 
 #### 新的工具类
 - 描述
@@ -14,6 +14,8 @@
 - 描述
   - table在currentchange的时候currentrow有null的可能
   - 按钮渲染type的时候，取nativeType
+  - raido-button/radio-group传值可以兼容number
+  - table判断hidden改为了0为否，1位是
 
 ### 0.0.42
 

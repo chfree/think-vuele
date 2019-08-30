@@ -63,7 +63,7 @@ export default {
       return this.data
     },
     columnFormate: function() {
-      return this.columns.filter(item => !(item.hideen))
+      return this.columns.filter(item => item.hideen)
     }
   },
   methods: {
