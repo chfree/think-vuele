@@ -68,6 +68,9 @@ export default {
   },
   methods: {
     setCurrentRow(currentRow) {
+      if (this.currentRow === null) {
+        this.currentRow = currentRow
+      }
       this.$refs.eltable.setCurrentRow(currentRow)
     },
     getCurrentRow() {
