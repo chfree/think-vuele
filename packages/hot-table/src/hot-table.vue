@@ -1,9 +1,6 @@
 <template>
   <div>
-    <hot-table class="tc-hot-table" licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" 
-    :height="height"
-    :rowHeaders="rowHeaders" 
-    :colHeaders="colHeaders" />
+    <hot-table class="tc-hot-table" :settings="resultSettings" licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" />
   </div>
 </template>
 
@@ -15,13 +12,23 @@ export default {
   components: {HotTable},
   name: 'TcHotTable',
   props: {
-    height: { type: String | Number, default: 'auto' },
-    rowHeaders: { type: Boolean | Array, default: true },
-    colHeaders: { type: Boolean | Array, default: true }
+    settings: { type: Object, default: () => {} }
   },
   data: () => ({
+    defaultSetting: {
+      height: '300px',
+      width: '100%',
+      manualColumnResize: true,
+      manualRowResize: true,
+      rowHeaders: true,
+      colHeaders: true,
+      stretchH: 'all'
+    }
   }),
   computed: {
+    resultSettings: function() {
+      return Object.assign(this.defaultSetting, this.settings)
+    }
   },
   methods: {
   }

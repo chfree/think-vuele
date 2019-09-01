@@ -3,13 +3,17 @@ handsontable 可编辑表格
 
 官方地址参考[https://handsontable.com/](https://handsontable.com/)
 
+:::tip
+警告：stretchH设置为all后，如果高度height设置为auto后，会导致整个宽度跑出父容器外面，所以tc-hot-table，默认设置stretchH为all,height为300px,
+:::
+
 ### 基础示例
 :::demo
 ```html
 <tc-block style="margin-bottom:10px;">
   {{ excelData }}
 </tc-block>
-<tc-hot-table ref="hotTable" :data="data" :settings="hotSettings" />
+<tc-hot-table ref="hotTable" height="180px" :data="data" :settings="hotSettings" />
 <tc-button @click="getData" style="margin-top:10px;">获取数据</tc-button>
 <script>
 export default {
@@ -98,13 +102,15 @@ export default {
 ### 自定义表头
 :::demo
 ```html
-<tc-hot-table :data="data" :colHeaders="colHeaders" />
+<tc-hot-table :data="data" :settings="settings" />
 <script>
 export default {
     data: function() {
       return {
         data: this.$hotTable.helper.createSpreadsheetData(15, 5),
-        colHeaders: ['姓名','性别','年龄','爱好','地址']
+        settings: {
+          colHeaders: ['姓名','性别','年龄','爱好','地址']
+        }
       }
     }
   }
@@ -115,6 +121,19 @@ export default {
 :::tip
 `handsontable`是一个非常强大的仿照`excel`的组件，远不止目前提供的示例，具体的示例无法一一在此列举，更多示例请参照官网
 :::
+
+### Settings默认值
+```
+defaultSetting: {
+  height: '300px',
+  width: '100%',
+  manualColumnResize: true,
+  manualRowResize: true,
+  rowHeaders: true,
+  colHeaders: true,
+  stretchH: 'all'
+}
+```
 
 ### Attributes
 
