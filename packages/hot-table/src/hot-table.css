@@ -36,7 +36,11 @@
   background-color: #fafafa;
   color: #999999;
 }
-
+/* 输入文本时文字垂直居中 */
 .tc-hot-table .handsontableInput{
   line-height: 31px;
+}
+/* valid颜色变红 */
+.tc-hot-table .handsontable td.htInvalid{
+  background-color: #f7d0d0 !important;
 }
