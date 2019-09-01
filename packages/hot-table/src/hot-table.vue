@@ -37,6 +37,14 @@ export default {
     }
   },
   methods: {
+    deleteEmpty() {
+      var rows = this.hotInstance.countRows()
+      for (var i = rows - 1;i >= 0;i--) {
+        if (this.hotInstance.isEmptyRow(i)) {
+          this.hotInstance.alter('remove_row', i)
+        }
+      }
+    }
   }
 }
 </script>

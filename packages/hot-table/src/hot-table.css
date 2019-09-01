@@ -36,3 +36,7 @@
   background-color: #fafafa;
   color: #999999;
 }
+
+.tc-hot-table .handsontableInput{
+  line-height: 31px;
+}
