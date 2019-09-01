@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hot-table class="tc-hot-table" :settings="resultSettings" licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" />
+    <hot-table ref="hotTable" class="tc-hot-table" :settings="resultSettings" licenseKey="non-commercial-and-evaluation" v-bind="$attrs" v-on="$listeners" />
   </div>
 </template>
 
@@ -28,6 +28,12 @@ export default {
   computed: {
     resultSettings: function() {
       return Object.assign(this.defaultSetting, this.settings)
+    },
+    hotInstance: function() {
+      return this.$refs.hotTable.hotInstance
+    },
+    hotTable: function() {
+      return this.$refs.hotTable
     }
   },
   methods: {

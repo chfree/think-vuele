@@ -38,8 +38,7 @@ export default {
     },
     methods: {
       getData() {
-        this.excelData =Object.assign([], this.$refs.hotTable.$attrs.data)
-        
+        this.excelData =Object.assign([], this.$refs.hotTable.hotInstance.getSourceData())
       }
     }
   }
