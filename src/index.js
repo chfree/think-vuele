@@ -101,7 +101,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.49',
+  version: '0.0.50',
   install,
   utilLib,
   directives,
