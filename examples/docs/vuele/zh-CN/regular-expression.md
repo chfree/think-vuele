@@ -1,5 +1,67 @@
 ## Regular正则表达式
 
+提供了一些常用的正则表达以及对应名称的判断工具和提供工具
+
+### 使用示例-判断
+:::demo
+```html
+<div style="margin-bottom:10px;">
+是否全局判断<tc-checkbox v-model="isGlobal" />
+</div>
+<tc-input v-model="value" />
+<tc-block style="margin-top:10px;">
+  {{result}}
+</tc-block>
+<tc-button @click="isMobile" style="margin-top:10px">isMobile</tc-button>
+<script>
+  export default {
+    data() {
+      return {
+        isGlobal: true,
+        value: 1,
+        result: null
+      }
+    },
+    methods: {
+      isMobile() {
+        this.result = this.$regularUtil.isMobile(this.value, this.isGlobal)
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 使用示例-提取
+:::demo
+```html
+<div style="margin-bottom:10px;">
+是否提取全部<tc-checkbox v-model="isAll" />
+</div>
+<tc-input v-model="value" />
+<tc-block style="margin-top:10px;">
+  {{result}}
+</tc-block>
+<tc-button @click="matchMobile" style="margin-top:10px">matchMobile</tc-button>
+<script>
+  export default {
+    data() {
+      return {
+        isAll: false,
+        value: 1,
+        result: null
+      }
+    },
+    methods: {
+      matchMobile() {
+        this.result = this.$regularUtil.matchMobile(this.value, this.isAll)
+      }
+    }
+  }
+</script>
+```
+:::
+
 ### 常用正则表达式 type
 ```json
 {

@@ -16,7 +16,9 @@ import {
   isObject,
   isFunction,
   isDate,
-  confirm
+  confirm,
+  random,
+  regluarUtil
 } from '.'
 
 const install = function(Vue, opts = {}) {
@@ -43,6 +45,9 @@ const install = function(Vue, opts = {}) {
 
   Vue.prototype.$confirm = Vue.prototype.$confirm || {}
   Vue.prototype.$confirm.warning = confirm
+
+  Vue.prototype.$random = random
+  Vue.prototype.$regularUtil = regluarUtil
 }
 
 export default install
