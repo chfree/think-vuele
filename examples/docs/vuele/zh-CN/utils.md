@@ -60,6 +60,30 @@ return moment(date).format('YYYY-MM-DD HH:mm:ss')
 confirm('是否确定删除').then().catch()
 ```
 
+### regularUtil
+提供了正则相关的工具判断，主要分为isXxxx和matchXxxx
+请阅读具体章节：[正则表达式](/#/vuele/zh-CN/component/regular-expression)。
+```js
+function matchRegexp(regexp, value, isAll = false) {
+  let flag = ''
+  if (isAll) {
+    flag = 'g'
+  }
+  const result = value.match(new RegExp(regexp, flag))
+  if (isAll) {
+    return result
+  }
+  return (result || [''])[0]
+}
+
+function testRegexp(regexp, value, isGlobal = true) {
+  if (isGlobal) {
+    regexp = '^' + regexp + '$'
+  }
+  return new RegExp(regexp).test(value)
+}
+```
+
 :::tip
 find 系列来源iview作者在掘金小册中的提供
 :::
@@ -128,4 +152,10 @@ formatDateTime
 ### this.$confirm
 ```
 warning = confirm
+```
+
+### this.$regularUtil
+```
+isXxxx
+matchXxxx
 ```
