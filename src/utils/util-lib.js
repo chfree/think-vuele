@@ -16,6 +16,7 @@ import {
   isObject,
   isFunction,
   isDate,
+  isEmptyObject,
   confirm,
   random,
   regluarUtil
@@ -33,6 +34,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil.isObject = isObject
   Vue.prototype.$tcUtil.isFunction = isFunction
   Vue.prototype.$tcUtil.isDate = isDate
+  Vue.prototype.$tcUtil.isEmptyObject = isEmptyObject
   Vue.prototype.$tcUtil.findComponentDownward = findComponentDownward
   Vue.prototype.$tcUtil.findComponentUpward = findComponentUpward
   Vue.prototype.$tcUtil.findComponentsUpward = findComponentsUpward
