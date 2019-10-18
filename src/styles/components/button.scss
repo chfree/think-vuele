@@ -1,3 +1,9 @@
 .el-button.el-button--text{
   padding: 0px;
 }
+
+.tc-button.el-button--think.is-disabled{
+  background-color: #8a9cb1;
+  border-color: #8a9cb1;
+  color: #fff !important;
+}
