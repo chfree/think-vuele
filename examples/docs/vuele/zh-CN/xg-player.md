@@ -1,3 +1,5 @@
+<script>
+</script>
 ## XgPlayer
 XgPlayer 西瓜视频播放器
 
@@ -5,12 +7,14 @@ XgPlayer 西瓜视频播放器
 此版本依赖于[xgplayer-vue组件](https://github.com/bytedance/xgplayer-vue),[xgplayer](https://h5player.bytedance.com/)
 
 ### 基础示例
-:::demo
 ```html
-<tc-xg-player :config="config" />
-
+<Xgplayer :config="config" />
 <script>
+  import Xgplayer from 'xgplayer-vue'
   export default {
+    components: {
+      Xgplayer
+    },
     data() {
       return {
         config: {
@@ -23,7 +27,6 @@ XgPlayer 西瓜视频播放器
   }
 </script>
 ```
-:::
 
 ### 参数配置
 [西瓜播放器使用配置说明](https://h5player.bytedance.com/config/)

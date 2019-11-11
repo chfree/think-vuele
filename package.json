@@ -44,8 +44,7 @@
     "moment": "^2.24.0",
     "vue": "^2.5.16",
     "vue-moment": "^4.0.0",
-    "vue-router": "^3.0.1",
-    "xgplayer-vue": "^1.1.4-beta"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
@@ -111,7 +110,8 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.11",
     "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "xgplayer-vue": "^1.1.4-beta"
   },
   "engines": {
     "node": ">= 6.0.0",
