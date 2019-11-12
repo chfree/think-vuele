@@ -121,7 +121,6 @@ export default {
   TcFixedBottom,
   TcForm,
   TcFormItem,
-  TcHotTable,
   TcInput,
   TcInputMoney,
   TcInputNumber,

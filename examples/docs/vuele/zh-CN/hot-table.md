@@ -4,6 +4,10 @@ handsontable 可编辑表格
 官方地址参考[https://handsontable.com/](https://handsontable.com/)
 
 :::tip
+此组件不作强制引入，放在了dev中，如果要使用，则自行引入，并复制组件包到项目中进行注册
+:::
+
+:::tip
 警告：stretchH设置为all后，如果高度height设置为auto后，会导致整个宽度跑出父容器外面，所以tc-hot-table，默认设置stretchH为all,height为300px,
 :::
 
