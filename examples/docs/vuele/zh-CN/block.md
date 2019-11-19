@@ -34,6 +34,16 @@ test
 ```
 :::
 
+
+### 无高度模式
+:::demo
+```html
+<tc-block title="我是title">
+  <div style="font-size:18px;height:200px;">test</div>
+</tc-block>
+```
+:::
+
 ### 阴影模式
 :::demo
 ```html

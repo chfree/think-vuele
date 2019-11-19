@@ -1,5 +1,8 @@
 .tc-block-container{
   border: 1px solid #cfd9e5;
+  .tc-left-title-container{
+    float: left;
+  }
   .tc-block-title{
     padding: 4px;
     font-size: 14px;
@@ -22,7 +25,32 @@
   .tc-block-content{
     padding: 5px;
   }
+  .tc-right-tool-container{
+    float:right;
+    margin-right:0px;
+    .toolbar {
+      font-size:18px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  }
 }
+.tc-block-container:-webkit-full-screen {
+  background-color:rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.tc-block-full-body{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  left: 0px;
+  z-index: 3001;
+}
+
 .tc-box-shadow{
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }

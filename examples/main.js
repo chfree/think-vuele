@@ -23,6 +23,10 @@ import FooterNavVuele from './components/footer-nav-vuele'
 import Handsontable from 'handsontable'
 Vue.prototype.$hotTable = Handsontable
 
+import icon from './icon.json'
+
+Vue.prototype.$icon = icon // Icon 列表页用
+
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'remixicon/fonts/remixicon.css'
 

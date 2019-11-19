@@ -1,14 +1,27 @@
 <template>
-  <div ref="blockContainer" class="tc-block-container" :class="boxShadow">
+  <div ref="blockContainer" class="tc-block-container" :class="blockClass">
     <div v-if="showTitle" class="tc-block-title" :style="titleStyle">
-      <slot name="title">
-        <span class="tc-block-title-left"></span>
-        <span>{{title}}</span>
-      </slot>
+      <div class="tc-left-title-container">
+        <slot name="title">
+          <span class="tc-block-title-left"></span>
+          <span>{{title}}</span>
+        </slot>
+      </div>
+      <div class="tc-right-tool-container">
+        <slot name="rightTool">
+          <span>
+            <i v-show="(!isMaximum)&&(!isMinimum)" class="el-icon-minus toolbar" @click="toMinimum" />
+            <i v-show="(!isMaximum)&&(!isMinimum)" class="el-icon-full-screen toolbar" @click="toMaximum" />
+            <i v-show="isMaximum||isMinimum" class="el-icon-crop toolbar" @click="toResizBox" />
+          </span>
+        </slot>
+      </div>
     </div>
-    <div class="tc-block-content" :style="contentStyle" :class="contentClass">
-      <slot></slot>
-    </div>
+    <transition name="el-zoom-in-top">
+      <div class="tc-block-content" v-show="!isMinimum" ref="tcBloclContent" :style="contentStyle" :class="contentClass">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -24,8 +37,10 @@ export default {
     }}
   },
   data: () => ({
-    height: 100,
-    titleHeight: 25
+    defaultStyleHeight: null,
+    titleHeight: 25,
+    isMinimum: false,
+    isMaximum: false
   }),
   computed: {
     titleStyle: function() {
@@ -40,6 +55,9 @@ export default {
       }
       return this.title !== '' && this.title !== null && this.title !== undefined
     },
+    blockClass: function() {
+      return this.boxShadow + ' ' + this.fullBody
+    },
     boxShadow: function() {
       if (this.shadow === 'always') {
         return 'tc-box-shadow'
@@ -47,15 +65,39 @@ export default {
       if (this.shadow === 'hover') {
         return 'tc-box-shadow-hover'
       }
+    },
+    fullBody: function() {
+      if (this.isMaximum) {
+        return 'tc-block-full-body'
+      }
+      return ''
     }
   },
   mounted() {
-    this.calcHeight()
+    this.defaultStyleHeight = this.$el.style.height
   },
   methods: {
-    calcHeight() {
-      let height = this.$refs.blockContainer.style.height
-      this.height = parseInt(height, 10)
+    toMinimum() {
+      this.isMinimum = true
+      this.$el.style.height = '33px'
+    },
+    toMaximum() {
+      this.isMaximum = true
+      this.$el.style.height = ''
+      // const element = this.$el
+      // var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen
+      // if (requestMethod) {
+      //   requestMethod.call(element)
+      // }
+    },
+    toResizBox() {
+      this.$el.style.height = this.defaultStyleHeight
+      this.isMaximum = false
+      this.isMinimum = false
+      // var requestMethod = document.exitFullScreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen
+      // if (requestMethod) {
+      //   requestMethod.call(document)
+      // }
     }
   }
 }
