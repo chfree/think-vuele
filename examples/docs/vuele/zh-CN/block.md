@@ -18,7 +18,7 @@ test
 ### title模式
 :::demo
 ```html
-<tc-block title="我是一个block" style="height:100px;" content-style="color:red;padding:10px;">
+<tc-block title="我是一个block" show-minimum style="height:100px;" content-style="color:red;padding:10px;">
 test
 </tc-block>
 ```
@@ -27,7 +27,7 @@ test
 ### 自定义title模式
 :::demo
 ```html
-<tc-block style="height:100px;">
+<tc-block style="height:100px;" show-maximum>
   <div slot="title" style="color:red;">我是自定义title</div>
   <div style="font-size:18px;">test</div>
 </tc-block>
@@ -38,7 +38,7 @@ test
 ### 无高度模式
 :::demo
 ```html
-<tc-block title="我是title">
+<tc-block title="我是title" show-minimum show-maximum full-mode="document">
   <div style="font-size:18px;height:200px;">test</div>
 </tc-block>
 ```
@@ -72,12 +72,16 @@ test
 |------|--------|
 | default | 默认标签正文内容 |
 | title | 标题栏 |
+| rightTool | 右边工具栏 |
 
 ### Attributes
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
 | title   | 标题文本   | String | — | — |
+| show-minimum   | 显示最小化   | Boolean | — | false |
+| show-maximum   | 显示最大化   | Boolean | — | false |
+| full-mode   | 全屏模式   | String | `window`,`document` | `window` |
 | content-style   | 正文的样式   | String | — | — |
 | content-class   | 正文的class样式名   | String | — | — |
-| shadow   | 标题文本   | String | `always`, `hover`, `never` | `always` |
+| shadow   | 阴影模式   | String | `always`, `hover`, `never` | `always` |

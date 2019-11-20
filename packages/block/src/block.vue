@@ -10,8 +10,8 @@
       <div class="tc-right-tool-container">
         <slot name="rightTool">
           <span>
-            <i v-show="(!isMaximum)&&(!isMinimum)" class="el-icon-minus toolbar" @click="toMinimum" />
-            <i v-show="(!isMaximum)&&(!isMinimum)" class="el-icon-full-screen toolbar" @click="toMaximum" />
+            <i v-show="showMinimum&&(!isMaximum)&&(!isMinimum)" class="el-icon-minus toolbar" @click="toMinimum" />
+            <i v-show="showMaximum&&(!isMaximum)&&(!isMinimum)" class="el-icon-full-screen toolbar" @click="toMaximum" />
             <i v-show="isMaximum||isMinimum" class="el-icon-crop toolbar" @click="toResizBox" />
           </span>
         </slot>
@@ -32,6 +32,11 @@ export default {
     title: { type: String, default: '' },
     contentStyle: { type: String, default: '' },
     contentClass: { type: String, default: '' },
+    showMinimum: { type: Boolean, default: false},
+    showMaximum: { type: Boolean, default: false},
+    fullMode: {type: String, default: 'window', validator: function(value) {
+      return ['window', 'document'].indexOf(value) !== -1
+    }},
     shadow: {type: String, default: 'always', validator: function(value) {
       return ['always', 'hover', 'never'].indexOf(value) !== -1
     }}
@@ -67,7 +72,7 @@ export default {
       }
     },
     fullBody: function() {
-      if (this.isMaximum) {
+      if (this.fullMode === 'document' && this.isMaximum) {
         return 'tc-block-full-body'
       }
       return ''
@@ -83,21 +88,26 @@ export default {
     },
     toMaximum() {
       this.isMaximum = true
-      this.$el.style.height = ''
-      // const element = this.$el
-      // var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen
-      // if (requestMethod) {
-      //   requestMethod.call(element)
-      // }
+      if (this.fullMode === 'window') {
+        const element = this.$el
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen
+        if (requestMethod) {
+          requestMethod.call(element)
+        }
+      } else if (this.fullMode === 'document') {
+        this.$el.style.height = ''
+      }
     },
     toResizBox() {
       this.$el.style.height = this.defaultStyleHeight
       this.isMaximum = false
       this.isMinimum = false
-      // var requestMethod = document.exitFullScreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen
-      // if (requestMethod) {
-      //   requestMethod.call(document)
-      // }
+      if (this.fullMode === 'window') {
+        var requestMethod = document.exitFullScreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen
+        if (requestMethod) {
+          requestMethod.call(document)
+        }
+      }
     }
   }
 }
