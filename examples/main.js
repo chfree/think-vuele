@@ -23,6 +23,9 @@ import FooterNavVuele from './components/footer-nav-vuele'
 import Handsontable from 'handsontable'
 Vue.prototype.$hotTable = Handsontable
 
+import uitest from './ui-test'
+Vue.use(uitest)
+
 import icon from './icon.json'
 
 Vue.prototype.$icon = icon // Icon 列表页用
