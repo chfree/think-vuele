@@ -72,10 +72,17 @@ export default {
       }
     },
     fullBody: function() {
-      if (this.fullMode === 'document' && this.isMaximum) {
-        return 'tc-block-full-body'
+      const cssNames = []
+      if (this.isMaximum) {
+        cssNames.push('tc-block-full')
       }
-      return ''
+      if (this.fullMode === 'document' && this.isMaximum) {
+        cssNames.push('tc-block-full-body')
+      }
+      if (this.fullMode === 'window' && this.isMaximum) {
+        cssNames.push('tc-block-full-window')
+      }
+      return cssNames.join(' ')
     }
   },
   mounted() {
