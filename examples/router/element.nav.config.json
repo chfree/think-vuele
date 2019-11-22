@@ -2,7 +2,7 @@
   "zh-CN": [
     {
       "name": "更新日志",
-      "path": "/changelog"
+      "path": "/element-changelog"
     },
     {
       "name": "Element React",
@@ -172,6 +172,10 @@
             {
               "path": "/badge",
               "title": "Badge 标记"
+            },
+            {
+              "path": "/avatar",
+              "title": "Avatar 头像"
             }
           ]
         },
@@ -245,6 +249,10 @@
               "title": "Popover 弹出框"
             },
             {
+              "path": "/popconfirm",
+              "title": "Popconfirm 气泡确认框"
+            },
+            {
               "path": "/card",
               "title": "Card 卡片"
             },
@@ -279,6 +287,10 @@
             {
               "path": "/infiniteScroll",
               "title": "InfiniteScroll 无限滚动"
+            },
+            {
+              "path": "/drawer",
+              "title": "Drawer 抽屉"
             }
           ]
         }

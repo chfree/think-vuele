@@ -44,12 +44,36 @@ Vue.component('demo-block', demoBlock)
 Vue.component('footer-nav', FooterNav)
 Vue.component('footer-nav-vuele', FooterNavVuele)
 
+const globalEle = new Vue({
+  data: { $isEle: false } // 是否 ele 用户
+})
+
+Vue.mixin({
+  computed: {
+    $isEle: {
+      get: () => (globalEle.$data.$isEle),
+      set: (data) => {globalEle.$data.$isEle = data}
+    }
+  }
+})
+
+import title from './i18n/title'
+
 router.afterEach(route => {
   // https://github.com/highlightjs/highlight.js/issues/909#issuecomment-131686186
   Vue.nextTick(() => {
     const blocks = document.querySelectorAll('pre code:not(.hljs)')
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
   })
+  const data = title[route.meta.lang]
+  for (let val in data) {
+    if (new RegExp('^' + val, 'g').test(route.name)) {
+      document.title = data[val]
+      return
+    }
+  }
+  document.title = 'Element'
+  ga('send', 'event', 'PageView', route.name)
 })
 
 /* eslint-disable no-new */

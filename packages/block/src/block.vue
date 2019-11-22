@@ -100,14 +100,14 @@ export default {
     },
     toResizBox() {
       this.$el.style.height = this.defaultStyleHeight
-      this.isMaximum = false
-      this.isMinimum = false
-      if (this.fullMode === 'window') {
+      if (this.isMaximum && this.fullMode === 'window') {
         var requestMethod = document.exitFullScreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen
         if (requestMethod) {
           requestMethod.call(document)
         }
       }
+      this.isMaximum = false
+      this.isMinimum = false
     }
   }
 }
