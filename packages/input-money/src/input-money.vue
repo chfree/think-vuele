@@ -152,9 +152,11 @@ export default {
       required: false
     }
   },
-  data: () => ({
-    amount: this.value
-  }),
+  data() {
+    return {
+      amount: this.value || 0
+    }
+  },
   computed: {
     /**
      * Number type of formatted value.
