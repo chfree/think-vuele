@@ -18,7 +18,7 @@ vue-clamp的功能简介：
 ### 基础用法
 :::demo
 ```html
-<tc-clamp autoresize auto-title :max-lines="2">
+<tc-clamp autoresize auto-tip :max-lines="2">
 嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
 </tc-clamp>
 ```
@@ -30,14 +30,14 @@ vue-clamp的功能简介：
 <el-row>
   <el-col :span="12">
     <tc-block title="左边容器">
-      <tc-clamp autoresize auto-title :max-lines="2">
+      <tc-clamp autoresize auto-tip :max-lines="2">
       嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
       </tc-clamp>
     </tc-block>
   </el-col>
   <el-col :span="12">
-    <tc-block title="右边容器">
-      <tc-clamp autoresize auto-title :max-lines="2">
+    <tc-block title="右边容器-无tip">
+      <tc-clamp autoresize :max-lines="2">
       嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
       </tc-clamp>
     </tc-block>
@@ -50,7 +50,7 @@ vue-clamp的功能简介：
 :::demo
 ```html
 <el-checkbox v-model="expanded">展开内容</el-checkbox>
-<tc-clamp autoresize auto-title :expanded.sync="expanded" :max-lines="2">
+<tc-clamp autoresize auto-tip :expanded.sync="expanded" :max-lines="2">
 嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
 </tc-clamp>
 <script>
@@ -82,4 +82,7 @@ vue-clamp的功能简介：
 | max-height   | 根元素的最大高度。数字值将被转换为 px 单位；字符串值将直接作为 CSS 属性 max-height 输出。 | Number、String | — | — |
 | ellipsis   | 当文字被截断时需要显示的省略号字符串。 | String | — | `…` |
 | expanded `sync`  | 是否展开显式被截断的文本。   | Boolean | — | false |
-| autoTitle   | 是否显示title   | Boolean | — | false |
+| autoTip   | 是否显示tip提示   | Boolean | — | false |
+| tipWidth   | 显示tip时，tip的宽度   | Number | — | 300 |
+| placement   | Tooltip 的出现位置   | String | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | top |
+
