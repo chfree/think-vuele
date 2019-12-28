@@ -7,8 +7,8 @@
       <slot></slot>
       <template v-if="isExpand" slot-scope="{ expand, collapse, toggle, clamped, expanded }" slot="after">
         <slot :expand="expand" :collapse="collapse" :toggle="toggle" :clamped="clamped", :expanded="expanded" name="after">
-          <tc-button v-if="expanded" type="text" @click="doClamp">收起</tc-button>
-          <tc-button v-else type="text" @click="doExpand">展开</tc-button>
+          <tc-button v-if="expanded" type="text" @click="doClamp">{{clampText}}</tc-button>
+          <tc-button v-else type="text" @click="doExpand">{{expandText}}</tc-button>
         </slot>
       </template>
     </clamp>
@@ -29,7 +29,9 @@ export default {
     placement: {type: String, default: 'top'},
     autoTip: {type: Boolean, default: false},
     tipWidth: {type: Number, default: 300},
-    expanded: {type: Boolean, default: false}
+    expanded: {type: Boolean, default: false},
+    expandText: {type: String, default: '展开'},
+    clampText: {type: String, default: '收起'}
   },
   data() {
     return {

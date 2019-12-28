@@ -106,4 +106,7 @@ vue-clamp的功能简介：
 | autoTip   | 是否显示tip提示   | Boolean | — | false |
 | tipWidth   | 显示tip时，tip的宽度   | Number | — | 300 |
 | placement   | Tooltip 的出现位置   | String | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | top |
+| expandText   | 收起时，显示的展开文本   | String | — | 展开 |
+| clampText   | 展开时，显示的收起文本   | String | — | 收起 |
+
 
