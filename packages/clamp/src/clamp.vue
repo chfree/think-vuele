@@ -1,18 +1,14 @@
 <template>
-  <el-tooltip :disabled="!autoTip" :placement="placement">
+  <el-tooltip :disabled="!isTipAndTitle" :placement="placement">
     <div slot="content" :style="tipStyle">
       {{title}}
     </div>
-    <clamp ref="clamp" v-bind="$attrs" v-on="$listeners">
+    <clamp ref="clamp" :ellipsis="ellipsis" :expanded.sync="localExpanded" v-bind="$attrs" v-on="$listeners">
       <slot></slot>
-      <template slot-scope="{ expand, collapse, toggle, clamped, expanded }" slot="after">
+      <template v-if="isExpand" slot-scope="{ expand, collapse, toggle, clamped, expanded }" slot="after">
         <slot :expand="expand" :collapse="collapse" :toggle="toggle" :clamped="clamped", :expanded="expanded" name="after">
-          <span v-if="expanded">
-            收起
-          </span>
-          <span v-else="expanded">
-            展开
-          </span>
+          <tc-button v-if="expanded" type="text" @click="doClamp">收起</tc-button>
+          <tc-button v-else type="text" @click="doExpand">展开</tc-button>
         </slot>
       </template>
     </clamp>
@@ -26,17 +22,39 @@ export default {
   componentName: 'TcClamp',
   components: {clamp},
   props: {
+    useMode: {type: String, default: 'tip', validator: function(value) {
+      return ['tip', 'expand'].indexOf(value) !== -1
+    }},
+    ellipsis: {type: String, default: '…'},
     placement: {type: String, default: 'top'},
     autoTip: {type: Boolean, default: false},
-    tipWidth: {type: Number, default: 300}
+    tipWidth: {type: Number, default: 300},
+    expanded: {type: Boolean, default: false}
   },
   data() {
     return {
+      localExpanded: !!this.expanded
+    }
+  },
+  watch: {
+    expanded(val) {
+      this.localExpanded = val
+    },
+    localExpanded(val) {
+      if (this.expanded !== val) {
+        this.$emit('update:expanded', val)
+      }
     }
   },
   computed: {
+    isExpand() {
+      return this.useMode === 'expand'
+    },
+    isTipAndTitle() {
+      return this.useMode === 'tip' && this.autoTip
+    },
     title() {
-      return this.autoTip ? this.getText() : ''
+      return this.isTipAndTitle ? this.getText() : ''
     },
     tipStyle() {
       const style = {}
@@ -51,6 +69,12 @@ export default {
         node => !node.tag && !node.isComment
       )
       return content ? content.text : ''
+    },
+    doExpand() {
+      this.localExpanded = true
+    },
+    doClamp() {
+      this.localExpanded = false
     }
   }
 }
