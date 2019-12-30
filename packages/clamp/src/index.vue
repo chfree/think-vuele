@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip :disabled="!isTipAndTitle" :placement="placement">
+  <el-tooltip :disabled="tipDisabled" :placement="placement">
     <div slot="content" :style="tipStyle">
       {{title}}
     </div>
@@ -8,7 +8,7 @@
       <template v-if="isExpand" slot-scope="{ expand, collapse, toggle, clamped, expanded }" slot="after">
         <slot :expand="expand" :collapse="collapse" :toggle="toggle" :clamped="clamped", :expanded="expanded" name="after">
           <tc-button v-if="expanded" type="text" @click="doClamp">{{clampText}}</tc-button>
-          <tc-button v-else type="text" @click="doExpand">{{expandText}}</tc-button>
+          <tc-button v-if="!expanded && clamped" type="text" @click="doExpand">{{expandText}}</tc-button>
         </slot>
       </template>
     </clamp>
@@ -28,14 +28,15 @@ export default {
     ellipsis: {type: String, default: '…'},
     placement: {type: String, default: 'top'},
     autoTip: {type: Boolean, default: false},
-    tipWidth: {type: Number, default: 300},
+    tipWidth: {type: Number, default: 200},
     expanded: {type: Boolean, default: false},
     expandText: {type: String, default: '展开'},
     clampText: {type: String, default: '收起'}
   },
   data() {
     return {
-      localExpanded: !!this.expanded
+      localExpanded: !!this.expanded,
+      isClamped: false
     }
   },
   watch: {
@@ -55,6 +56,14 @@ export default {
     isTipAndTitle() {
       return this.useMode === 'tip' && this.autoTip
     },
+    tipDisabled() {
+      // 如果设置不显示tip， 直接禁用
+      if (!this.isTipAndTitle) {
+        return true
+      }
+      // 需要判断是否clamp, 没有截断的时候，也禁用tip
+      return !this.isClamped
+    },
     title() {
       return this.isTipAndTitle ? this.getText() : ''
     },
@@ -63,6 +72,12 @@ export default {
       style.width = this.tipWidth + 'px'
       return style
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.isClamped = this.$refs.clamp.isClamped
+      console.log(this.isClamped, 'isClamped')
+    })
   },
   methods: {
     getText() {

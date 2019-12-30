@@ -117,6 +117,9 @@ export default {
         this.search()
       }
     },
+    // isClamped() {
+    //   return this.offset !== this.text.length
+    // },
     expand() {
       this.localExpanded = true
     },

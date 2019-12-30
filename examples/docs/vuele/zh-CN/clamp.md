@@ -18,9 +18,16 @@ vue-clamp的功能简介：
 ### 基础用法
 :::demo
 ```html
-<tc-clamp autoresize auto-tip :max-lines="2">
-嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
-</tc-clamp>
+<tc-block title="需要截断">
+  <tc-clamp autoresize auto-tip :max-lines="2">
+  嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
+  </tc-clamp>
+</tc-block>
+<tc-block title="不需要截断" style="margin-top:10px">
+  <tc-clamp autoresize auto-tip :max-lines="2">
+  嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。
+  </tc-clamp>
+</tc-block>
 ```
 :::
 
@@ -68,11 +75,17 @@ vue-clamp的功能简介：
 ### 展开模式
 :::demo
 ```html
-<el-checkbox v-model="expanded">展开内容</el-checkbox>
-<tc-clamp autoresize useMode="expand" :expanded.sync="expanded"  :max-lines="2">
-嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
-</tc-clamp>
-
+<tc-block title="需要截断">
+  <el-checkbox v-model="expanded">展开内容</el-checkbox>
+  <tc-clamp autoresize useMode="expand" :expanded.sync="expanded"  :max-lines="2" style="margin-top:5px;">
+  嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！
+  </tc-clamp>
+</tc-block>
+<tc-block title="不需要截断" style="margin-top:10px;">
+  <tc-clamp autoresize useMode="expand" :max-lines="2" >
+  嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。
+  </tc-clamp>
+</tc-block>
 <script>
   export default {
     data() {
