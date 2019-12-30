@@ -101,7 +101,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.0.59',
+  version: '0.0.61',
   install,
   utilLib,
   directives,
@@ -112,6 +112,7 @@ export default {
   TcCheckbox,
   TcCheckboxButton,
   TcCheckboxGroup,
+  TcClamp,
   TcDatePicker,
   TcDateTimePicker,
   TcDialog,

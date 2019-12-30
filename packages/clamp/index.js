@@ -1,4 +1,4 @@
-import TcClamp from './src/clamp'
+import TcClamp from './src/index'
 
 TcClamp.install = function(Vue) {
   Vue.component(TcClamp.name, TcClamp)
