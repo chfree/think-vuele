@@ -28,6 +28,10 @@
               "title": "Block 容器"
             },
             {
+              "path": "/more",
+              "title": "More 折叠容器"
+            },
+            {
               "path": "/icon",
               "title": "Icon 图标"
             }
