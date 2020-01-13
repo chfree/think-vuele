@@ -1,26 +1,26 @@
 {
   "zh-CN": {
-    "home": "Element - 网站快速成型工具",
-    "guide": "指南 | Element",
-    "component": "组件 | Element",
-    "resource": "资源 | Element"
+    "home": "Vuele - 网站快速成型工具",
+    "guide": "指南 | Vuele",
+    "component": "组件 | Vuele",
+    "resource": "资源 | Vuele"
   },
   "en-US": {
-    "home": "Element - A Desktop UI Toolkit for Web",
-    "guide": "Guide | Element",
-    "component": "Component | Element",
-    "resource": "Resource | Element"
+    "home": "Vuele - A Desktop UI Toolkit for Web",
+    "guide": "Guide | Vuele",
+    "component": "Component | Vuele",
+    "resource": "Resource | Vuele"
   },
   "es": {
-    "home": "Element - Un kit de interfaz de usuario para la web",
-    "guide": "Guía | Element",
-    "component": "Componentes | Element",
-    "resource": "Recursos | Element"
+    "home": "Vuele - Un kit de interfaz de usuario para la web",
+    "guide": "Guía | Vuele",
+    "component": "Componentes | Vuele",
+    "resource": "Recursos | Vuele"
   },
   "fr-FR": {
-    "home": "Element - Un kit de composants d'interface pour le web",
-    "guide": "Guide | Element",
-    "component": "Composants | Element",
-    "resource": "Ressources | Element"
+    "home": "Vuele - Un kit de composants d'interface pour le web",
+    "guide": "Guide | Vuele",
+    "component": "Composants | Vuele",
+    "resource": "Ressources | Vuele"
   }
 }
