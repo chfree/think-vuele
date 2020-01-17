@@ -85,3 +85,10 @@
 </el-row>
 ```
 :::
+
+### 标签用法
+:::demo
+```html
+<tc-loading>加载中</tc-loading>
+```
+:::
