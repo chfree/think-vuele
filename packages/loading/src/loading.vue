@@ -1,8 +1,8 @@
 <template>
-  <div :style="defaultBox">
-    <div class="loader-16"></div>
-    <div :style="defaultFont">
-      <slot></slot>
+  <div :style="boxStyleResult" :class="boxClass">
+    <div :class="iconKeyResult" :style="iconStyleResult"></div>
+    <div :style="fontStyleResult">
+      <slot>加载中</slot>
     </div>
   </div>
 </template>
@@ -11,6 +11,12 @@
 export default {
   name: 'TcLoading',
   props: {
+    iconKey: {type: String, default: '16'},
+    iconClass: {type: String, default: ''},
+    iconStyle: {type: Object, default: null},
+    boxStyle: {type: Object, default: null},
+    boxClass: {type: String, default: ''},
+    fontStyle: {type: Object, default: null}
   },
   data: () => ({
     defaultBox: {
@@ -23,6 +29,18 @@ export default {
     }
   }),
   computed: {
+    boxStyleResult: function() {
+      return Object.assign(this.defaultBox, this.boxStyle)
+    },
+    iconKeyResult: function() {
+      return 'loader-' + this.iconKey + ' ' + this.iconClass
+    },
+    iconStyleResult: function() {
+      return this.iconStyle
+    },
+    fontStyleResult: function() {
+      return Object.assign(this.defaultFont, this.fontStyle)
+    }
   },
   methods: {
   }
