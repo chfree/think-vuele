@@ -92,3 +92,13 @@
 <tc-loading>加载中</tc-loading>
 ```
 :::
+
+### Attributes
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+|------  |-----|---- |----- |---- |
+| iconKey | 图标的序号 | String | — | 16 |
+| iconClass | 图标的样式名 | String | — | — |
+| iconStyle | 图标的样式 | String | — | — |
+| boxStyle | 容器的样式 | String | — | { textAlign: 'center',fontSize: '30px',color: '#d60b52' } |
+| boxClass | 容器的样式名 | String | — | — |
+| fontStyle | 字体的样式 | String | — | { font-size: '13px' } |
