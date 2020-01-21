@@ -11,16 +11,16 @@
 <script>
 export default {
   name: 'content-placeholders-heading',
-  data () {
+  data() {
     return {
-      className: 'vue-content-placeholders-heading',
+      className: 'vue-content-placeholders-heading'
     }
   },
   props: {
     img: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 }
 </script>

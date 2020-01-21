@@ -8,29 +8,29 @@
 export default {
   name: 'content-placeholders',
   computed: {
-    classObject () {
+    classObject() {
       return {
         'vue-content-placeholders': true,
         'vue-content-placeholders-is-rounded': this.rounded,
         'vue-content-placeholders-is-centered': this.centered,
-        'vue-content-placeholders-is-animated': this.animated,
+        'vue-content-placeholders-is-animated': this.animated
       }
-    },
+    }
   },
   props: {
     rounded: {
       type: Boolean,
-      default: false,
+      default: false
     },
     centered: {
       type: Boolean,
-      default: false,
+      default: false
     },
     animated: {
       type: Boolean,
-      default: true,
-    },
-  },
+      default: true
+    }
+  }
 }
 </script>
 

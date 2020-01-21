@@ -7,16 +7,16 @@
 <script>
 export default {
   name: 'content-placeholders-text',
-  data () {
+  data() {
     return {
-      className: 'vue-content-placeholders-text',
+      className: 'vue-content-placeholders-text'
     }
   },
   props: {
     lines: {
       type: Number,
-      default: 4,
-    },
-  },
+      default: 4
+    }
+  }
 }
 </script>

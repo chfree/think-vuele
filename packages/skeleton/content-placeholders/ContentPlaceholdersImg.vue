@@ -5,10 +5,10 @@
 <script>
 export default {
   name: 'content-placeholders-img',
-  data () {
+  data() {
     return {
-      className: 'vue-content-placeholders-img',
+      className: 'vue-content-placeholders-img'
     }
-  },
+  }
 }
 </script>
