@@ -147,6 +147,10 @@
             {
               "path": "/clamp",
               "title": "Clamp 文本截断"
+            },
+            {
+              "path": "/skeleton",
+              "title": "骨架屏 Skeleton"
             }
           ]
         },
