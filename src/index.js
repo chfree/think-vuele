@@ -98,7 +98,9 @@ const install = function(Vue, opts = {}) {
 
   // load components
   components.forEach(component => {
-    Vue.component(component.name, component)
+    Vue.use(component)
+    // 每个组件自己进行了install，所以这里不需要进行component，进行Vue.use即可
+    // Vue.component(component.name, component)
   })
 }
 
