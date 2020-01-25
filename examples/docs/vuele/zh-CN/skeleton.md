@@ -10,7 +10,7 @@
 <content-placeholders>
   <content-placeholders-heading :img="false" />
   <content-placeholders-img />
-  <content-placeholders-text :lines="3" />
+  <content-placeholders-text :lines="5" />
 </content-placeholders>
 ```
 :::
