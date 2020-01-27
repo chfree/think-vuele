@@ -16,7 +16,7 @@
 :::
 
 
-### content-placeholders Attributes 【root】
+### skeleton-content Attributes 【root】
 这些属性定义了所有子组件的行为方式
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
@@ -25,16 +25,16 @@
 | rounded | 是否圆角 | Boolean | — | false |
 | centered | 是否居中 | Boolean | — | false |
 
-### content-placeholders-heading Attributes
+### skeleton-heading Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
 | img | 是否显示图片 | Boolean | — | false |
 
-### content-placeholders-text Attributes
+### skeleton-text Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
 | lines | 文本显示的行数 | Number | — | 4 |
 
-### content-placeholders-img Attributes
+### skeleton-img Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
