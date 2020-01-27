@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'content-placeholders-text',
+  name: 'TcSkeletonText',
   data() {
     return {
-      className: 'vue-content-placeholders-text'
+      className: 'skeleton-text'
     }
   },
   props: {

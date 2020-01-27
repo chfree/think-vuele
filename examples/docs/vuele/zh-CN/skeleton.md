@@ -7,11 +7,11 @@
 :::demo
 ```html
 <tc-skeleton />
-<content-placeholders>
-  <content-placeholders-heading :img="false" />
-  <content-placeholders-img />
-  <content-placeholders-text :lines="5" />
-</content-placeholders>
+<tc-skeleton-content>
+  <tc-skeleton-heading :img="false" />
+  <tc-skeleton-img />
+  <tc-skeleton-text :lines="5" />
+</tc-skeleton-content>
 ```
 :::
 

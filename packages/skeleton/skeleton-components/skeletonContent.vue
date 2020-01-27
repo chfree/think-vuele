@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: 'content-placeholders',
+  name: 'TcSkeletonContent',
   computed: {
     classObject() {
       return {
-        'vue-content-placeholders': true,
-        'vue-content-placeholders-is-rounded': this.rounded,
-        'vue-content-placeholders-is-centered': this.centered,
-        'vue-content-placeholders-is-animated': this.animated
+        'skeleton': true,
+        'skeleton-is-rounded': this.rounded,
+        'skeleton-is-centered': this.centered,
+        'skeleton-is-animated': this.animated
       }
     }
   },

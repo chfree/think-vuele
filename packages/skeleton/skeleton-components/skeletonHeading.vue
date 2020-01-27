@@ -10,10 +10,10 @@
 
 <script>
 export default {
-  name: 'content-placeholders-heading',
+  name: 'TcSkeletonHeading',
   data() {
     return {
-      className: 'vue-content-placeholders-heading'
+      className: 'skeleton-heading'
     }
   },
   props: {

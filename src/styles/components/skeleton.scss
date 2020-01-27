@@ -1,0 +1,127 @@
+// Variables
+$skeleton-primary-color: #ccc !default;
+$skeleton-secondary-color: #eee !default;
+$skeleton-border-radius: 6px !default;
+$skeleton-line-height: 15px !default;
+$skeleton-spacing: 10px !default;
+
+
+
+// Animations
+@keyframes skeletonAnimation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+
+
+// Mixins
+@mixin skeleton {
+  position: relative;
+  overflow: hidden;
+  height: $skeleton-line-height;
+  background: $skeleton-secondary-color;
+
+  .skeleton-is-rounded &  {
+    border-radius: $skeleton-border-radius;
+  }
+
+  .skeleton-is-centered & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skeleton-is-animated &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 1000px;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, darken($skeleton-secondary-color, 5%) 15%, transparent 30%);
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: skeletonAnimation;
+    animation-timing-function: linear;
+  }
+}
+
+@mixin skeleton-spacing {
+  [class^="skeleton-"] + & {
+    margin-top: 2 * $skeleton-spacing;
+  }
+}
+
+
+
+// Styles
+.skeleton-heading {
+  @include skeleton-spacing;
+  display: flex;
+
+  &__img {
+    @include skeleton;
+    width: 2 * $skeleton-line-height + 3 * $skeleton-spacing;
+    height: 2 * $skeleton-line-height + 3 * $skeleton-spacing;
+    margin-right: 1.5 * $skeleton-spacing;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    @include skeleton;
+    width: 85%;
+    margin-bottom: $skeleton-spacing;
+    background: $skeleton-primary-color;
+  }
+
+  &__subtitle {
+    @include skeleton;
+    width: 90%;
+  }
+}
+
+.skeleton-text {
+  @include skeleton-spacing;
+
+  &__line {
+    @include skeleton;
+    width: 100%;
+    margin-bottom: $skeleton-spacing;
+
+    &:nth-child(4n + 1) {
+      width: 80%;
+    }
+
+    &:nth-child(4n + 2) {
+      width: 100%;
+    }
+
+    &:nth-child(4n + 3) {
+      width: 70%;
+    }
+
+    &:nth-child(4n + 4) {
+      width: 85%;
+    }
+  }
+}
+
+.skeleton-img {
+  @include skeleton;
+  @include skeleton-spacing;
+  width: 100%;
+  height: 120px;
+}

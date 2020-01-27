@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: 'content-placeholders-img',
+  name: 'TcSkeletonImg',
   data() {
     return {
-      className: 'vue-content-placeholders-img'
+      className: 'skeleton-img'
     }
   }
 }
