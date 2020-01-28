@@ -125,3 +125,13 @@ $skeleton-spacing: 10px !default;
   width: 100%;
   height: 120px;
 }
+
+.skeleton-field {
+  @include skeleton-spacing;
+
+  &__item {
+    @include skeleton;
+    width: 100%;
+    height: 32px;
+  }
+}

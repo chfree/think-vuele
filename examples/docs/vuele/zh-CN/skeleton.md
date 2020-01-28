@@ -4,6 +4,7 @@
 
 基础组件来自：[https://github.com/michalsnik/vue-content-placeholders](https://github.com/michalsnik/vue-content-placeholders)
 
+### 基础用法
 :::demo
 ```html
 <tc-skeleton />
@@ -15,6 +16,15 @@
 ```
 :::
 
+### 扩展field
+:::demo
+```html
+<tc-skeleton-content>
+  <tc-skeleton-field />
+  <tc-skeleton-form />
+</tc-skeleton-content>
+```
+:::
 
 ### skeleton-content Attributes 【root】
 这些属性定义了所有子组件的行为方式
