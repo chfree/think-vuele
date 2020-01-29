@@ -21,7 +21,7 @@
 ```html
 <tc-skeleton-content>
   <tc-skeleton-field />
-  <tc-skeleton-form />
+  <tc-skeleton-form :column="4" />
 </tc-skeleton-content>
 ```
 :::
@@ -48,3 +48,14 @@
 ### skeleton-img Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
+
+### skeleton-field Attributes
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+|------  |-----|---- |----- |---- |
+
+### skeleton-form Attributes
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+|------  |-----|---- |----- |---- |
+| row | 显示多少行 | Number | — | 4 |
+| column | 每行显示多少列 | Number | — | 2 |
+| gutter | 间隔 | Number | — | 20 |
