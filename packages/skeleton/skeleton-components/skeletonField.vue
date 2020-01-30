@@ -1,6 +1,6 @@
 <template>
-  <div :class="className">
-    <div :class="`${className}__item`" />
+  <div :class="fieldClassName">
+    <div :class="classNameResult" :style="styleResult" />
   </div>
 </template>
 
@@ -9,10 +9,33 @@ export default {
   name: 'TcSkeletonField',
   data() {
     return {
-      className: 'skeleton-field'
+      fieldClassName: 'skeleton-field',
+      defaultStyle: {
+      }
     }
   },
   props: {
+    style: {
+      type: Object,
+      default: () => {}
+    },
+    height: {
+      type: Number,
+      default: 22
+    },
+    className: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    styleResult: function() {
+      let heightObj = { height: this.height + 'px' }
+      return Object.assign({}, this.defaultStyle, this.style, heightObj)
+    },
+    classNameResult: function() {
+      return this.fieldClassName + '__item ' + this.className
+    }
   }
 }
 </script>

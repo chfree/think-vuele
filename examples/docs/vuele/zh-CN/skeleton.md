@@ -52,6 +52,9 @@
 ### skeleton-field Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
+| height | 高度 | Number | — | 22 |
+| style | 样式 | Object | — | {} |
+| className | 样式名称 | String | — | — |
 
 ### skeleton-form Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
