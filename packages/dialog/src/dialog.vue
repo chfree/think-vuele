@@ -44,6 +44,7 @@ export default {
     visible: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 },
+    loadingType: { type: String, required: false, default: 'loading' },
     loading: { type: Boolean, required: false, default: false },
     loadingAutoClose: { type: Boolean, required: false, default: true },
     loadingText: { type: String, required: false, default: '加载中' },
@@ -148,16 +149,20 @@ export default {
       closeCall()
     },
     startLoading() {
-      const option = this.loadingOption || {
-        lock: true,
-        text: this.loadingText,
-        spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.7)'
+      if (this.loadingType === 'loading') {
+        const option = this.loadingOption || {
+          lock: true,
+          text: this.loadingText,
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        }
+        this.loadingInstance = this.$loading(option)
       }
-      this.loadingInstance = this.$loading(option)
     },
     closeLoading() {
-      this.loadingInstance.close()
+      if (this.loadingType === 'loading') {
+        this.loadingInstance.close()
+      }
     },
     calcFixedBottom() {
       var tcFixedBottom = findComponentDownward(this.$refs.elDialog, 'TcFixedBottom')
