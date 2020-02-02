@@ -24,7 +24,7 @@
         <div v-show="!isSkeletonLoading">
           <slot :visible.sync="visible"></slot>
         </div>
-        <tc-skeleton-content v-if="isSkeletonLoading">
+        <tc-skeleton-content style="padding:5px 10px" v-if="isSkeletonLoading">
           <tc-skeleton-form :column="1" />
         </tc-skeleton-content>
       </div>
@@ -49,7 +49,9 @@ export default {
     visible: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 },
-    loadingType: { type: String, required: false, default: 'loading' },
+    loadingType: { type: String, required: false, default: 'loading', validator: function(value) {
+      return ['loading', 'skeleton'].indexOf(value) !== -1
+    }},
     loading: { type: Boolean, required: false, default: false },
     loadingAutoClose: { type: Boolean, required: false, default: true },
     loadingText: { type: String, required: false, default: '加载中' },

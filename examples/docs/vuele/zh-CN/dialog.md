@@ -47,7 +47,7 @@ export default {
 ### 引用组件
 ```html
 <tc-button @click="openDialog1">打开dialog1</tc-button>
-<tc-dialog :visible.sync="showDialog1" title="test1" width="400px" height="300px">
+<tc-dialog :visible.sync="showDialog1" loading loadingType="skeleton" title="test1" width="400px" height="300px">
   <test-index />
 </tc-dialog>
 
@@ -137,6 +137,7 @@ fixedBottom
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String  | — | el-icon-time |
 | loading   | 是否开启loading加载   | Boolean | — | false |
+| loadingType   | loading的类型   | String | `loading`,`skeleton` | loading |
 | loadingAutoClose   | 是否自动关闭loading   | Boolean | — | true |
 | loadingText   | 开启loading时的提示文本   | String | — | 加载中 |
 | loadingOption   | 开启loading时的配置 | String | — | — |
