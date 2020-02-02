@@ -10,7 +10,7 @@
       <tc-dialog :visible.sync="showDialog" title="基础用法" width="400px" height="300px">
         test
       </tc-dialog>
-      <tc-dialog :visible.sync="showDialog1" loading title="引用组件" width="400px" height="300px">
+      <tc-dialog :visible.sync="showDialog1" loadingType="skeleton" loading title="引用组件1" width="400px" height="300px">
         <test-index :model="model"/>
       </tc-dialog>
       <tc-dialog :visible.sync="showDialog2" title="组件内固定底部" width="400px" height="300px">
@@ -45,7 +45,7 @@ export default {
       this.showDialog = true
     },
     openDialog1() {
-      this.showDialog2 = true
+      this.showDialog1 = true
       this.model.disabled = true
     },
     openDialog2() {

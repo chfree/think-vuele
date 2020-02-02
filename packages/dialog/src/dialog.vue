@@ -21,7 +21,12 @@
         <slot name="title">{{ title }}</slot>
       </div>
       <div :style="dialogHeight" class="tc-dialog-body-container">
-        <slot :visible.sync="visible"></slot>
+        <div v-show="!isSkeletonLoading">
+          <slot :visible.sync="visible"></slot>
+        </div>
+        <tc-skeleton-content v-if="isSkeletonLoading">
+          <tc-skeleton-form :column="1" />
+        </tc-skeleton-content>
       </div>
       <div :style="fixedButtonStyle">
       </div>
@@ -49,7 +54,6 @@ export default {
     loadingAutoClose: { type: Boolean, required: false, default: true },
     loadingText: { type: String, required: false, default: '加载中' },
     loadingOption: { type: Object, required: false, default: null }
-
   },
   provide() {
     return {
@@ -64,7 +68,8 @@ export default {
       currentHeight: 0,
       fixedBottomHeight: 0,
       isFirstOpen: true,
-      loadingInstance: null
+      loadingInstance: null,
+      skeletonLoading: true
     }
   },
   computed: {
@@ -72,6 +77,9 @@ export default {
       return {
         height: this.fixedBottomHeight + 'px'
       }
+    },
+    isSkeletonLoading: function() {
+      return this.loadingType === 'skeleton' && this.skeletonLoading
     }
   },
   watch: {
@@ -157,11 +165,15 @@ export default {
           background: 'rgba(0, 0, 0, 0.7)'
         }
         this.loadingInstance = this.$loading(option)
+      } else if (this.loadingType === 'skeleton') {
+        this.skeletonLoading = true
       }
     },
     closeLoading() {
       if (this.loadingType === 'loading') {
         this.loadingInstance.close()
+      } else if (this.loadingType === 'skeleton') {
+        this.skeletonLoading = false
       }
     },
     calcFixedBottom() {
