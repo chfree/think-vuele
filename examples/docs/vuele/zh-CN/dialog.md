@@ -137,10 +137,35 @@ fixedBottom
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String  | — | el-icon-time |
 | loading   | 是否开启loading加载   | Boolean | — | false |
-| loadingType   | loading的类型   | String | `loading`,`skeleton` | loading |
+| loadingType   | loading的类型   | String | `loading`,`skeleton`,`cssLoading` | loading |
 | loadingAutoClose   | 是否自动关闭loading   | Boolean | — | true |
 | loadingText   | 开启loading时的提示文本   | String | — | 加载中 |
 | loadingOption   | 开启loading时的配置 | String | — | — |
+| skeletonOption   | skeleton时的参数 | Object | — | — |
+
+
+#### skeletonOption格式及默认数据
+```
+{
+  content: {
+    animated: true,
+    rounded: true,
+    centered: false
+  },
+  form: {
+    row: 2,
+    column: 1,
+    gutter: 20
+  }
+}
+```
+
+### slots
+| 参数 | 说明 |
+|------  |-----|
+| title | title插槽 |
+| skeleton | skeleton骨架屏插槽 |
+| cssLoading | cssLoading场景的插槽 |
 
 ### Dialog 内部组件钩子函数
 #### beforeClose: 窗体关闭前的回调钩子，返回false则阻止关闭

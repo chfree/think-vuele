@@ -21,12 +21,23 @@
         <slot name="title">{{ title }}</slot>
       </div>
       <div :style="dialogHeight" class="tc-dialog-body-container">
-        <div v-show="!isSkeletonLoading">
+        <div v-show="isDefaultLoading">
           <slot :visible.sync="visible"></slot>
         </div>
-        <tc-skeleton-content style="padding:5px 10px" v-if="isSkeletonLoading">
-          <tc-skeleton-form :column="1" />
-        </tc-skeleton-content>
+        <slot name="skeleton">
+          <tc-skeleton-content v-if="isSkeletonLoading" style="padding:5px 10px" 
+            :animated="skeletonOptionResult.content.animated"
+            :rounded="skeletonOptionResult.content.rounded"
+            :centered="skeletonOptionResult.content.centered">
+            <tc-skeleton-form 
+            :row="skeletonOptionResult.form.row"
+            :column="skeletonOptionResult.form.column"
+            :gutter="skeletonOptionResult.form.gutter" />
+          </tc-skeleton-content>
+        </slot>
+        <slot name="cssLoading">
+          <tc-loading v-if="isCssLoading" />
+        </slot>
       </div>
       <div :style="fixedButtonStyle">
       </div>
@@ -50,12 +61,13 @@ export default {
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 },
     loadingType: { type: String, required: false, default: 'loading', validator: function(value) {
-      return ['loading', 'skeleton'].indexOf(value) !== -1
+      return ['loading', 'skeleton', 'cssLoading'].indexOf(value) !== -1
     }},
     loading: { type: Boolean, required: false, default: false },
     loadingAutoClose: { type: Boolean, required: false, default: true },
     loadingText: { type: String, required: false, default: '加载中' },
-    loadingOption: { type: Object, required: false, default: null }
+    loadingOption: { type: Object, required: false, default: null },
+    skeletonOption: { type: Object, required: false, default: null }
   },
   provide() {
     return {
@@ -71,7 +83,20 @@ export default {
       fixedBottomHeight: 0,
       isFirstOpen: true,
       loadingInstance: null,
-      skeletonLoading: true
+      skeletonLoading: false,
+      cssLoading: false,
+      defaultSkeletonOption: {
+        content: {
+          animated: true,
+          rounded: true,
+          centered: false
+        },
+        form: {
+          row: 2,
+          column: 1,
+          gutter: 20
+        }
+      }
     }
   },
   computed: {
@@ -80,8 +105,17 @@ export default {
         height: this.fixedBottomHeight + 'px'
       }
     },
+    isDefaultLoading: function() {
+      return !this.isSkeletonLoading && !this.isCssLoading
+    },
     isSkeletonLoading: function() {
       return this.loadingType === 'skeleton' && this.skeletonLoading
+    },
+    isCssLoading: function() {
+      return this.loadingType === 'cssLoading' && this.cssLoading
+    },
+    skeletonOptionResult: function() {
+      return Object.assign({}, this.defaultSkeletonOption, this.skeletonOption)
     }
   },
   watch: {
@@ -169,6 +203,8 @@ export default {
         this.loadingInstance = this.$loading(option)
       } else if (this.loadingType === 'skeleton') {
         this.skeletonLoading = true
+      } else if (this.loadingType === 'cssLoading') {
+        this.cssLoading = true
       }
     },
     closeLoading() {
@@ -176,6 +212,8 @@ export default {
         this.loadingInstance.close()
       } else if (this.loadingType === 'skeleton') {
         this.skeletonLoading = false
+      } else if (this.loadingType === 'cssLoading') {
+        this.cssLoading = false
       }
     },
     calcFixedBottom() {
