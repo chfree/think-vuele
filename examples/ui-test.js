@@ -1,12 +1,14 @@
 
 import {
   TcHotTable,
-  TcAceEditor
+  TcAceEditor,
+  TcCodeDisplay
 } from '../packages/tennetcn-ui-test'
 
 const components = [
   TcHotTable,
-  TcAceEditor
+  TcAceEditor,
+  TcCodeDisplay
 ]
 
 const install = function(Vue, opts = {}) {
