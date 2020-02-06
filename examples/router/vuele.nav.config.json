@@ -130,6 +130,15 @@
           ]
         },
         {
+          "groupName": "Editor",
+          "list": [
+            {
+              "path": "/ace-editor",
+              "title": "AceEditor 代码编辑器"
+            }
+          ]
+        },
+        {
           "groupName": "Others",
           "list": [
             {
