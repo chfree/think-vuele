@@ -2,6 +2,10 @@
 
 AceEditor代码编辑器
 
+:::tip
+此组件不作强制引入，放在了dev中，如果要使用，则自行引入，并复制组件包到项目中进行注册
+:::
+
 - 官网：[https://ace.c9.io/](https://ace.c9.io/)
 - 官方示例：[https://ace.c9.io/build/kitchen-sink.html](https://ace.c9.io/build/kitchen-sink.html)
 
