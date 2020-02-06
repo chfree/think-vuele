@@ -48,3 +48,13 @@ CodeDisplay代码编辑器
 </script>
 ```
 :::
+
+### Attributes
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值   |
+| --- |--- |--- |--- |--- |
+| html | html内容 | String | — | — |
+| js | js内容 | String | — | — |
+| css | css内容 | String | — | — |
+
+需要调用组件的`renderCode`进行代码渲染
