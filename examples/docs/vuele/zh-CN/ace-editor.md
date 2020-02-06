@@ -42,6 +42,7 @@ AceEditor代码编辑器
 | value | 内容，支持v-model绑定 | String | — | — |
 | type | 编辑器支持的语言格式,如果需要支持更多，需要参照官方进行示例进行自己适配 | String | `html`,`js/javascript`,`css` | html |
 | option | 构建aceEditor需要的一些参数 | Object | — | {} |
+| readonly | 是否只读 | Boolean | — | false |
 
 #### option默认值
 ```

@@ -29,6 +29,10 @@ export default {
     option: {
       type: Object,
       default: null
+    },
+    readonly: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -43,7 +47,19 @@ export default {
     aceEditor: null,
     contentBackup: ''
   }),
+  inject: {
+    elForm: {
+      default: ''
+    },
+    elFormItem: {
+      default: ''
+    }
+  },
   computed: {
+    inputDisabled() {
+      const result = this.disabled || (this.elForm || {}).disabled
+      return result
+    },
     editorOption: function() {
       let dynamicOption = {}
       dynamicOption.mode = this.getMode()
@@ -59,6 +75,9 @@ export default {
         this.aceEditor.session.setValue(newVal)
         this.contentBackup = newVal
       }
+    },
+    'readonly': function(newVal) {
+      this.aceEditor.setOption('readOnly', newVal)
     }
   },
   mounted() {
@@ -72,6 +91,10 @@ export default {
       enableSnippets: true,
       enableLiveAutocompletion: true
     })
+
+    if (this.inputDisabled) {
+      this.aceEditor.setOption('readOnly', true)
+    }
 
     this.aceEditor.getSession().on('change', this.change)
   },
