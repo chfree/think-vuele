@@ -7,6 +7,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 const buildConfig = require('./build-config');
 
@@ -123,6 +124,16 @@ const webpackConfig = {
     minimizer: []
   }
 };
+
+const printHost = webpackConfig.devServer.host === '0.0.0.0'? 'localhost' : webpackConfig.devServer.host
+
+webpackConfig.plugins.push(
+  new FriendlyErrorsPlugin({
+    compilationSuccessInfo: {
+      messages: [`demo Your application is running here: http://${printHost}:${webpackConfig.devServer.port}`],
+    }
+  })
+)
 
 if (isProd) {
   webpackConfig.externals = {
