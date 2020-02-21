@@ -2,7 +2,7 @@
 
 按钮，扩展自`ElButton`
 
-### 无title模式
+### 基础示例
 :::demo
 ```html
 <tc-button type="success" ref="btnTest">测试</tc-button>
@@ -15,6 +15,8 @@
     },
     mounted() {
       console.log(this.$refs.btnTest)
+    },
+    methods: {
     }
   }
 </script>
