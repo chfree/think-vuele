@@ -79,6 +79,10 @@
             {
               "path": "/form",
               "title": "Form 表单"
+            },
+            {
+              "path": "/date-picker",
+              "title": "DatePicker 日期选择器"
             }
           ]
         },
