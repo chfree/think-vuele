@@ -9,6 +9,12 @@ export default {
   name: 'TcForm',
   props: {
   },
+  provide() {
+    return {
+      tcForm: this,
+      formDataMap: {}
+    }
+  },
   data: () => ({
   }),
   computed: {
