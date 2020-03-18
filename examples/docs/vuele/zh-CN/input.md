@@ -60,6 +60,29 @@
 ```
 :::
 
+### 基础示例-输入正则类型
+:::demo
+```html
+<tc-block style="height:28px;margin-bottom:10px;">
+{{value}}
+</tc-block>
+<tc-input v-model="value" :regular-type="regularType" />
+<div style="margin-top:10px">
+<tc-input v-model="regularType" />regularType
+</div>
+<script>
+  export default {
+    data() {
+      return {
+        value: '',
+        regularType: 'naturalNumber'
+      }
+    }
+  }
+</script>
+```
+:::
+
 ### Attributes
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
