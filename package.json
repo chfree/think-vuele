@@ -1,6 +1,6 @@
 {
   "name": "tennetcn-ui",
-  "version": "0.0.66",
+  "version": "0.0.67",
   "description": "vue+element ui kit list, the like bootstarp ui list for limitless",
   "author": "zfree <79763939@qq.com>",
   "private": false,
@@ -23,7 +23,7 @@
     "vue.js"
   ],
   "scripts": {
-    "bootstrap": "yarn || npm i",
+    "bootstrap": "npm i",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:theme": "gulp build --gulpfile src/styles/gulpfile.js && cp-cli src/styles/lib lib/styles",
     "clean": "rimraf lib && rimraf test/**/coverage",
