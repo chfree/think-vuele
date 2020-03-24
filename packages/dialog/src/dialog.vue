@@ -55,6 +55,10 @@ export default {
   mixins: [emitter],
   directives: { elDragDialog },
   props: {
+    opened: { type: String, required: false, default: 'opened' },
+    open: { type: String, required: false, default: 'open' },
+    closed: { type: String, required: false, default: 'closed' },
+    close: { type: String, required: false, default: 'close' },
     title: { type: String, required: false, default: 'dialog' },
     icon: { type: String, required: false, default: 'el-icon-time' },
     visible: { type: Boolean, required: false, default: false },
@@ -160,7 +164,7 @@ export default {
       this.childrenClose()
     },
     childrenOpened() {
-      const openedCall = this.getChildrenMethod('opened')
+      const openedCall = this.getChildrenMethod(this.opened)
       if (openedCall === null) {
         return
       }
@@ -172,21 +176,21 @@ export default {
       this.isFirstOpen = false
     },
     childrenOpen() {
-      const openCall = this.getChildrenMethod('open')
+      const openCall = this.getChildrenMethod(this.open)
       if (openCall === null) {
         return
       }
       openCall()
     },
     childrenClosed() {
-      const closedCall = this.getChildrenMethod('closed')
+      const closedCall = this.getChildrenMethod(this.closed)
       if (closedCall === null) {
         return
       }
       closedCall()
     },
     childrenClose() {
-      const closeCall = this.getChildrenMethod('close')
+      const closeCall = this.getChildrenMethod(this.close)
       if (closeCall === null) {
         return
       }
