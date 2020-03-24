@@ -59,6 +59,7 @@ export default {
     open: { type: String, required: false, default: 'open' },
     closed: { type: String, required: false, default: 'closed' },
     close: { type: String, required: false, default: 'close' },
+    beforeClose: { type: String, required: false, default: 'beforeClose' },
     title: { type: String, required: false, default: 'dialog' },
     icon: { type: String, required: false, default: 'el-icon-time' },
     visible: { type: Boolean, required: false, default: false },
@@ -244,7 +245,7 @@ export default {
     },
     dialogBeforeClose(done) {
       // 先向下找到eldialog，在找到子级即可
-      const beforeCloseCall = this.getChildrenMethod('beforeClose')
+      const beforeCloseCall = this.getChildrenMethod(this.beforeClose)
       if (beforeCloseCall === null) {
         done(true)
         return

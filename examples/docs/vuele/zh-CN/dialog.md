@@ -129,10 +129,15 @@ fixedBottom
 
 ### Attributes
 
-| 参数          | 说明            | 类型            | 可选值                 | 默认值   |
-|-------------  |---------------- |---------------- |---------------------- |-------- |
-| visible   | 控制显示dialog   | Boolean          | — | — |
-| title   | dialog的标题   | String          | — | dialog |
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| --- | --- | --- | --- | --- |
+| opened  | 窗体打开后的回调函数定义   | String | — | opened |
+| open  | 窗体打开时的回调函数定义   | String | — | open |
+| closed  | 窗体关闭后的回调函数定义   | String | — | closed |
+| close  | 窗体关闭时的回调函数定义   | String | — | close |
+| beforeClose  | 窗体关闭前的回调函数定义 | String | — | beforeClose |
+| visible  | 控制显示dialog   | Boolean | — | — |
+| title   | dialog的标题   | String | — | dialog |
 | width   | dialog的宽度   | String          | 百分比和数值 | — |
 | height   | dialog的高度   | String          | 百分比和数值 | — |
 | icon   | dialog的图标   | String  | — | el-icon-time |
