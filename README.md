@@ -3,6 +3,8 @@
 > 基于`Vue`和`ElementUI`框架进行整合二次开发的一个框架.提供一些`elementUI`没有的或当时没有的控件.优化了或简化了便于2B软件开发的一些控件
 > 框架结构按element源码结构进行改造
 
+> `element-ui`的控件库是`el`+控件名的方式进行使用。`tennetcn-ui`是以`tc`开头使用的控件库，如果你想用回`el`，只需前缀将`tc`改为`el`即可，只是`tc`提供的扩展属性和方法回调就不起作用了。
+
 [![License](https://img.shields.io/npm/l/tennetcn-ui.svg)](https://www.npmjs.com/package/tennetcn-ui)
 [![Week Downloads](https://img.shields.io/npm/dw/tennetcn-ui.svg)](https://www.npmjs.com/package/tennetcn-ui)
 [![Version](https://img.shields.io/npm/v/tennetcn-ui.svg)](https://github.com/chfree/think-vuele)
@@ -126,7 +128,7 @@ avatar在el的某个版本才提供，此控件也是参照了github源码[`elie
 ### Select
 每次用觉得很繁琐，每次都要进行`v-for`的`option`循环。我给`select`加了一个`provider`属性。只用定义好标准的数据源格式，然后绑定到`select`标签上即可，至于选择判断，那是`v-model`双向绑定的事情。
 ```json
-[{id:'',text:'',value:''}]
+[{"id":"","text":"","value":""}]
 ```
 
 ### RadioGroup
@@ -193,9 +195,9 @@ avatar在el的某个版本才提供，此控件也是参照了github源码[`elie
 另外对回调函数进行了改造，多了一个`pager-change`，当`pageIndex`和`pageSize`发生变化时触发，不然代码里面都是一个分页组件两次监听，因为我们大多数时候监听就是直接调用后端方法，至于是`index`变化还是`size`变化我们很少关心.
 ```json
 {
-  pageIndex: 1,
-  pageSize: 20,
-  totalCount: 100
+  "pageIndex": 1,
+  "pageSize": 20,
+  "totalCount": 100
 }
 ```
 

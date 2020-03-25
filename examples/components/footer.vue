@@ -3,6 +3,8 @@
     <div class="container">
       <div class="footer-main">
         <h4>Vuele</h4>
+        <a href="http://vuele.tennetcn.com" class="footer-main-link" target="_blank">官网</a>
+        <a href="https://github.com/chfree/think-vuele" class="footer-main-link" target="_blank">代码仓库</a>
       </div>
       <div class="footer-main">
         <h4>Element</h4>
@@ -14,9 +16,9 @@
       </div>
     </div>
     <div style="text-align:center;font-size:14px;color:#3a4e64;">
-      <span>Copyright©2019 Tennetcn</span>
+      <span>Copyright©2019-2020 Tennetcn</span>
       <span> | </span>
-      <span>鄂ICP备15015935号-2</span>
+      <span>鄂ICP备15015935号-1</span>
     </div>
   </footer>
 </template>

@@ -1,26 +1,8 @@
 {
   "zh-CN": {
-    "home": "Vuele - 网站快速成型工具",
-    "guide": "指南 | Vuele",
-    "component": "组件 | Vuele",
-    "resource": "资源 | Vuele"
-  },
-  "en-US": {
-    "home": "Vuele - A Desktop UI Toolkit for Web",
-    "guide": "Guide | Vuele",
-    "component": "Component | Vuele",
-    "resource": "Resource | Vuele"
-  },
-  "es": {
-    "home": "Vuele - Un kit de interfaz de usuario para la web",
-    "guide": "Guía | Vuele",
-    "component": "Componentes | Vuele",
-    "resource": "Recursos | Vuele"
-  },
-  "fr-FR": {
-    "home": "Vuele - Un kit de composants d'interface pour le web",
-    "guide": "Guide | Vuele",
-    "component": "Composants | Vuele",
-    "resource": "Ressources | Vuele"
+    "home": "网站快速成型工具",
+    "guide": "指南",
+    "component": "组件",
+    "resource": "资源"
   }
 }
