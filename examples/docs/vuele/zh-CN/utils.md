@@ -151,7 +151,12 @@ formatDateTime
 
 ### this.$confirm
 ```
-warning = confirm
+this.$confirm.warning = confirm
+```
+
+### this.$random
+```
+random
 ```
 
 ### this.$regularUtil
