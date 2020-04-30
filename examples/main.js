@@ -13,6 +13,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 import TennetcnUI from 'main/index'
 import ElementUI from 'element-ui'
 
+// import plTable from 'pl-table'
+
+// import 'pl-table/themes/index.css' // 引入样式（必须引入)，请查看webpack是否配置了url-loader对woff，ttf文件的引用,不配置会报错哦
+
 import MainFooter from './components/footer'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
@@ -25,6 +29,7 @@ Vue.prototype.$hotTable = Handsontable
 
 import uitest from './ui-test'
 Vue.use(uitest)
+// Vue.use(plTable)
 
 import icon from './icon.json'
 
@@ -73,7 +78,7 @@ router.afterEach(route => {
     }
   }
   document.title = 'Element'
-  ga('send', 'event', 'PageView', route.name)
+  // ga('send', 'event', 'PageView', route.name)
 })
 
 /* eslint-disable no-new */
