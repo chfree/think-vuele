@@ -140,6 +140,10 @@ TcTable > ElTable
 ```
 :::
 
+**大数据量测试**
+
+el-table对大数量的滚动体验上非常差，这里在另外一个页面进行一下[测试](/#/vuele/zh-CN/component/table-big-data)
+
 ### Attributes
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |

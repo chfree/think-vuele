@@ -94,6 +94,10 @@
               "title": "Table 表格"
             },
             {
+              "path": "/table-big-data",
+              "title": "大数据量 表格"
+            },
+            {
               "path": "/tree-table",
               "title": "TreeTable 表格树"
             },
