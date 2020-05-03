@@ -15,25 +15,7 @@
       <tc-button @click="fastTableAdd(1000)">加载1000条</tc-button>
       <tc-button @click="fastTableAdd(2000)">加载2000条</tc-button>
       <tc-button @click="fastTableAdd(5000)">加载5000条</tc-button>
-      <tc-fast-table :columns="fastTable.columns" :data="fastTable.data" height="300"
-              big-data-checkbox
-              fixed-columns-roll
-              use-virtual
-              :row-height="50">
-        <template slot="empty">
-        没有查询到符合条件的记录
-        </template>
-        <el-table-column type="selection" width="55"/>
-        <el-table-column type="index" width="100" fixed/>
-        <el-table-column
-              v-for="item in plTable.columns"
-              :key="item.id"
-              :resizable="item.resizable"
-              :show-overflow-tooltip="item.showOverflowTooltip"
-              :prop="item.prop"
-              :label="item.label"
-              :fixed="item.fixed"
-              :width="item.width"/>
+      <tc-fast-table :columns="fastTable.columns" :data="fastTable.data" height="300">
       </tc-fast-table>
     </div>
     <div>
@@ -91,22 +73,22 @@ export default {
       },
       fastTable: {
         data: [],
-        columns: [{key: 'a1', title: 'a1', width: 200},
-          {key: 'a2', title: 'a2', width: 200},
-          {key: 'a3', title: 'a3', width: 200},
-          {key: 'a4', title: 'a4', width: 200},
-          {key: 'a5', title: 'a5', width: 200},
-          {key: 'a6', title: 'a6', width: 200},
-          {key: 'a7', title: 'a7', width: 200},
-          {key: 'a8', title: 'a8', width: 200},
-          {key: 'a9', title: 'a9', width: 200},
-          {key: 'a10', title: 'a10', width: 200},
-          {key: 'a11', title: 'a11', width: 200},
-          {key: 'a12', title: 'a12', width: 200},
-          {key: 'a13', title: 'a13', width: 200},
-          {key: 'a14', title: 'a14', width: 200},
-          {key: 'a15', title: 'a15', width: 200},
-          {key: 'a16', title: 'a16', width: 200}]
+        columns: [{name: 'a1', text: 'a1', width: 200, fixed: true},
+          {name: 'a2', text: 'a2', width: 200, fixed: true},
+          {name: 'a3', text: 'a3', width: 200},
+          {name: 'a4', text: 'a4', width: 200},
+          {name: 'a5', text: 'a5', width: 200},
+          {name: 'a6', text: 'a6', width: 200},
+          {name: 'a7', text: 'a7', width: 200},
+          {name: 'a8', text: 'a8', width: 200},
+          {name: 'a9', text: 'a9', width: 200},
+          {name: 'a10', text: 'a10', width: 200},
+          {name: 'a11', text: 'a11', width: 200},
+          {name: 'a12', text: 'a12', width: 200},
+          {name: 'a13', text: 'a13', width: 200},
+          {name: 'a14', text: 'a14', width: 200},
+          {name: 'a15', text: 'a15', width: 200},
+          {name: 'a16', text: 'a16', width: 200}]
       },
       plTable: {
         data: [],
