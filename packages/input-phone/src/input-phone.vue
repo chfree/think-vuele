@@ -5,7 +5,7 @@
 
 <script>
 import vnameMixin from 'main/mixins/vname-mixin.js'
-import { parsePhoneNumberFromString } from 'libphonenumber-js'
+// import { parsePhoneNumberFromString } from 'libphonenumber-js'
 /**
  * validType: common 通用，采用libphone进行
  *            phone 座机号
@@ -54,7 +54,8 @@ export default {
       return ''
     },
     getParsePhoneNumberFromString(phoneNumber, countryCode) {
-      const parsing = phoneNumber && countryCode ? parsePhoneNumberFromString(phoneNumber, countryCode) : null
+      // const parsing = phoneNumber && countryCode ? parsePhoneNumberFromString(phoneNumber, countryCode) : null
+      const parsing = {}
       return {
         phoneNumber: phoneNumber ? phoneNumber : null,
         countryCode: countryCode,

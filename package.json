@@ -38,7 +38,6 @@
     "accounting-js": "^1.1.1",
     "crypto": "^1.0.1",
     "element-ui": "^2.12.0",
-    "libphonenumber-js": "^1.7.19",
     "moment": "^2.24.0",
     "vue": "^2.5.16",
     "vue-moment": "^4.0.0",

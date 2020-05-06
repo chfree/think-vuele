@@ -54,6 +54,7 @@
 :::
 
 ### 基础示例 通用验证
+**移除了libphone的引用，暂时不支持**
 :::demo
 ```html
 {{phone}}
@@ -74,11 +75,11 @@
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值   |
 |------  |-----|---- |----- |---- |
-| country | 国家区域代码 | String | — | CN |
-| valid-type | 验证类型 | String | `common`,`phone`,`mobile`,`mop`,`regex` | `mop` |
+| valid-type | 验证类型 | String | `phone`,`mobile`,`mop`,`regex` | `mop` |
 | regex | 正则表达式 | String | — | — |
 
 :::tip
+**common暂时不支持，需要自行引入libphonenumber-js**<br/>
 当valid-type是common时，country才支持国家区域代码
 
 并使用以下库进行验证
