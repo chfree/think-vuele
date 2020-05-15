@@ -20,7 +20,7 @@ export default {
   }),
   computed: {
     pageSizeArray: function() {
-      return this.pageSizes.split(',')
+      return this.pageSizes.split(',').map(item => parseInt(item, 10))
     }
   },
   methods: {
