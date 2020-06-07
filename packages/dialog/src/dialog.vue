@@ -4,10 +4,10 @@
     <el-dialog ref="elDialog" 
       v-el-drag-dialog 
       v-bind="$attrs" 
-      @opened="opened" 
-      @closed="closed"
-      @open="open"
-      @close="close"
+      @opened="topened" 
+      @closed="tclosed"
+      @open="topen"
+      @close="tclose"
       :width="width" 
       :visible="visible" 
       :close-on-click-modal="false" 
@@ -139,7 +139,7 @@ export default {
       this.calcDialogHeight()
       this.calcMarginTop()
     },
-    opened() {
+    topened() {
       // 计算底部
       this.calcFixedBottom()
 
@@ -150,18 +150,18 @@ export default {
       }
       this.broadcast('TcButton', 'tcDialogOpened')
     },
-    open() {
+    topen() {
       // loading且不是第一次打开，第一次打开loading，会在后面
       if (this.loading) {
         this.startLoading()
       }
       this.childrenOpen()
     },
-    closed() {
+    tclosed() {
       // 调用子级的closed
       this.childrenClosed()
     },
-    close() {
+    tclose() {
       this.childrenClose()
     },
     childrenOpened() {

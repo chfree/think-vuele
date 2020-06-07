@@ -15,7 +15,7 @@ export default {
     }
   },
   props: {
-    style: {
+    customStyle: {
       type: Object,
       default: () => {}
     },
@@ -31,7 +31,7 @@ export default {
   computed: {
     styleResult: function() {
       let heightObj = { height: this.height + 'px' }
-      return Object.assign({}, this.defaultStyle, this.style, heightObj)
+      return Object.assign({}, this.defaultStyle, this.customStyle, heightObj)
     },
     classNameResult: function() {
       return this.fieldClassName + '__item ' + this.className

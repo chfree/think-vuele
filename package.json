@@ -27,7 +27,7 @@
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:theme": "gulp build --gulpfile src/styles/gulpfile.js && cp-cli src/styles/lib lib/styles",
     "clean": "rimraf lib && rimraf test/**/coverage",
-    "demo": "npm run bootstrap && cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.demo.js",
+    "demo": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.demo.js",
     "dist": "npm run clean && npm run lint && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme",
     "lint": "eslint --ext .js,.vue src",
     "build": "rimraf dist && node build/build.js"
