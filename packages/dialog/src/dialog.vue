@@ -10,7 +10,7 @@
       @close="tclose"
       :width="width" 
       :visible="visible" 
-      :close-on-click-modal="false" 
+      :close-on-click-modal="closeOnClickModal" 
       :close-on-press-escape="false" 
       :top="marginTop"
       :before-close="dialogBeforeClose"
@@ -55,6 +55,8 @@ export default {
   mixins: [emitter],
   directives: { elDragDialog },
   props: {
+    closeOnClickModal: { type: Boolean, required: false, default: false },
+    closeOnPressEscape: { type: Boolean, required: false, default: false },
     opened: { type: String, required: false, default: 'opened' },
     open: { type: String, required: false, default: 'open' },
     closed: { type: String, required: false, default: 'closed' },
