@@ -42,6 +42,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil.findBrothersComponents = findBrothersComponents
 
   Vue.prototype.$moment = Vue.prototype.$moment || {}
+  Vue.use(require('vue-moment'))
   Vue.prototype.$moment.formatDate = formatDate
   Vue.prototype.$moment.formatDateTime = formatDateTime
 
