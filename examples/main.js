@@ -29,7 +29,6 @@ Vue.prototype.$hotTable = Handsontable
 
 import uitest from './ui-test'
 Vue.use(uitest)
-// Vue.use(plTable)
 
 import icon from './icon.json'
 

@@ -22,6 +22,8 @@ import {
   regluarUtil
 } from '.'
 
+import vueMoment from 'vue-moment'
+
 const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil = Vue.prototype.$tcUtil || {}
   Vue.prototype.$tcUtil.isEmpty = isEmpty
@@ -42,7 +44,7 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$tcUtil.findBrothersComponents = findBrothersComponents
 
   Vue.prototype.$moment = Vue.prototype.$moment || {}
-  Vue.use(require('vue-moment'))
+  Vue.use(vueMoment)
   Vue.prototype.$moment.formatDate = formatDate
   Vue.prototype.$moment.formatDateTime = formatDateTime
 
