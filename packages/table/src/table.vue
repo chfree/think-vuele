@@ -26,7 +26,12 @@
       <el-table-column v-for="column in columnFormate" :key="column.name" :label="column.text" :width="column.width" :align="column.align==null?'center':column.align">
         <template slot-scope="scope" >
           <slot :value="scope.row[column.name]" :columnName="column.name" :rowData="scope.row" :column="column" :scope="scope">
-            {{ scope.row[column.name] }}
+            <tc-clamp v-if="column.clamp" autoresize auto-tip :max-lines="column.clamp">
+              {{ scope.row[column.name] }}
+            </tc-clamp>
+            <span v-else>
+              {{ scope.row[column.name] }}
+            </span>
           </slot>
         </template>
       </el-table-column>
