@@ -11,7 +11,9 @@ import './assets/styles/fonts/style.css'
 import 'main/styles/index.scss'
 import 'element-ui/lib/theme-chalk/index.css'
 import TennetcnUI from 'main/index'
-import ElementUI from 'element-ui'
+
+// import locale from 'element-ui/lib/locale/lang/en'
+// import ElementUI from 'element-ui'
 
 // import plTable from 'pl-table'
 
@@ -38,7 +40,28 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'remixicon/fonts/remixicon.css'
 
 Vue.use(TennetcnUI)
-Vue.use(ElementUI)
+
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
+
+import enLocale from 'main/locale/lang/en'
+import zhLocale from 'main/locale/lang/zh-CN'
+const messages = {
+  en: {
+    ...enLocale
+  },
+  zh: {
+    ...zhLocale
+  }
+}
+const i18n = new VueI18n({
+  locale: 'zh',
+  messages
+})
+import ElementLocale from 'element-ui/lib/locale'
+ElementLocale.i18n((key, value) => i18n.t(key, value))
+
+// Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 Vue.component('main-footer', MainFooter)
@@ -84,6 +107,7 @@ router.afterEach(route => {
 new Vue({
   el: '#app',
   router,
+  i18n,
   components: { App },
   template: '<App/>'
 })

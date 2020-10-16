@@ -18,12 +18,12 @@
       @select-all="myHandleSelectAll">
       <el-table-column v-if="selection" type="selection" width="45" align="center">
       </el-table-column>
-      <el-table-column v-if="sequence" label="序号" align="center" width="55">
+      <el-table-column v-if="sequence" :label="$t('tui.sequenceLabel')" align="center" width="55">
         <template slot-scope="scope">
           {{ scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column v-for="column in columnFormate" :key="column.name" :label="column.text" :width="column.width" :align="column.align==null?'center':column.align">
+      <el-table-column v-for="column in columnFormate" :key="column.name" :label="columnLabel(column)" :width="column.width" :align="column.align==null?'center':column.align">
         <template slot-scope="scope" >
           <slot :value="scope.row[column.name]" :columnName="column.name" :rowData="scope.row" :column="column" :scope="scope">
             <tc-clamp v-if="column.clamp" autoresize auto-tip :max-lines="column.clamp">
@@ -42,6 +42,7 @@
 
 <script>
 import { hasClass, removeClass } from 'element-ui/lib/utils/dom'
+import { isEmpty } from 'main/utils'
 export default {
   name: 'TcTable',
   props: {
@@ -69,6 +70,18 @@ export default {
     },
     columnFormate: function() {
       return this.columns.filter(item => !item.hideen)
+    },
+    columnLabel() {
+      return function(column) {
+        if (isEmpty(column.lang)) {
+          return column.text
+        }
+        const langText = this.$t(column.lang)
+        if (isEmpty(langText)) {
+          return column.text
+        }
+        return langText
+      }
     }
   },
   methods: {

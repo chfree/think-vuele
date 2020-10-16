@@ -92,7 +92,7 @@ import directives from './directives'
 
 const install = function(Vue, opts = {}) {
   // load element ui
-  Vue.use(ElementUI)
+  Vue.use(ElementUI, opts)
   // load utilLib
   Vue.use(utilLib)
   // load directive

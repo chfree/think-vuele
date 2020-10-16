@@ -12,6 +12,8 @@ TcTable > ElTable
 <tc-button-group style="margin-bottom:10px;">
   <tc-button @click="getCurrentRow" size="mini">获取选中的数据</tc-button>
   <tc-button @click="reload" size="mini">重新加载数据</tc-button>
+  <tc-button @click="setnull" size="mini">清空数据</tc-button>
+  <tc-button @click="changeLang" size="mini">切换语言</tc-button>
 </tc-button-group>
 <tc-table ref="tcTable" :columns="columns" :data="tableData"/>
 
@@ -20,8 +22,9 @@ TcTable > ElTable
     data() {
       return {
         columns:[{name:'name',text:'姓名',width:'200'},
-        {name:'date',text:'日期',width:'200'},
+        {name:'date',text:'日期',width:'200', lang: 'tui.sequenceLabel'},
         {name:'address',text:'地址', clamp: 1}],
+        tableData1: [],
         tableData: [{
           date: '2016-05-02',
           name: '王小虎',
@@ -42,6 +45,12 @@ TcTable > ElTable
       }
     },
     methods: {
+      setnull() {
+        this.tableData = []
+      },
+      changeLang() {
+        this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh'
+      },
       getCurrentRow() {
         const currentRow = this.$refs.tcTable.getCurrentRow()
         console.log(currentRow, 'currentRow')
