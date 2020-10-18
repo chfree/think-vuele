@@ -16,11 +16,11 @@ TcTreeTable > TcTable > ElTable
       return {
         columns:[{name:'name',text:'名称',width:'200', align: 'left'},
         {name:'title',text:'标题',width:'200'},
-        {name:'address',text:'地址'}],
+        {name:'address',text:'地址', clamp: 1}],
         tableData: [{
           title: '系统管理',
           name: 'system',
-          address: '/admin/system'
+          address: '/admin/system/xxxxxxxxxxxxxxxxxxx/admin/system/xxxxxxxxxxxxxxxxxxx/admin/system/xxxxxxxxxxxxxxxxxxx/admin/system/xxxxxxxxxxxxxxxxxxx/admin/system/xxxxxxxxxxxxxxxxxxx/admin/system/xxxxxxxxxxxxxxxxxxx'
         }, {
           title: '配置管理',
           name: 'setting',

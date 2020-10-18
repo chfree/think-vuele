@@ -23,7 +23,35 @@
           {{ scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column v-for="column in columnFormate" :key="column.name" :label="columnLabel(column)" :width="column.width" :align="column.align==null?'center':column.align">
+      <el-table-column v-for="column in columnFormate" 
+        :key="column.name"
+        :prop="column.name" 
+        :label="columnLabel(column)" 
+        :width="column.width"
+        :min-width="column.minWidth"
+        :align="column.align==null?'center':column.align" 
+        :formatter="column.formatter"
+        :resizable="column.resizable"
+        :sortable="column.sortable"
+        :sort-orders="column.sortOrders"
+        :sort-method="column.sortMethod"
+        :sort-by="column.sortBy"
+        :header-align="column.headerAlign"
+        :render-header="column.renderHeader"
+        :fixed="column.fixed"
+        :type="column.type"
+        :index="column.index"
+        :column-key="column.columnKey"
+        :class-name="column.className"
+        :label-class-name="column.labelClassName"
+        :selectable="column.selectable"
+        :reserve-selection="column.reserveSelection"
+        :filters="column.filters"
+        :filter-placement="column.filterPlacement"
+        :filter-multiple="column.filterMultiple"
+        :filter-method="column.filterMethod"
+        :filtered-value="column.filteredValue"
+        :show-overflow-tooltip="column.showOverflowTooltip">
         <template slot-scope="scope" >
           <slot :value="scope.row[column.name]" :columnName="column.name" :rowData="scope.row" :column="column" :scope="scope">
             <tc-clamp v-if="column.clamp" autoresize auto-tip :max-lines="column.clamp">

@@ -20,7 +20,7 @@ TcEditTable > TcTable > ElTable
       return {
         columns:[{name:'name',text:'姓名',width:'200', editable: true},
         {name:'date',text:'日期',width:'200', editable: true, type: 'date'},
-        {name:'address',text:'地址', editable: true}],
+        {name:'address',text:'地址', editable: true, clamp: 1}],
         tableData: [{
           date: '2016-05-02',
           name: '王小虎',

@@ -14,7 +14,6 @@
     v-on="$listeners" >
        <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">
-          {{ value }}
         </slot>
        </template>
        <slot />

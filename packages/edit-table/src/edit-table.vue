@@ -13,7 +13,6 @@
       v-on="$listeners">
       <template slot-scope="{ value, columnName, rowData, column, scope }">
         <slot v-if="!toObject(column).editable" :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope">
-          <span>{{ value }}</span>
         </slot>
         <slot v-else :value="value" :columnName="columnName" :rowData="rowData" :column="column" :scope="scope" name="editable">
           <div :class="{'editable-control' : isSignleMode, 'editable-container': !isSignleMode}">
