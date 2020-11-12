@@ -90,6 +90,7 @@ export default {
   watch: {
     'data': function() {
       this.currentRow = null
+      this.setCurrentRow(null)
     }
   },
   computed: {

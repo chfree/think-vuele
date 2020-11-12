@@ -56,8 +56,6 @@ export default {
       return this.columns
     }
   },
-  created() {
-  },
   methods: {
     showRow: function(row) {
       const show = (row.row.parent ? (row.row.parent._expanded && row.row.parent._show) : true)

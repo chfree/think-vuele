@@ -8,8 +8,9 @@ TcTreeTable > TcTable > ElTable
 ### 基础树形表格
 :::demo
 ```html
-<tc-tree-table :columns="columns" :data="tableData" row-key="name" />
-
+<tc-tree-table ref="treeTable" :columns="columns" :data="tableData" row-key="name" />
+<tc-button @click="reloadData">重新加载数据</tc-button>
+<tc-button @click="getData">获取数据</tc-button>
 <script>
   export default {
     data() {
@@ -32,6 +33,19 @@ TcTreeTable > TcTable > ElTable
           }]
         }]
       }
+    },
+    methods: {
+      reloadData() {
+        let tmpTableData = [].concat(this.tableData)
+        // this.tableData = []
+        setTimeout(() =>{
+          this.tableData = [].concat(tmpTableData)
+        }, 100)
+      },
+      getData() {
+        const currentRow = this.$refs.treeTable.getCurrentRow()
+        console.log(currentRow, 'currentRow')
+      }
     }
   }
 </script>
@@ -42,7 +56,7 @@ TcTreeTable > TcTable > ElTable
 :::demo
 ```html
 <tc-tree-table ref="treeTable" :columns="columns" :data="tableData" row-key="name" selection/>
-
+<tc-button @click="reloadData">重新加载数据</tc-button>
 <tc-button @click="getData">获取数据</tc-button>
 
 <script>
@@ -69,6 +83,13 @@ TcTreeTable > TcTable > ElTable
       }
     },
     methods: {
+      reloadData() {
+        let tmpTableData = [].concat(this.tableData)
+        // this.tableData = []
+        setTimeout(() =>{
+          this.tableData = [].concat(tmpTableData)
+        }, 100)
+      },
       getData() {
         const currentRow = this.$refs.treeTable.getCurrentRow()
         console.log(currentRow, 'currentRow')
