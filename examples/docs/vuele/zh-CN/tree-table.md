@@ -25,11 +25,11 @@ TcTreeTable > TcTable > ElTable
         }, {
           title: '配置管理',
           name: 'setting',
-          address: '/admin/setting',
+          address: '/admin/setting,/admin/setting/admin/setting/admin/setting/admin/setting/admin/setting/admin/setting/admin/setting',
           children: [{
             title: '用户管理',
             name: 'user',
-            address: '/admin/system/user'
+            address: '/admin/system/user,/admin/system/user/admin/system/user/admin/system/user/admin/system/user/admin/system/user/admin/system/user'
           }]
         }]
       }
@@ -65,11 +65,11 @@ TcTreeTable > TcTable > ElTable
       return {
         columns:[{name:'name',text:'名称',width:'200', align: 'left'},
         {name:'title',text:'标题',width:'200'},
-        {name:'address',text:'地址'}],
+        {name:'address',text:'地址', showOverflowTooltip: true}],
         tableData: [{
           title: '系统管理',
           name: 'system',
-          address: '/admin/system'
+          address: '/admin/system,/admin/system/admin/system/admin/system/admin/system/admin/system/admin/system/admin/system/admin/system'
         }, {
           title: '配置管理',
           name: 'setting',

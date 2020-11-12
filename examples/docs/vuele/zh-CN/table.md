@@ -23,7 +23,7 @@ TcTable > ElTable
       return {
         columns:[{name:'name',text:'姓名',width:'200'},
         {name:'date',text:'日期',width:'200', lang: 'tui.sequenceLabel'},
-        {name:'address',text:'地址', clamp: 1}],
+        {name:'address',text:'地址', showOverflowTooltip: true}],
         tableData1: [],
         tableData: [{
           date: '2016-05-02',

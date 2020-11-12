@@ -50,13 +50,18 @@
         :filter-placement="column.filterPlacement"
         :filter-multiple="column.filterMultiple"
         :filter-method="column.filterMethod"
-        :filtered-value="column.filteredValue"
-        :show-overflow-tooltip="column.showOverflowTooltip">
+        :filtered-value="column.filteredValue">
         <template slot-scope="scope" >
           <slot :value="scope.row[column.name]" :columnName="column.name" :rowData="scope.row" :column="column" :scope="scope">
             <tc-clamp v-if="column.clamp" autoresize auto-tip :max-lines="column.clamp">
               {{ scope.row[column.name] }}
             </tc-clamp>
+            <template v-else-if="column.showOverflowTooltip">
+              <el-tooltip placement="top">
+                <div slot="content" :style="`max-width:${tooltipMaxWidth}px;`">{{scope.row[column.name]}}</div>
+                <div style="white-space:nowrap;text-overflow: ellipsis;overflow: hidden;">{{ scope.row[column.name] }}</div>
+              </el-tooltip>
+            </template>
             <span v-else>
               {{ scope.row[column.name] }}
             </span>
@@ -81,7 +86,8 @@ export default {
     fit: { type: Boolean, required: false, default: true },
     selection: { type: Boolean, required: false, default: false },
     selectionType: { type: String, required: false, default: 'single' },
-    columns: { type: Array, default: () => [] }
+    columns: { type: Array, default: () => [] },
+    tooltipMaxWidth: {type: Number, required: false, default: 200}
   },
   data: () => ({
     currentRow: null,
