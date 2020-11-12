@@ -17,7 +17,7 @@
       custom-class="tc-dialog-base" 
       v-on="$listeners">
       <div slot="title" class="tc-dialog-title">
-        <i :class="icon" />
+        <i :class="icon" v-if="icon" />
         <slot name="title">{{ title }}</slot>
       </div>
       <div :style="dialogHeight" class="tc-dialog-body-container">
@@ -63,7 +63,7 @@ export default {
     close: { type: String, required: false, default: 'close' },
     beforeClose: { type: String, required: false, default: 'beforeClose' },
     title: { type: String, required: false, default: 'dialog' },
-    icon: { type: String, required: false, default: 'el-icon-time' },
+    icon: { type: String, required: false, default: null },
     visible: { type: Boolean, required: false, default: false },
     width: { type: String, required: false, default: '50%' },
     height: { type: Number | String, required: false, default: -1 },
