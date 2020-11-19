@@ -1,4 +1,4 @@
-.demo-block .box [class*="loader-"] {
+.demo-block .box [class^="loader-"] {
   font-size: 40px;
 }
 .box{
@@ -9,7 +9,7 @@
   line-height: 120px;
 }
 
-[class*="loader-"] {
+[class^="loader-"] {
   display: inline-block;
   width: 1em;
   height: 1em;

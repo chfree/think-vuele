@@ -40,6 +40,7 @@
         </slot>
       </div>
       <div :style="fixedButtonStyle">
+        <slot name="fixedBottom"></slot>
       </div>
     </el-dialog>
   </div> 
