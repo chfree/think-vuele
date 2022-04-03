@@ -3,24 +3,34 @@
 用于电话号码的格式化输入
 
 ### 基础示例 正则只验证手机号
+
 :::demo
+
 ```html
 {{phone}}
-<tc-input-phone v-model="phone" valid-type="mobile" />
+<tc-input-phone v-model="phone" @validPhoneResult="validPhoneResult" valid-type="mobile" />
 <script>
   export default {
     data() {
       return {
         phone: ''
       }
+    },
+    methods:{
+      validPhoneResult(phone){
+        console.log(phone, 'phone')
+      }
     }
   }
 </script>
 ```
+
 :::
 
 ### 基础示例 正则只验证座机号
+
 :::demo
+
 ```html
 {{phone}}
 <tc-input-phone v-model="phone" valid-type="phone" />
@@ -34,10 +44,13 @@
   }
 </script>
 ```
+
 :::
 
 ### 基础示例 正则验证座机号或座机
+
 :::demo
+
 ```html
 {{phone}}
 <tc-input-phone v-model="phone" valid-type="mop" />
@@ -51,11 +64,14 @@
   }
 </script>
 ```
+
 :::
 
 ### 基础示例 通用验证
+
 **移除了libphone的引用，暂时不支持**
 :::demo
+
 ```html
 {{phone}}
 <tc-input-phone v-model="phone" valid-type="common"  />
@@ -69,6 +85,7 @@
   }
 </script>
 ```
+
 :::
 
 ### Attributes
@@ -89,6 +106,7 @@
 基于该验证库的示例库[`LouisMazel/vue-phone-number-input`](https://louismazel.github.io/vue-phone-number-input/)
 
 其他情况则只采用正则进行验证(字符串的提取验证`value.match`取第一个匹配)
+
 ```
 /**
  * validType: common 通用，采用libphone进行
@@ -102,4 +120,5 @@ var regexValid = {
   phone: /(0\d{2}-?\d{8}(-\d{1,4})?)|(0\d{3}-?\d{7,8}(-\d{1,4})?)/
 }
 ```
+
 :::

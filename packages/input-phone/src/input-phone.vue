@@ -1,5 +1,10 @@
 <template>
-  <el-input :value="value" :vname="vname" class="tc-input-phone" @blur="blurHandle" v-bind="$attrs" v-on="$listeners">
+  <el-input :value="value" 
+    :vname="vname" 
+    class="tc-input-phone" 
+    @blur="blurHandle" 
+    v-bind="$attrs" 
+    v-on="$listeners">
   </el-input>
 </template>
 
@@ -15,7 +20,7 @@ import vnameMixin from 'main/mixins/vname-mixin.js'
  */
 var regexValid = {
   mobile: /((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0-9]))\d{8}/,
-  phone: /(0\d{2}-?\d{8}(-\d{1,4})?)|(0\d{3}-?\d{7,8}(-\d{1,4})?)/
+  phone: /(0\d{2}-?\d{8}(-\d{1,4}))|(0\d{3}-?\d{7,8}(-\d{1,4}))/
 }
 export default {
   name: 'TcInputPhone',
@@ -44,6 +49,7 @@ export default {
           resultPhone = (resultPhone.match(this.regex) || [''])[0]
         }
       }
+      this.$emit('validPhoneResult', {inputPhone: e.target.value, resultPhone: resultPhone})
       this.$emit('input', resultPhone)
     },
     libphoneValid(inPhone) {
