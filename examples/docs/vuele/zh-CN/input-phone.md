@@ -94,6 +94,7 @@
 |------  |-----|---- |----- |---- |
 | valid-type | 验证类型 | String | `phone`,`mobile`,`mop`,`regex` | `mop` |
 | regex | 正则表达式 | String | — | — |
+| validPhoneResult | 验证回调 | Function | — | — |
 
 :::tip
 **common暂时不支持，需要自行引入libphonenumber-js**<br/>
