@@ -57,10 +57,12 @@ export default {
       moving: false,
       activeTab: 'config',
       themeName: '',
-      userTheme: []
+      userTheme: [],
+      timeOutID: null
     };
   },
   mounted() {
+    this.controller = new window.AbortController();
     const editor = this.$refs.editor;
     this.width = editor.offsetWidth;
     leftX = window.innerWidth - 20 - this.width;
@@ -71,10 +73,14 @@ export default {
       leftX = this.left;
       topY = this.top;
       document.addEventListener('mousemove', this.moveFunc);
+    }, {
+      signal: this.controller?.signal
     });
     document.addEventListener('mouseup', e => {
       document.removeEventListener('mousemove', this.moveFunc);
-      setTimeout(() => {this.moving = false;}, 0);
+      this.timeOutID = setTimeout(() => {this.moving = false;}, 0);
+    }, {
+      signal: this.controller?.signal
     });
     // chrome.storage.local.remove('ELEMENT_THEME_USER_CONFIG');
     loadUserThemeFromLocal()
@@ -158,6 +164,12 @@ export default {
       }
       saveUserThemeToLocal(this.userTheme);
     }
+  },
+
+  beforeDestroy() {
+    this.controller.abort();
+    document.removeEventListener('mousemove', this.moveFunc);
+    clearTimeout(this.timeOutID);
   }
 };
 </script>

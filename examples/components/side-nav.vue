@@ -275,9 +275,15 @@
       }
     },
     created() {
-      bus.$on('fadeNav', () => {
+      const handleFadeNav = () => {
         this.isFade = true
-      })
+      };
+
+      bus.$on('fadeNav', handleFadeNav)
+
+      this.$once('hook:beforeDestroy', () => {
+        bus.$off('fadeNav', handleFadeNav);
+      });
     },
     mounted() {
       this.handleResize()

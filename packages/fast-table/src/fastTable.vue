@@ -491,6 +491,7 @@ export default {
   },
   // 生命周期结束
   beforeDestroy() {
+    clearTimeout(this._times);
   },
   // 如果使用了keep-alive
   deactivated() {

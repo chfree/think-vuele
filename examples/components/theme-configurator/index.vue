@@ -130,7 +130,8 @@ export default {
       lastApply: 0,
       userConfigHistory: [],
       userConfigRedoHistory: [],
-      hasLocalConfig: false
+      hasLocalConfig: false,
+      timeOutID: null
     }
   },
   mixins: [DocStyle, Loading, Shortcut],
@@ -171,7 +172,7 @@ export default {
             this.onError(err)
           })
           .then(() => {
-            setTimeout(() => {
+            this.timeOutID = setTimeout(() => {
               if (defaultConfig) {
                 this.defaultConfig = defaultConfig
                 this.filterCurrentConfig()
@@ -291,6 +292,10 @@ export default {
       })
 
     }
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.timeOutID);
   }
 }
 </script>
