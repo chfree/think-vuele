@@ -19,7 +19,7 @@ export default {
     };
   },
   created() {
-    bus.$on('user-theme-config-loading', val => {
+    const handleUserThemeConfigLoading = val => {
       if (val) {
         this.count++;
         if (this.count > 1) return;
@@ -29,6 +29,12 @@ export default {
         if (this.count) return;
         this.$bar.finish();
       }
+    };
+
+    bus.$on('user-theme-config-loading', handleUserThemeConfigLoading);
+
+    this.$once('hook:beforeDestroy', () => {
+      bus.$off('user-theme-config-loading', handleUserThemeConfigLoading);
     });
   }
 };

@@ -47,8 +47,9 @@ export default {
       contentHeight: 0,
       focusing: false,
       isClick: false,
-      id: generateId()
-    }
+      id: generateId(),
+      timeOutID: null
+    };
   },
 
   inject: ['collapse'],
@@ -72,7 +73,7 @@ export default {
 
   methods: {
     handleFocus() {
-      setTimeout(() => {
+      this.timeOutID = setTimeout(() => {
         if (!this.isClick) {
           this.focusing = true
         } else {
@@ -89,6 +90,10 @@ export default {
     handleEnterClick() {
       this.dispatch('ElCollapse', 'item-click', this)
     }
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.timeOutID);
   }
 }
 </script>

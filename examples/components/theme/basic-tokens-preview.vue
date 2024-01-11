@@ -204,7 +204,8 @@ const original = {
 export default {
   created() {
     bus.$on(ACTION_USER_CONFIG_UPDATE, this.setGlobal);
-    bus.$on(ACTION_COMPONECT_SELECT, (val) => {
+
+    const handleActionComponectSelect = val => {
       this.$nextTick(() => {
         const getSelectElement = Array.from(document.querySelectorAll('h4')).filter((el) => (el.innerText.toLowerCase() === val));
         if (getSelectElement[0]) {
@@ -212,6 +213,13 @@ export default {
           window.scrollTo(0, window.pageYOffset + elementTop - 20); // 20 for padding
         }
       });
+    };
+
+    bus.$on(ACTION_COMPONECT_SELECT, handleActionComponectSelect);
+
+    this.$once('hook:beforeDestroy', () => {
+      bus.$off(ACTION_USER_CONFIG_UPDATE, this.setGlobal);
+      bus.$off(ACTION_COMPONECT_SELECT, handleActionComponectSelect);
     });
   },
   mounted() {
